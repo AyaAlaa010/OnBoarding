@@ -1,18 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/linear_name_picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/user_welcome"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/hi_omar"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_42sdp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_picture"
+                android:layout_width="@dimen/_48sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:src="@drawable/slid1"
+
+
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_welcome_message"
+            android:layout_width="@dimen/_230sdp"
+            android:layout_height="0dp"
+            android:layout_weight=".75"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:fontFamily="@font/ubuntu_light_italic"
+            android:text="@string/welcome_back_where_do_you_want_to_go_today"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@+id/linear_name_picture"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_services"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight=".5"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="Services"
+            android:textSize="@dimen/_21sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_welcome_message"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/linear3_btn"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".75"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_services"
+
+            >
+
+            <Button
+                android:id="@+id/btn_bussiness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/btn_rounded_border"
+                android:fontFamily="@font/ubuntu_medium"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/business"
+                android:textAllCaps="false"
+
+                android:textSize="@dimen/_12sdp"
+
+
+                />
+
+            <Button
+                android:id="@+id/btn_flight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/btn_rounded_border"
+                android:fontFamily="@font/ubuntu_medium"
+                android:paddingStart="@dimen/_19sdp"
+                android:paddingEnd="@dimen/_19sdp"
+                android:text="@string/flight"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12sdp"
+
+                />
+
+            <Button
+                android:id="@+id/btn_hotels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_rounded_border"
+                android:fontFamily="@font/ubuntu_medium"
+                android:paddingStart="@dimen/_19sdp"
+                android:paddingEnd="@dimen/_19sdp"
+                android:text="@string/hotles"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12sdp"
+
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear2_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_weight=".5"
+
+            app:layout_constraintTop_toBottomOf="@+id/linear3_btn">
+
+            <Button
+                android:id="@+id/btn_homestay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/btn_rounded_border"
+                android:fontFamily="@font/ubuntu_medium"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/homestay"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12sdp"
+
+
+                />
+
+            <Button
+                android:id="@+id/btn_carrental"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:background="@drawable/btn_rounded_border"
+                android:fontFamily="@font/ubuntu_medium"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/car_rental"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_12sdp"
+
+
+                />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            app:layout_constraintTop_toBottomOf="@id/linear2_btn"
+            android:layout_marginTop="@dimen/_5sdp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/_30sdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Top Cities"
+                        android:textSize="@dimen/_15ssp"
+                        android:textAllCaps="false"
+
+                        />
+                    <!--                <com.smarteist.autoimageslider.SliderView-->
+                    <!--                    android:id="@+id/slider"-->
+                    <!--                    android:layout_width="match_parent"-->
+                    <!--                    android:layout_height="150dp"-->
+                    <!--                    android:layout_centerInParent="true"-->
+                    <!--                    app:sliderAnimationDuration="600"-->
+                    <!--                    app:sliderAutoCycleDirection="back_and_forth"-->
+                    <!--                    app:sliderIndicatorAnimationDuration="600"-->
+                    <!--                    app:sliderIndicatorEnabled="true"-->
+                    <!--                    app:sliderIndicatorGravity="center_horizontal|bottom"-->
+                    <!--                    app:sliderIndicatorMargin="15dp"-->
+                    <!--                    app:sliderIndicatorOrientation="horizontal"-->
+                    <!--                    app:sliderIndicatorPadding="3dp"-->
+                    <!--                    app:sliderIndicatorRadius="2dp"-->
+                    <!--                    app:sliderIndicatorSelectedColor="#5A5A5A"-->
+                    <!--                    app:sliderIndicatorUnselectedColor="#FFF"-->
+                    <!--                    app:sliderScrollTimeInSec="1" />-->
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/main_tabs_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:tabGravity="fill"
+            app:tabIndicatorAnimationMode="elastic"
+            app:tabIndicatorGravity="stretch"
+            app:tabMode="fixed"
+            android:background="@drawable/tab_layout"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:elevation="@dimen/_30sdp"
+
+
+            />
+
+
+    </LinearLayout>
+</layout>
