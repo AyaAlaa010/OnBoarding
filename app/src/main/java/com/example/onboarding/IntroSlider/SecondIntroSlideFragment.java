@@ -1,4 +1,4 @@
-package com.example.onboarding.sliderFragments;
+package com.example.onboarding.IntroSlider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,12 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onboarding.MainActivity;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSecondBinding;
+import com.example.onboarding.ui.mainactivity.MainActivity;
 
 
-public class SecondFragment extends Fragment {
+public class SecondIntroSlideFragment extends Fragment {
 private FragmentSecondBinding binding;
 
 

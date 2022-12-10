@@ -1,4 +1,4 @@
-package com.example.onboarding;
+package com.example.onboarding.IntroSlider;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -6,20 +6,18 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Html;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.onboarding.R;
 import com.example.onboarding.databinding.IntroActivityBinding;
-import com.example.onboarding.sliderFragments.MyPagerAdapter;
+import com.example.onboarding.ui.mainactivity.MainActivity;
 
-import java.util.ArrayList;
-
-public class IntroActivity extends AppCompatActivity {
+public class IntroSliderActivity extends AppCompatActivity {
     // creating variables for view pager,
     // liner layout, adapter and our array list.
     private IntroActivityBinding binding;
@@ -45,19 +43,26 @@ public class IntroActivity extends AppCompatActivity {
 
 
         // calling method to add dots indicator
-        addDots(3, 0);
+        addIndicator(3, 0);
+        setActionListener();
 
         // below line is use to call on
         // page change listener method.
         viewPager.addOnPageChangeListener(viewListner);
-        setActionListener();
 
     }
     private void setActionListener(){
         binding.imgGoToNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(IntroActivity.this,MainActivity.class));
+
+                int current = getItem(+1);
+                if (current < 3) {
+                    // move to next screen
+                    viewPager.setCurrentItem(current);
+                } else {
+                    startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
+                }
 
             }
         });
@@ -67,7 +72,7 @@ public class IntroActivity extends AppCompatActivity {
     }
 
 
-    private void addDots(int size, int pos) {
+    private void addIndicator(int size, int pos) {
         // inside this method we are
         // creating a new text view.
         dots = new TextView[size];
@@ -82,18 +87,30 @@ public class IntroActivity extends AppCompatActivity {
             // below line is use to add the
             // dots and modify its color.
             dots[i] = new TextView(this);
-            dots[i].setText(Html.fromHtml("•"));
-            dots[i].setTextSize(55);
+            //dots[i].setText(Html.fromHtml("•"));
+            dots[i].setBackgroundResource(R.drawable.unselected_indicator_slider);
+            dots[i].setWidth(70);
+            dots[i].setHeight(15);
+//
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.setMargins(10,10,10,10);
+            dots[i].setLayoutParams(params);
 
-            // below line is called when the dots are not selected.
-            dots[i].setTextColor(Color.WHITE);
             dotsLL.addView(dots[i]);
+
         }
         if (dots.length > 0) {
             // this line is called when the dots
             // inside linear layout are selected
-            dots[pos].setTextColor(getResources().getColor(R.color.blue));
+            dots[pos].setBackgroundResource(R.drawable.selected_indicator_slider);
+            //dots[pos].setTextColor(getResources().getColor(R.color.blue));
         }
+
+
+    }
+
+    private int getItem(int i) {
+        return viewPager.getCurrentItem() + i;
     }
 
     // creating a method for view pager for on page change listener.
@@ -101,13 +118,21 @@ public class IntroActivity extends AppCompatActivity {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+
         }
 
         @Override
         public void onPageSelected(int position) {
-            // we are calling our dots method to
-            // change the position of selected dots.
-            addDots(3, position);
+            addIndicator(3, position);
+
+//
+//            if(position==viewPager.getAdapter().getCount()-1){
+//                Intent reg = new
+//                        Intent(IntroSliderActivity.this,MainActivity.class);
+//                startActivity(reg);
+//            }
+
+
         }
 
         @Override

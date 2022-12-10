@@ -1,4 +1,4 @@
-package com.example.onboarding.sliderFragments;
+package com.example.onboarding.IntroSlider;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -14,11 +14,10 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int pos) {
         switch(pos) {
 
-            case 0: return new FirstFragment();
-            case 1: return new SecondFragment();
-            case 2: return new ThirdFragment();
-
-            default: return   new FirstFragment();
+            case 0: return new FirstIntroSlideFragment();
+            case 1: return new SecondIntroSlideFragment();
+            case 2: return new ThirdIntroSlideFragment();
+            default: return new FirstIntroSlideFragment();
         }
     }
 
@@ -26,4 +25,5 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return 3;
     }
+
 }

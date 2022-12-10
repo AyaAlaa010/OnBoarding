@@ -1,4 +1,4 @@
-package com.example.onboarding.sliderFragments;
+package com.example.onboarding.IntroSlider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,19 +7,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.onboarding.MainActivity;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentFirstBinding;
+import com.example.onboarding.ui.mainactivity.MainActivity;
 
 
-public class FirstFragment extends Fragment {
+public class FirstIntroSlideFragment extends Fragment {
 
 private FragmentFirstBinding binding;
 //private NavController navController;
