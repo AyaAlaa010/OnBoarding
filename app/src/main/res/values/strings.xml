@@ -27,4 +27,14 @@
     <string name="dubai">Dubai (DBX)</string>
 
     <string name="mumbai_bom">Mumbai (BOM)</string>
+    <string name="to">to</string>
+    <string name="departure">Departure</string>
+    <string name="back">return</string>
+    <string name="passenger">Passenger</string>
+    <string name="where_are_you_going">Where are you going ?</string>
+    <string name="check_in">Check in</string>
+    <string name="check_out">check out</string>
+    <string name="guests">Guests</string>
+    <string name="pickup">Pickup</string>
+    <string name="drop_off">Drop-off</string>
 </resources>

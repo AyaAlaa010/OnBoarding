@@ -2,21 +2,205 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
+    <LinearLayout
 
-    </data>
-
-    <FrameLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_10sdp"
 
-        <!-- TODO: Update blank fragment layout -->
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/tv_return_same"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/tab_layout"
+            android:elevation="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu"
+
+            android:text="Return to same location" />
+
+        <TextView
+            android:id="@+id/tv_return_different"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/tab_layout"
+            android:elevation="@dimen/_15sdp"
+            android:padding="@dimen/_5sdp"
+            android:text="Return to different location"
+            android:fontFamily="@font/ubuntu"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+
+
+
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/trip_layout"
+        android:backgroundTint="@color/blue"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/pickup"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu"
 
-            android:text="@string/hello_blank_fragment" />
 
-    </FrameLayout>
+            />
+
+        <TextView
+            android:id="@+id/tv_pickup_country"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:drawableStart="@drawable/fligth_from"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/dubai"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold"
+            android:fontFamily="@font/ubuntu_bold"
+
+            />
+
+
+        <TextView
+            android:id="@+id/tv_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_40sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/drop_off"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10sdp"
+
+
+            />
+
+        <TextView
+            android:id="@+id/tv_dropoff_country"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:drawableStart="@drawable/flight_to"
+            android:padding="@dimen/_10sdp"
+            android:text="@string/mumbai_bom"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:fontFamily="@font/ubuntu_bold"
+
+            android:textSize="@dimen/_13sdp"
+
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        android:background="@drawable/trip_layout"
+        android:elevation="@dimen/_10sdp"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/departure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/departure"
+                android:textSize="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:fontFamily="@font/ubuntu"
+
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:drawableStart="@drawable/calender"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text= "  Sat2,Sep"
+                android:textSize="@dimen/_15sdp"
+
+
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/back"
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="@font/ubuntu"
+                android:layout_marginStart="@dimen/_20sdp"
+
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  Sun24,Sep"
+                android:fontFamily="@font/ubuntu_bold"
+                android:textSize="@dimen/_15sdp"
+                android:drawableStart="@drawable/calender"
+                android:layout_margin="@dimen/_5sdp"
+
+
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
 </layout>

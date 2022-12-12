@@ -27,10 +27,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_5sdp"
-                android:text=" Where are you going ?"
+                android:text="@string/where_are_you_going"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15sdp"
+                android:fontFamily="@font/ubuntu"
+
                 android:textStyle="bold"
 
                 />
@@ -38,14 +40,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
                 android:drawableStart="@drawable/myflight"
-                android:padding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
                 android:text="@string/dubai"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_20sdp"
-                android:textStyle="bold"
+                android:textSize="@dimen/_15sdp"
+                android:fontFamily="@font/ubuntu_bold"
 
                 />
 
@@ -75,9 +77,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:hint="Check in "
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold" />
+                    android:hint="@string/check_in"
+                    android:textSize="@dimen/_15sdp"
+                 android:fontFamily="@font/ubuntu" />
 
 
                 <TextView
@@ -85,10 +87,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
                     android:drawableStart="@drawable/calender"
-                    android:text="Sat2,Sep"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold"
-
+                    android:text="  Sat2,Sep"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/ubuntu_bold"
                     />
 
             </LinearLayout>
@@ -104,10 +105,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:hint="check out"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold"
-
+                    android:hint="@string/check_out"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/ubuntu"
                     />
 
 
@@ -116,10 +116,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
                     android:drawableStart="@drawable/calender"
-                    android:text="Sun24,Sep"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold"
-
+                    android:text="  Sun24,Sep"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/ubuntu_bold"
 
                     />
 
@@ -164,10 +163,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:hint="Guests"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold"
-
+                    android:hint="@string/guests"
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/ubuntu"
                     />
 
 
@@ -176,9 +174,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
                     android:text="2 Adults,1 Child"
-                    android:textSize="@dimen/_20sdp"
-                    android:textStyle="bold"
-
+                    android:textSize="@dimen/_15sdp"
+                    android:fontFamily="@font/ubuntu_bold"
 
                     />
 

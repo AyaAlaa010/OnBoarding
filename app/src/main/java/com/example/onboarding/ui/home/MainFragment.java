@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends Fragment {
+public class MainFragment extends Fragment {
 private FragmentMainBinding binding;
     private SliderAdapter adapter;
   //  private NavController navController;

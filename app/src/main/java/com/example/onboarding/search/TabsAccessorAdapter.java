@@ -20,7 +20,7 @@ public class TabsAccessorAdapter extends FragmentStateAdapter {
             case 0:
                 return new FlightFragment();
             case 1:
-                return  new HomeFragment();
+                return  new HouseFragment();
             case 2:
                 return new BedFragment();
             case 3:

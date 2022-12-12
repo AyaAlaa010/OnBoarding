@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginStart="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="#fff">
 
             <TextView
                 android:id="@+id/one_way"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/tab_layout"
                 android:elevation="@dimen/_15sdp"
                 android:padding="@dimen/_5sdp"
@@ -27,11 +34,23 @@
                 android:id="@+id/round_trip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/tab_layout"
                 android:elevation="@dimen/_15sdp"
                 android:padding="@dimen/_5sdp"
                 android:text="@string/round_trip"
+                android:fontFamily="@font/ubuntu"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:elevation="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="|"
                 android:fontFamily="@font/ubuntu"
 
 
@@ -41,7 +60,7 @@
                 android:id="@+id/multi_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/tab_layout"
                 android:elevation="@dimen/_15sdp"
                 android:padding="@dimen/_5sdp"
@@ -55,7 +74,7 @@
                 android:id="@+id/Class"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_margin="@dimen/_3sdp"
                 android:background="@drawable/tab_layout"
                 android:drawableEnd="@drawable/fligth_menu"
                 android:elevation="@dimen/_15sdp"
@@ -72,9 +91,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
             android:background="@drawable/trip_layout"
             android:backgroundTint="@color/blue"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:orientation="vertical">
 
             <TextView
@@ -96,7 +118,7 @@
                 android:layout_height="@dimen/_35sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:drawableStart="@drawable/fligth_from"
-                android:padding="@dimen/_1sdp"
+                android:padding="@dimen/_10sdp"
                 android:text="@string/dubai"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -112,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_40sdp"
-                android:text="to"
+                android:text="@string/to"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_8sdp"
@@ -126,9 +148,8 @@
                 android:id="@+id/tv_to_country"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/_40sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
                 android:drawableStart="@drawable/flight_to"
-                android:padding="@dimen/_13sdp"
+                android:padding="@dimen/_10sdp"
                 android:text="@string/mumbai_bom"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -145,8 +166,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:padding="@dimen/_5sdp"
             android:background="@drawable/trip_layout"
             android:elevation="@dimen/_10sdp"
@@ -164,7 +187,7 @@
                     android:id="@+id/departure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Departure"
+                    android:hint="@string/departure"
                     android:textSize="@dimen/_15sdp"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:fontFamily="@font/ubuntu"
@@ -175,13 +198,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sat2,Sep"
-                    android:textSize="@dimen/_15sdp"
-                    android:drawableStart="@drawable/calender"
                     android:layout_margin="@dimen/_5sdp"
+                    android:drawableStart="@drawable/calender"
                     android:fontFamily="@font/ubuntu_bold"
-
-
+                    android:text= "  Sat2,Sep"
+                    android:textSize="@dimen/_15sdp"
 
 
                     />
@@ -198,7 +219,7 @@
                     android:id="@+id/return_trip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="return"
+                    android:hint="@string/back"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu"
                     android:layout_marginStart="@dimen/_20sdp"
@@ -209,7 +230,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sun24,Sep"
+                    android:text="  Sun24,Sep"
                     android:fontFamily="@font/ubuntu_bold"
                     android:textSize="@dimen/_15sdp"
                     android:drawableStart="@drawable/calender"
@@ -227,8 +248,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:background="@drawable/trip_layout"
         android:elevation="@dimen/_10sdp"
         android:orientation="horizontal"
@@ -261,7 +284,7 @@
                     android:id="@+id/passenger_trip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:hint="Passenger"
+                    android:hint="@string/passenger"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu"
                     android:layout_marginStart="@dimen/_20sdp"
@@ -303,3 +326,4 @@
 
 
     </LinearLayout>
+</ScrollView>

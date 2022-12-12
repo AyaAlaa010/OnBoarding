@@ -23,12 +23,14 @@ public class SearchFragment extends Fragment {
 
 
     private TabsAccessorAdapter tabsAccessorAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false);
-        return binding.getRoot();    }
+        return binding.getRoot();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -36,17 +38,14 @@ public class SearchFragment extends Fragment {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new TabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
-        setTabsTitles();
+        addTabs();
 
     }
-    private void setTabsTitles() {
 
 
-        binding.mainTabs.addTab( binding.mainTabs.newTab().setIcon(R.drawable.flight));
-        binding.mainTabs.addTab( binding.mainTabs.newTab().setIcon(R.drawable.home_icone));
-        binding.mainTabs.addTab( binding.mainTabs.newTab().setIcon(R.drawable.bed));
-        binding.mainTabs.addTab( binding.mainTabs.newTab().setIcon(R.drawable.car));
-        binding.mainTabs.addTab( binding.mainTabs.newTab().setIcon(R.drawable.location));
+    private void addTabs() {
+
+        setTabsTitles();
 
 
         binding.mainTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -54,7 +53,7 @@ public class SearchFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
 
                 binding.mainTabsPager.setCurrentItem(tab.getPosition());
-
+                setTabSelectedActions(tab);
 
             }
 
@@ -74,9 +73,54 @@ public class SearchFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
-                binding.mainTabs.selectTab( binding.mainTabs.getTabAt(position));
+                binding.mainTabs.selectTab(binding.mainTabs.getTabAt(position));
             }
         });
+
+    }
+
+    private void setTabsTitles() {
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.flight));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.home_icone));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.bed));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.car));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.location));
+
+
+    }
+
+    private void setTabSelectedActions(TabLayout.Tab tab) {
+
+
+        if (tab.getPosition() == 0) {
+
+            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.background));
+
+
+        } else if (tab.getPosition() == 1) {
+
+            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
+
+
+        } else if (tab.getPosition() == 2) {
+
+            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slid3));
+
+
+        } else if (tab.getPosition() == 3) {
+
+
+            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slid1));
+
+
+        } else if (tab.getPosition() == 4) {
+
+            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.brown_btn));
+
+            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
+
+        }
+
 
     }
 
