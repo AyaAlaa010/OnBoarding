@@ -1,17 +1,21 @@
-package com.example.onboarding.ui.mainactivity;
+package com.example.onboarding.ui.home;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.onboarding.R;
-import com.example.onboarding.databinding.ActivityMainBinding;
-import com.example.onboarding.ui.mainactivity.imageslider.SliderAdapter;
-import com.example.onboarding.ui.mainactivity.imageslider.SliderItem;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
+import com.example.onboarding.databinding.FragmentMainBinding;
+import com.example.onboarding.ui.home.imageslider.SliderAdapter;
+import com.example.onboarding.ui.home.imageslider.SliderItem;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -19,25 +23,39 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding;
+
+public class HomeFragment extends Fragment {
+private FragmentMainBinding binding;
     private SliderAdapter adapter;
+  //  private NavController navController;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        setBottomTaps();
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
+        return binding.getRoot();    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+       // navController= Navigation.findNavController(view);
 
         setTopCitiesSlider();
         setTopHotelsSlider();
         setFeaturesSlider();
-
+        binding.btnBussiness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //navController.navigate(R.id.action_mainFragment_to_blankFragment);
+            }
+        });
     }
 
     private void setTopCitiesSlider() {
 
-        adapter = new SliderAdapter(this);
+        adapter = new SliderAdapter(requireContext());
         List<SliderItem> sliderItemList = new ArrayList<>();
         //dummy data
         sliderItemList.add(new SliderItem("Dubai", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley ...", R.drawable.slid1));
@@ -61,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTopHotelsSlider() {
 
-        adapter = new SliderAdapter(this);
+        adapter = new SliderAdapter(requireContext());
 
 
         List<SliderItem> sliderItemList = new ArrayList<>();
@@ -86,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setFeaturesSlider() {
 
-        adapter = new SliderAdapter(this);
+        adapter = new SliderAdapter(requireContext());
 
 
         List<SliderItem> sliderItemList = new ArrayList<>();
@@ -109,76 +127,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    private void setBottomTaps() {
-
-
-        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.ic_baseline_home_24));
-        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.ic_baseline_search_24));
-        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.ic_baseline_favorite_border_24));
-        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.menu));
-
-
-        binding.mainTabsBottom.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-              // binding.mainTabsBottom.setSelectedTabIndicatorColor(Color.parseColor("#88449CE1"));
-                //  viewPager.setCurrentItem(tab.getPosition());
-                if (tab.getPosition() == 0) {
-
-                    tab.setIcon(R.drawable.ic_baseline_home_24);
-                    tab.setText("Home");
-
-
-                }
-                else if (tab.getPosition() == 1) {
-
-                    tab.setIcon(R.drawable.ic_baseline_search_24);
-                    tab.setText("Search");
-
-                }
-                //  startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-               else if (tab.getPosition() == 2) {
-
-                    tab.setIcon(R.drawable.ic_baseline_favorite_border_24);
-                    tab.setText("Saved");
-
-                }
-
-            }
-
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-
-                    tab.setIcon(R.drawable.ic_baseline_home_24);
-                    tab.setText("Home");
-
-
-                }
-                else if (tab.getPosition() == 1) {
-
-                    tab.setIcon(R.drawable.ic_baseline_search_24);
-                    tab.setText("Search");
-
-                }
-                //  startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-                else if (tab.getPosition() == 2) {
-
-                    tab.setIcon(R.drawable.ic_baseline_favorite_border_24);
-                    tab.setText("Saved");
-
-                }
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-    }
 
 
 }

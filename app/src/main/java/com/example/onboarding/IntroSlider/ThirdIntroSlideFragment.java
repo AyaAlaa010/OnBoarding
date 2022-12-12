@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentThirdBinding;
-import com.example.onboarding.ui.mainactivity.MainActivity;
+import com.example.onboarding.ui.home.MainActivity;
 
 
 public class ThirdIntroSlideFragment extends Fragment {

@@ -12,4 +12,19 @@
     <string name="featured">Featured</string>
     <string name="top_hotels">Top Hotels</string>
     <string name="top_cities">Top Cities</string>
+    <string name="find">Find</string>
+
+    <string name="one_way">One Way</string>
+
+    <string name="round_trip">Round Trip</string>
+
+    <string name="multi_city">multi-city</string>
+
+    <string name="trip_class">Class</string>
+
+    <string name="from">From</string>
+
+    <string name="dubai">Dubai (DBX)</string>
+
+    <string name="mumbai_bom">Mumbai (BOM)</string>
 </resources>

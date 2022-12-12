@@ -1,4 +1,4 @@
-package com.example.onboarding.ui.mainactivity.imageslider;
+package com.example.onboarding.ui.home.imageslider;
 
 public class SliderItem {
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstIntroSlideFragment">
+
+    <fragment
+        android:id="@+id/firstIntroSlideFragment"
+        android:name="com.example.onboarding.IntroSlider.FirstIntroSlideFragment"
+        android:label="FirstIntroSlideFragment" >
+        <action
+            android:id="@+id/action_firstIntroSlideFragment_to_thirdIntroSlideFragment"
+            app:destination="@id/thirdIntroSlideFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondIntroSlideFragment"
+        android:name="com.example.onboarding.IntroSlider.SecondIntroSlideFragment"
+        android:label="SecondIntroSlideFragment" />
+    <fragment
+        android:id="@+id/thirdIntroSlideFragment"
+        android:name="com.example.onboarding.IntroSlider.ThirdIntroSlideFragment"
+        android:label="ThirdIntroSlideFragment" >
+        <action
+            android:id="@+id/action_thirdIntroSlideFragment_to_secondIntroSlideFragment"
+            app:destination="@id/secondIntroSlideFragment" />
+    </fragment>
+
+</navigation>

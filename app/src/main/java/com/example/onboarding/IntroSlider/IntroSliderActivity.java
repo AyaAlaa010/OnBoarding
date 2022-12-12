@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.IntroActivityBinding;
-import com.example.onboarding.ui.mainactivity.MainActivity;
+import com.example.onboarding.ui.home.MainActivity;
 
 public class IntroSliderActivity extends AppCompatActivity {
     // creating variables for view pager,
@@ -61,7 +61,11 @@ public class IntroSliderActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
+                      Intent intent=   new Intent(IntroSliderActivity.this, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // to prevent the backing to RegisterActivity
+                    startActivity(intent);
+                    finish();
+
                 }
 
             }
