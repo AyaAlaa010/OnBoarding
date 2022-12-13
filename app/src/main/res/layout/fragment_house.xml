@@ -18,8 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            android:background="@drawable/trip_layout"
-            android:backgroundTint="@color/blue"
+            android:background="@drawable/blue_gradient"
             android:orientation="vertical">
 
             <TextView
@@ -36,13 +35,21 @@
                 android:textStyle="bold"
 
                 />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/location_solid"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
 
+        />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/myflight"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_5sdp"
+                android:padding="@dimen/_10sdp"
                 android:text="@string/dubai"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
@@ -50,7 +57,7 @@
                 android:fontFamily="@font/ubuntu_bold"
 
                 />
-
+</LinearLayout>
 
         </LinearLayout>
 
@@ -144,7 +151,8 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/person_trip"
+                android:src="@drawable/person_svg"
+                android:padding="@dimen/_5sdp"
 
 
                 />
@@ -186,8 +194,11 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/down_icon_svg"
                 android:layout_gravity="center"
-                android:src="@drawable/arrow"
+                android:layout_marginStart="@dimen/_50sdp"
+
+
 
 
                 />

@@ -34,13 +34,17 @@ private FragmentFirstBinding binding;
         super.onViewCreated(view, savedInstanceState);
         //this.navController = Navigation.findNavController(view);
 
-        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               startActivity(new Intent(getContext(), MainActivity.class));
-               /// navController.navigate(R.id.action_firstFragment_to_mainFragment);;
-
-            }
-        });
+//        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//            //   startActivity(new Intent(getContext(), MainActivity.class));
+//                Intent intent=   new Intent(getContext(), MainActivity.class);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // to prevent the backing to RegisterActivity
+//                startActivity(intent);
+//                getActivity().finish();
+//               /// navController.navigate(R.id.action_firstFragment_to_mainFragment);;
+//
+//            }
+//        });
     }
 }

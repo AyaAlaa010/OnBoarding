@@ -1,9 +1,12 @@
 package com.example.onboarding.search;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -60,7 +63,7 @@ public class SearchFragment extends Fragment {
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
 
-
+                setTabUnSelectedActions(tab);
             }
 
             @Override
@@ -80,11 +83,11 @@ public class SearchFragment extends Fragment {
     }
 
     private void setTabsTitles() {
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.flight));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.home_icone));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.bed));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.car));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.location));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.plane_up_solid_1));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.hotel_solid_1));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.bed_solid));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.car_solid_1));
+        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.award_solid_1));
 
 
     }
@@ -93,36 +96,89 @@ public class SearchFragment extends Fragment {
 
 
         if (tab.getPosition() == 0) {
+           tab.setIcon(R.drawable.plane_up_solid_1);
+
+            tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
+                    PorterDuff.Mode.MULTIPLY);
 
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.background));
 
 
         } else if (tab.getPosition() == 1) {
 
+            tab.setIcon(R.drawable.hotel_solid_1);
+
+            tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
+                    PorterDuff.Mode.MULTIPLY);
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
 
 
         } else if (tab.getPosition() == 2) {
+            tab.setIcon(R.drawable.bed_solid);
 
+            tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
+                    PorterDuff.Mode.MULTIPLY);
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slid3));
 
 
         } else if (tab.getPosition() == 3) {
+            tab.setIcon(R.drawable.car_solid_1);
 
+            tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
+                    PorterDuff.Mode.MULTIPLY);
 
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slid1));
 
 
         } else if (tab.getPosition() == 4) {
+            tab.setIcon(R.drawable.award_solid_1);
+
+            tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
+                    PorterDuff.Mode.MULTIPLY);
 
             binding.btnFind.setBackground(getResources().getDrawable(R.drawable.brown_btn));
-
+            binding.btnFind.setTextColor(Color.parseColor("#E5C063"));
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
 
         }
 
 
     }
+    private void setTabUnSelectedActions(TabLayout.Tab tab) {
+
+
+        if (tab.getPosition() == 0) {
+           tab.setIcon(R.drawable.plane_up_solid_1);
+
+
+        } else if (tab.getPosition() == 1) {
+            tab.setIcon(R.drawable.hotel_solid_1);
+
+
+
+
+        } else if (tab.getPosition() == 2) {
+            tab.setIcon(R.drawable.bed_solid);
+
+
+        } else if (tab.getPosition() == 3) {
+
+
+            tab.setIcon(R.drawable.car_solid_white);
+
+
+        } else if (tab.getPosition() == 4) {
+            tab.setIcon(R.drawable.award_solid_1);
+            binding.btnFind.setTextColor(Color.parseColor("#FFFFFF"));
+
+            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.btn_green_layout));
+
+
+        }
+
+
+    }
+
 
 
 }

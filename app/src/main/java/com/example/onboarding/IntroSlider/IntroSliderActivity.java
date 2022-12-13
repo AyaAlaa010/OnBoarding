@@ -1,6 +1,7 @@
 package com.example.onboarding.IntroSlider;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.ViewCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -29,7 +31,9 @@ public class IntroSliderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         binding = DataBindingUtil.setContentView(this, R.layout.intro_activity);
 
         // initializing all our views.
@@ -61,16 +65,26 @@ public class IntroSliderActivity extends AppCompatActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                      Intent intent=   new Intent(IntroSliderActivity.this, MainActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // to prevent the backing to RegisterActivity
-                    startActivity(intent);
-                    finish();
+                    moveToMainActivity();
 
                 }
 
             }
         });
+        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                moveToMainActivity();
+            }
+        });
 
+
+
+    }
+    private void moveToMainActivity(){
+
+        startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
+        finish();
 
 
     }
@@ -144,4 +158,9 @@ public class IntroSliderActivity extends AppCompatActivity {
 
         }
     };
+
+
+
+
+    //https://stackoverflow.com/questions/37437037/android-prevent-white-screen-at-startup
 }

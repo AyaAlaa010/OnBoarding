@@ -24,9 +24,9 @@
 
     <string name="from">From</string>
 
-    <string name="dubai">Dubai (DBX)</string>
+    <string name="dubai">  Dubai (DBX)</string>
 
-    <string name="mumbai_bom">Mumbai (BOM)</string>
+    <string name="mumbai_bom">  Mumbai (BOM)</string>
     <string name="to">to</string>
     <string name="departure">Departure</string>
     <string name="back">return</string>

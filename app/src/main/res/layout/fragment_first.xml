@@ -24,31 +24,31 @@
             />
 
 
-        <FrameLayout
-            android:id="@+id/fl_skip_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            >
+<!--        <FrameLayout-->
+<!--            android:id="@+id/fl_skip_container"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="top"-->
+<!--            >-->
 
-            <TextView
-                android:id="@+id/tv_skip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_weight="4"
-                android:fontFamily="@font/ubuntu_light_italic"
-                android:padding="10dp"
-                android:text="Skip"
-                android:textAlignment="center"
-                android:textColor="@color/white"
+<!--            <TextView-->
+<!--                android:id="@+id/tv_skip"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="20dp"-->
+<!--                android:layout_weight="4"-->
+<!--                android:fontFamily="@font/ubuntu_light_italic"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="Skip"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/white"-->
 
-                android:textSize="18sp"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="italic"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
-        </FrameLayout>
+<!--        </FrameLayout>-->
 
     <FrameLayout
         android:id="@+id/fl_shadow_container"

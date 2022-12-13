@@ -20,7 +20,8 @@
             android:exported="true"/>
         <activity
             android:name=".IntroSlider.IntroSliderActivity"
-            android:exported="true">
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

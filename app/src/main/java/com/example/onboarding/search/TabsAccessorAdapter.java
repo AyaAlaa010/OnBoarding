@@ -26,7 +26,7 @@ public class TabsAccessorAdapter extends FragmentStateAdapter {
             case 3:
                 return new CarFragment();
             case 4:
-                return new LocationFragment();
+                return new AwardFragment();
             default:
                 return null;
 

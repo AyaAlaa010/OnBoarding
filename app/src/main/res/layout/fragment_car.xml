@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_3sdp"
             android:background="@drawable/tab_layout"
+            android:textColor="@color/blue"
             android:elevation="@dimen/_15sdp"
             android:padding="@dimen/_5sdp"
             android:textSize="@dimen/_10sdp"
@@ -36,6 +37,7 @@
             android:background="@drawable/tab_layout"
             android:elevation="@dimen/_15sdp"
             android:padding="@dimen/_5sdp"
+
             android:text="Return to different location"
             android:fontFamily="@font/ubuntu"
             android:backgroundTint="@color/blue"
@@ -48,81 +50,100 @@
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/trip_layout"
-        android:backgroundTint="@color/blue"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginEnd="@dimen/_20sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_40sdp"
+            android:background="@drawable/blue_gradient"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:text="@string/pickup"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
-            android:fontFamily="@font/ubuntu"
-
-
-            />
-
-        <TextView
-            android:id="@+id/tv_pickup_country"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_35sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:drawableStart="@drawable/fligth_from"
-            android:padding="@dimen/_10sdp"
-            android:text="@string/dubai"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_13sdp"
-            android:textStyle="bold"
-            android:fontFamily="@font/ubuntu_bold"
+            android:orientation="vertical">
 
-            />
-
-
-        <TextView
-            android:id="@+id/tv_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_40sdp"
-            android:fontFamily="@font/ubuntu"
-            android:text="@string/drop_off"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_10sdp"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="@string/pickup"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu"
 
 
-            />
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/car_solid_white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
 
-        <TextView
-            android:id="@+id/tv_dropoff_country"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_40sdp"
-            android:drawableStart="@drawable/flight_to"
-            android:padding="@dimen/_10sdp"
-            android:text="@string/mumbai_bom"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:fontFamily="@font/ubuntu_bold"
+                    />
 
-            android:textSize="@dimen/_13sdp"
+                <TextView
+                    android:id="@+id/tv_pickup_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_35sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/dubai"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/ubuntu_bold"
 
-            android:textStyle="bold" />
+                    />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:text="@string/drop_off"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu"
 
 
-    </LinearLayout>
 
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/car_solid_white"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:padding="@dimen/_10sdp"
+
+                    />
+                <TextView
+                    android:id="@+id/tv_dropoff_country"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_10sdp"
+                    android:text="@string/mumbai_bom"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+
+                    android:textSize="@dimen/_13sdp"
+
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
