@@ -41,10 +41,11 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_picture"
-                android:layout_width="@dimen/_48sdp"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_20sdp"
-                android:src="@drawable/slid1"
+                android:src="@drawable/person_svg"
+                android:padding="@dimen/_10sdp"
 
 
                 />

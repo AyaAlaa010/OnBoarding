@@ -37,4 +37,15 @@
     <string name="guests">Guests</string>
     <string name="pickup">Pickup</string>
     <string name="drop_off">Drop-off</string>
+    <string name="title_activity_test">TestActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="your_saved">Your Saved</string>
+    <string name="select_an_item_to_view_and_book">Select an item to view and book</string>
 </resources>

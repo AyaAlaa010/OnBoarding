@@ -164,7 +164,7 @@ public class SearchFragment extends Fragment {
         } else if (tab.getPosition() == 3) {
 
 
-            tab.setIcon(R.drawable.car_solid_white);
+            tab.setIcon(R.drawable.car_solid_icon_white);
 
 
         } else if (tab.getPosition() == 4) {

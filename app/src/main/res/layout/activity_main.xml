@@ -41,6 +41,7 @@
             android:layout_marginEnd="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:elevation="@dimen/_30sdp"
+            android:padding="@dimen/_5sdp"
             android:layout_marginBottom="@dimen/_10sdp"
 
 
