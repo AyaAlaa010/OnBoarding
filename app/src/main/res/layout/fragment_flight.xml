@@ -16,7 +16,7 @@
             android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginEnd="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            android:background="#fff">
+            >
 
             <TextView
                 android:id="@+id/one_way"

@@ -212,7 +212,7 @@
                     android:layout_marginBottom="@dimen/_5sdp"
 
                     android:background="@drawable/btn_green_layout"
-                    android:text="View"
+                    android:text="@string/view"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_7sdp"
                     android:fontFamily="@font/ubuntu_bold" />

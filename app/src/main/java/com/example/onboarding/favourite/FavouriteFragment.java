@@ -52,7 +52,6 @@ public class FavouriteFragment extends Fragment {
 
         adapter = new FavouriteAdapter(favouritesList);
         GridLayoutManager layoutManager=new GridLayoutManager(getContext(),2);
-        // at last set adapter to recycler view.
         binding.recyclerFavourites.setLayoutManager(layoutManager);
         binding.recyclerFavourites.setAdapter(adapter);
 

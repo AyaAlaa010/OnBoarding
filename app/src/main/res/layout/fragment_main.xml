@@ -240,7 +240,7 @@
                             app:sliderIndicatorPadding="1dp"
                             app:sliderIndicatorRadius="1dp"
                             app:sliderIndicatorSelectedColor="#5A5A5A"
-                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderIndicatorUnselectedColor="@color/white"
                             app:sliderScrollTimeInSec="1" />
                     </androidx.cardview.widget.CardView>
 
@@ -284,7 +284,7 @@
                             app:sliderIndicatorPadding="1dp"
                             app:sliderIndicatorRadius="1dp"
                             app:sliderIndicatorSelectedColor="#5A5A5A"
-                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderIndicatorUnselectedColor="@color/white"
                             app:sliderScrollTimeInSec="1" />
                     </androidx.cardview.widget.CardView>
 
@@ -329,7 +329,7 @@
                             app:sliderIndicatorPadding="1dp"
                             app:sliderIndicatorRadius="1dp"
                             app:sliderIndicatorSelectedColor="#5A5A5A"
-                            app:sliderIndicatorUnselectedColor="#FFF"
+                            app:sliderIndicatorUnselectedColor="@color/white"
                             app:sliderScrollTimeInSec="1" />
                     </androidx.cardview.widget.CardView>
 
@@ -345,7 +345,6 @@
 
 
 
-        <!--        bottom tabs-->
 
 
 

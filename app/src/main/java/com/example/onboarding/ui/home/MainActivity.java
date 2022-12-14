@@ -10,6 +10,7 @@ import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityMainBinding;
 import com.example.onboarding.favourite.FavouriteFragment;
 import com.example.onboarding.search.SearchFragment;
+import com.example.onboarding.settings.SettingsFragment;
 import com.google.android.material.tabs.TabLayout;
 
 
@@ -125,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (tab.getPosition() == 3) {
 
             tab.setIcon(R.drawable.menu_change_tab);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragmentContainerView3, new SettingsFragment()).commit();
 
         }
 

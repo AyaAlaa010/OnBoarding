@@ -106,7 +106,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"                    android:text="  Sat2,Sep"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="  Sat2,Sep"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu_bold"
                     />
