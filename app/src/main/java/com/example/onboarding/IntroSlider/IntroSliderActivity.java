@@ -39,8 +39,6 @@ public class IntroSliderActivity extends AppCompatActivity {
         // initializing all our views.
         viewPager = findViewById(R.id.idViewPager);
         dotsLL = findViewById(R.id.idLLDots);
-
-
         FragmentManager fragmentManager = getSupportFragmentManager();
         myAdapter = new MyPagerAdapter(fragmentManager);
         viewPager.setAdapter(myAdapter);
@@ -162,5 +160,4 @@ public class IntroSliderActivity extends AppCompatActivity {
 
 
 
-    //https://stackoverflow.com/questions/37437037/android-prevent-white-screen-at-startup
 }

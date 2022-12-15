@@ -42,7 +42,7 @@
             android:id="@+id/card_wallet_payment"
             app:cardCornerRadius="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
-
+            android:elevation="@dimen/_1sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_5sdp"
@@ -74,7 +74,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/brown_text"
+                    android:textColor="@color/app_second_color"
 
 
                     />
@@ -97,7 +97,9 @@
             app:cardCornerRadius="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"            >
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_1sdp"
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -122,7 +124,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/brown_text"
+                    android:textColor="@color/app_second_color"
 
 
                     />
@@ -138,7 +140,9 @@
             app:cardCornerRadius="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"            >
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_1sdp"
+            >
 
 
             <LinearLayout
@@ -164,7 +168,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/brown_text"
+                    android:textColor="@color/app_second_color"
                     />
             </LinearLayout>
 
@@ -180,7 +184,9 @@
             app:cardCornerRadius="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"            >
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_1sdp"
+            >
 
 
             <LinearLayout
@@ -188,6 +194,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
+
                 android:padding="@dimen/_5sdp">
 
                 <ImageView
@@ -205,7 +212,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/brown_text"
+                    android:textColor="@color/app_second_color"
                     />
             </LinearLayout>
 
@@ -218,7 +225,9 @@
             app:cardCornerRadius="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginBottom="@dimen/_5sdp"            >
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:elevation="@dimen/_1sdp"
+            >
 
 
             <LinearLayout
@@ -244,7 +253,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:layout_gravity="center"
                     android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/brown_text"
+                    android:textColor="@color/app_second_color"
                     />
             </LinearLayout>
 

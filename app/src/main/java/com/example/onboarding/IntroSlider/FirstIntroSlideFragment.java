@@ -20,7 +20,6 @@ import com.example.onboarding.ui.home.MainActivity;
 public class FirstIntroSlideFragment extends Fragment {
 
 private FragmentFirstBinding binding;
-//private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,19 +31,6 @@ private FragmentFirstBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //this.navController = Navigation.findNavController(view);
 
-//        binding.tvSkip.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//            //   startActivity(new Intent(getContext(), MainActivity.class));
-//                Intent intent=   new Intent(getContext(), MainActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // to prevent the backing to RegisterActivity
-//                startActivity(intent);
-//                getActivity().finish();
-//               /// navController.navigate(R.id.action_firstFragment_to_mainFragment);;
-//
-//            }
-//        });
     }
 }

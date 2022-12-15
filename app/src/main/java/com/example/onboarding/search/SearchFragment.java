@@ -1,6 +1,5 @@
 package com.example.onboarding.search;
 
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 
@@ -136,8 +135,8 @@ public class SearchFragment extends Fragment {
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
 
-            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.brown_btn));
-            binding.btnFind.setTextColor(Color.parseColor("#E5C063"));
+            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.second_color_btn));
+            binding.btnFind.setTextColor(getResources().getColor(R.color.award_color));
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
 
         }
@@ -169,9 +168,9 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 4) {
             tab.setIcon(R.drawable.award_solid_1);
-            binding.btnFind.setTextColor(Color.parseColor("#FFFFFF"));
+            binding.btnFind.setTextColor(getResources().getColor(R.color.white));
 
-            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.btn_green_layout));
+            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.btn_third_color_layout));
 
 
         }

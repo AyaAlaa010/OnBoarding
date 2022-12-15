@@ -7,7 +7,7 @@
             android:height="@dimen/_20sdp"
             />
         <stroke
-            android:color="#B3B3B3"
+            android:color="@color/app_second_color_light"
 
             android:width="0.1dp"
             />

@@ -56,4 +56,14 @@
     <string name="preferences">Preferences</string>
     <string name="personal_details">Personal details</string>
     <string name="email_notifications">Email notifications</string>
+    <string name="title_activity_login_register">LoginRegisterActivity</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="hello_again">Hello Again!</string>
+    <string name="are_you_ready_for_your_next_travel_xa_please_enter_your_login_details_below">Are you ready for your next travel? \nPlease enter your login details below</string>
+    <string name="enter_your_email_here">Enter your email here</string>
+    <string name="enter_your_password_here">Enter your password here</string>
+    <string name="forgot_your_password">Forgot your Password?</string>
+    <string name="or_you_can_login_with_one_of_your_accounts">or you can login with one of your accounts</string>
+    <string name="by_getting_started_you_acknowledge_and_agree_to_terms_of_use_and_privacy_policy">By getting started, you acknowledge and agree to Terms of Use and Privacy Policy</string>
 </resources>

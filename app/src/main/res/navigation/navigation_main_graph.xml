@@ -10,19 +10,33 @@
         android:name="com.example.onboarding.ui.home.MainFragment"
         android:label="MainFragment" >
         <action
-            android:id="@+id/action_mainFragment_to_blankFragment"
-            app:destination="@id/blankFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_awardFragment"
+            app:destination="@id/awardFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_favouriteFragment"
+            app:destination="@id/favouriteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.example.onboarding.ui.home.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" />
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.onboarding.search.SearchFragment"
         android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/awardFragment"
+        android:name="com.example.onboarding.search.AwardFragment"
+        android:label="AwardFragment" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.onboarding.favourite.FavouriteFragment"
+        android:label="FavouriteFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.onboarding.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

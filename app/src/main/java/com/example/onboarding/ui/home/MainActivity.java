@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         binding.mainTabsBottom.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                binding.mainTabsBottom.setSelectedTabIndicatorColor(Color.parseColor("#88449CE1"));
+                binding.mainTabsBottom.setSelectedTabIndicatorColor(getResources ().getColor (R.color.app_color_trasparency));
                 setTabSelectedActions(tab);
             }
 

@@ -18,6 +18,7 @@
             android:layout_marginEnd="@dimen/_7sdp"
             android:layout_marginBottom="@dimen/_7sdp"
             android:layout_marginTop="@dimen/_7sdp"
+            android:elevation="@dimen/_3sdp"
             app:layout_constraintTop_toTopOf="parent"
 
             >
@@ -45,7 +46,7 @@
                     android:layout_marginBottom="@dimen/_5sdp"
                     android:fontFamily="@font/ubuntu_bold"
                     android:text="HE Hotel Apartments"
-                    android:textColor="@color/blue"
+                    android:textColor="@color/app_color"
                     android:textSize="@dimen/_9sdp"
 
 
@@ -137,7 +138,7 @@
                         android:fontFamily="@font/ubuntu"
                         android:text="Dubai, United Arab Emirates 16.3 km from center"
                         android:textSize="@dimen/_6sdp"
-                        android:textColor="@color/brown_text"
+                        android:textColor="@color/app_second_color"
                         />
                 </LinearLayout>
 
@@ -162,6 +163,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_rounded_border"
                         android:fontFamily="@font/ubuntu_bold"
+                        android:elevation="1dp"
                         android:padding="@dimen/_3sdp"
                         android:text="8.5"
                         android:textColor="@color/white"
@@ -182,7 +184,7 @@
                             android:layout_marginBottom="@dimen/_2sdp"
                             android:fontFamily="@font/ubuntu"
                             android:text="Good"
-                            android:textColor="@color/brown_text"
+                            android:textColor="@color/app_second_color"
                             android:textSize="@dimen/_6sdp" />
 
                         <TextView
@@ -192,7 +194,7 @@
                             android:fontFamily="@font/ubuntu_light_italic"
                             android:text="1,129 reviews"
                             android:textSize="@dimen/_6sdp"
-                            android:textColor="@color/brown_text"
+                            android:textColor="@color/app_second_color"
 
 
                             />
@@ -210,8 +212,8 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
-
-                    android:background="@drawable/btn_green_layout"
+                    android:elevation="1dp"
+                    android:background="@drawable/btn_third_color_layout"
                     android:text="@string/view"
                     android:textColor="@color/white"
                     android:textSize="@dimen/_7sdp"

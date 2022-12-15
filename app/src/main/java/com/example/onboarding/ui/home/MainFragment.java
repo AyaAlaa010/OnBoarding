@@ -1,5 +1,6 @@
 package com.example.onboarding.ui.home;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -14,6 +15,7 @@ import android.view.ViewGroup;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentMainBinding;
+import com.example.onboarding.registration.LoginRegisterActivity;
 import com.example.onboarding.ui.home.imageslider.SliderAdapter;
 import com.example.onboarding.ui.home.imageslider.SliderItem;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
@@ -45,12 +47,27 @@ private FragmentMainBinding binding;
         setTopCitiesSlider();
         setTopHotelsSlider();
         setFeaturesSlider();
+        setViewsActions();
+    }
+
+    private void setViewsActions(){
+
+
+        binding.userPicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+            }
+        });
+
         binding.btnBussiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //navController.navigate(R.id.action_mainFragment_to_blankFragment);
             }
         });
+
+
     }
 
     private void setTopCitiesSlider() {

@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10sdp"
-            android:background="@drawable/blue_gradient"
+            android:background="@drawable/app_color_gradient"
+            android:elevation="@dimen/_5sdp"
 
             android:orientation="vertical">
 
@@ -72,7 +73,7 @@
             android:layout_margin="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:background="@drawable/trip_layout"
-            android:elevation="@dimen/_10sdp"
+            android:elevation="@dimen/_5sdp"
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
 
@@ -90,6 +91,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:hint="@string/check_in"
+                    android:textColor="@color/app_second_color_light"
+
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu" />
                 <LinearLayout
@@ -100,7 +103,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/calender_blue"
+                        android:src="@drawable/calender_app_color"
                         android:layout_margin="@dimen/_5sdp"
 
 
@@ -111,7 +114,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"                    android:text="  Sat2,Sep"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="  Sat2,Sep"
+                    android:textColor="@color/app_second_color"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu_bold"
                     />
@@ -131,6 +136,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:hint="@string/check_out"
+                    android:textColor="@color/app_second_color_light"
+
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu"
                     />
@@ -143,7 +150,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/calender_blue"
+                        android:src="@drawable/calender_app_color"
                         android:layout_margin="@dimen/_5sdp"
 
 
@@ -153,9 +160,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"                    android:text="  Sun24,Sep"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="  Sun24,Sep"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu_bold"
+                    android:textColor="@color/app_second_color"
 
                     />
                 </LinearLayout>
@@ -171,7 +180,7 @@
             android:layout_margin="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_20sdp"
             android:background="@drawable/trip_layout"
-            android:elevation="@dimen/_10sdp"
+            android:elevation="@dimen/_5sdp"
             android:orientation="horizontal"
             android:padding="@dimen/_5sdp"
 
@@ -203,6 +212,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_20sdp"
                     android:hint="@string/guests"
+                    android:textColor="@color/app_second_color_light"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu"
                     />
@@ -213,6 +223,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
                     android:text="2 Adults,1 Child"
+                    android:textColor="@color/app_second_color"
                     android:textSize="@dimen/_15sdp"
                     android:fontFamily="@font/ubuntu_bold"
 
