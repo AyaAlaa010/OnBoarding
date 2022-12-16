@@ -7,7 +7,7 @@
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="@dimen/_40sdp"
         android:layout_margin="10dp"
         android:elevation="@dimen/_3sdp"
         android:background="@drawable/back_tabs">
@@ -38,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/login"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_13ssp"
                 android:textColor="@android:color/white"
                 android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center"/>
@@ -48,7 +48,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/register"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_13ssp"
                 android:textColor="@color/app_color"
                 android:fontFamily="@font/ubuntu_bold"
 

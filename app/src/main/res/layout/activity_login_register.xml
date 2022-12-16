@@ -28,23 +28,24 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="8"
+            android:layout_weight="8.5"
             app:cardCornerRadius="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_20ssp"
             android:layout_marginEnd="@dimen/_20ssp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:elevation="@dimen/_3sdp"
+
             >
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView_login_register"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/login_register_graph"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="77dp" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView_login_register"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/login_register_graph"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="77dp" />
 
         </androidx.cardview.widget.CardView>
         <include
@@ -52,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="@dimen/_10sdp"
-            android:layout_weight="1.5"
+            android:layout_weight="1"
             android:padding="@dimen/_10sdp" />
 
 

@@ -29,6 +29,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         select = findViewById(R.id.select);
         def = tvRegister.getTextColors();
         setTabsAction();
+
     }
 
     private void setTabsAction(){

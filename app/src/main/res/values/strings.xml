@@ -66,4 +66,18 @@
     <string name="forgot_your_password">Forgot your Password?</string>
     <string name="or_you_can_login_with_one_of_your_accounts">or you can login with one of your accounts</string>
     <string name="by_getting_started_you_acknowledge_and_agree_to_terms_of_use_and_privacy_policy">By getting started, you acknowledge and agree to Terms of Use and Privacy Policy</string>
+    <string name="register_a_new_account">Register a new Account</string>
+    <string name="create_account_to_start_your_first_plan_with_time2travel">Create account to start your first plan with Time2Travel</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email_address">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="success">Success!</string>
+    <string name="congratulations_your_time2travel_account_has_been_created">Congratulations, your Time2Travel account has been created!</string>
+    <string name="you_can_now_start_planning_your_journey">You can Now start planning your journey!</string>
+    <string name="success_continue">Continue</string>
+    <string name="title_activity_success_register">SuccessRegisterActivity</string>
 </resources>
