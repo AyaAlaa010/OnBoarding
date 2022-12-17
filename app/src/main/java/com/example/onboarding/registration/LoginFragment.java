@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentLoginBinding;
@@ -34,7 +38,7 @@ private FragmentLoginBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
        //navController= Navigation.findNavController(view);
-
+setViewsAction();
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,5 +46,35 @@ private FragmentLoginBinding binding;
 
             }
         });
+    }
+
+    private void setViewsAction() {
+        binding.imgHidePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(     binding.imgHidePassword.getDrawable().getConstantState().equals
+                        (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
+
+                    showPassword(  binding.etLoginPassword,  binding.imgHidePassword);
+                }
+                else{
+                    hidePassword(   binding.etLoginPassword,  binding.imgHidePassword);
+
+
+                }
+            }
+        });
+    }
+    private void showPassword(EditText editText, ImageView imageView){
+        editText.setTransformationMethod( PasswordTransformationMethod.getInstance());
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.hide_password_icon));
+    }
+
+
+
+    private void hidePassword(EditText editText, ImageView imageView){
+        editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+        imageView.setImageDrawable(getResources().getDrawable(R.drawable.show_password_icon));
     }
 }

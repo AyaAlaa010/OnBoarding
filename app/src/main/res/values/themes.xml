@@ -20,16 +20,20 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.OnBoarding.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+<!--    <style name="Theme.OnBoarding.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
 
-    <style name="Theme.OnBoarding.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+<!--    <style name="Theme.OnBoarding.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 
-    <style name="OutlinedRoundedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded</item>
-    </style>
+<!--    <style name="OutlinedRoundedBox" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">-->
+<!--        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded</item>-->
+<!--    </style>-->
 
-    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">80dp</item>
-    </style>
+<!--    <style name="ShapeAppearanceOverlay.MyApp.TextInputLayout.Rounded" parent="">-->
+<!--        <item name="cornerFamily">rounded</item>-->
+<!--        <item name="cornerSize">80dp</item>-->
+<!--    </style>-->
+
+
+
+
 </resources>

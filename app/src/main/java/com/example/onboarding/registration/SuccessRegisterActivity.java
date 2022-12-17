@@ -1,16 +1,23 @@
 package com.example.onboarding.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
 
 import com.example.onboarding.R;
+import com.example.onboarding.databinding.ActivitySuccessRegisterBinding;
 
 public class SuccessRegisterActivity extends AppCompatActivity {
-
+private ActivitySuccessRegisterBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_success_register);
+    binding= DataBindingUtil. setContentView(this,R.layout.activity_success_register);
+    setViewActions();
+    }
+
+    private void setViewActions() {
+
     }
 }

@@ -55,23 +55,44 @@
 
             />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_login_password"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:id="@+id/linear_login_password"
             android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_20sdp"
             android:background="@drawable/edit_text_layout"
             android:elevation="@dimen/_3sdp"
-            android:hint="@string/enter_your_password_here"
-            android:inputType="textPassword"
-            android:textSize="@dimen/_9sdp"
-            android:padding="@dimen/_15sdp"
-            android:fontFamily="@font/ubuntu_light_italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:padding="@dimen/_10sdp"
+            android:weightSum="5"
+            app:layout_constraintTop_toBottomOf="@id/linear_phone_number">
 
 
-            />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_login_password"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:hint="@string/enter_your_password_here"
+                android:textSize="@dimen/_10sdp"
+                android:background="@null"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/img_hide_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/hide_password_icon" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
