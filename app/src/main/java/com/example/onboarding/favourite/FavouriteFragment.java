@@ -81,8 +81,8 @@ public class FavouriteFragment extends Fragment {
     }
 
     private void setTabsTitles() {
-        binding.favTabs.addTab(binding.favTabs.newTab().setText("Bookings"));
-        binding.favTabs.addTab(binding.favTabs.newTab().setText("Saved"));
+        binding.favTabs.addTab(binding.favTabs.newTab().setText(R.string.bookings));
+        binding.favTabs.addTab(binding.favTabs.newTab().setText(R.string.saved));
         binding.favTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.app_color));
 //        binding.favTabs.setSelectedTabIndicatorHeight((int) (5 * getResources().getDisplayMetrics().density));
 //        binding.favTabs.setTabTextColors(Color.parseColor("#727272"), Color.parseColor("#ffffff"));

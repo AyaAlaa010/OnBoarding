@@ -80,4 +80,6 @@
     <string name="you_can_now_start_planning_your_journey">You can Now start planning your journey!</string>
     <string name="success_continue">Continue</string>
     <string name="title_activity_success_register">SuccessRegisterActivity</string>
+    <string name="bookings">Bookings</string>
+    <string name="saved">Saved</string>
 </resources>

@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSearchBinding;
+import com.example.onboarding.favourite.FavouriteFragment;
+import com.example.onboarding.search.Flight.FlightDetailsFragment;
 import com.google.android.material.tabs.TabLayout;
 
 
@@ -57,6 +59,8 @@ public class SearchFragment extends Fragment {
 
                     case 0:  {
                         Toast.makeText(getContext(),"0",Toast.LENGTH_LONG).show();
+                       getActivity(). getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.linear_test, new FlightDetailsFragment()).commit();
                         break;
                     }
                     case 1:  {
