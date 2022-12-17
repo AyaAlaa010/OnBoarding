@@ -22,8 +22,9 @@ import com.example.onboarding.databinding.FragmentLoginBinding;
 
 
 public class LoginFragment extends Fragment {
-private FragmentLoginBinding binding;
- //  private NavController navController;
+    private FragmentLoginBinding binding;
+
+    //  private NavController navController;
 
 
     @Override
@@ -37,12 +38,12 @@ private FragmentLoginBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       //navController= Navigation.findNavController(view);
-setViewsAction();
+        //navController= Navigation.findNavController(view);
+        setViewsAction();
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  navController.navigate(R.id.action_loginFragment_to_registerFragment);
+                //  navController.navigate(R.id.action_loginFragment_to_registerFragment);
 
             }
         });
@@ -53,27 +54,26 @@ setViewsAction();
             @Override
             public void onClick(View view) {
 
-                if(     binding.imgHidePassword.getDrawable().getConstantState().equals
-                        (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
+                if (binding.imgHidePassword.getDrawable().getConstantState().equals
+                        (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())) {
 
-                    showPassword(  binding.etLoginPassword,  binding.imgHidePassword);
-                }
-                else{
-                    hidePassword(   binding.etLoginPassword,  binding.imgHidePassword);
+                    showPassword(binding.etLoginPassword, binding.imgHidePassword);
+                } else {
+                    hidePassword(binding.etLoginPassword, binding.imgHidePassword);
 
 
                 }
             }
         });
     }
-    private void showPassword(EditText editText, ImageView imageView){
-        editText.setTransformationMethod( PasswordTransformationMethod.getInstance());
+
+    private void showPassword(EditText editText, ImageView imageView) {
+        editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.hide_password_icon));
     }
 
 
-
-    private void hidePassword(EditText editText, ImageView imageView){
+    private void hidePassword(EditText editText, ImageView imageView) {
         editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         imageView.setImageDrawable(getResources().getDrawable(R.drawable.show_password_icon));
     }

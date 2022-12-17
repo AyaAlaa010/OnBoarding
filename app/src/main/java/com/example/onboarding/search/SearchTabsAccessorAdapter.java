@@ -6,10 +6,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.onboarding.search.Flight.FlightFragment;
 
 
-public class TabsAccessorAdapter extends FragmentStateAdapter {
-    public TabsAccessorAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class SearchTabsAccessorAdapter extends FragmentStateAdapter {
+    public SearchTabsAccessorAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 

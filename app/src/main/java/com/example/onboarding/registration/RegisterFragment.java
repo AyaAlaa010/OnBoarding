@@ -58,7 +58,8 @@ private FragmentRegisterBinding binding;
             @Override
             public void onClick(View view) {
 
-               if(    binding.imgHidePassword.getDrawable().getConstantState().equals(getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
+               if(    binding.imgHidePassword.getDrawable().getConstantState().equals
+                       (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
                   showPassword(binding.etRegisterPassword,binding.imgHidePassword);
                }
                else{

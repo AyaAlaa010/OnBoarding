@@ -1,4 +1,4 @@
-package com.example.onboarding.search;
+package com.example.onboarding.search.Flight;
 
 import android.os.Bundle;
 
@@ -10,15 +10,13 @@ import android.view.ViewGroup;
 
 import com.example.onboarding.R;
 
-
-public class FlightFragment extends Fragment {
-
+public class FlightDetailsFragment extends Fragment {
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_flight, container, false);
+        return inflater.inflate(R.layout.fragment_flight_details, container, false);
     }
 }

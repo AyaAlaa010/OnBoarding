@@ -12,9 +12,9 @@ import com.example.onboarding.databinding.ItemFavouriteBinding;
 
 import java.util.List;
 
-public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.FavouritsHolder> {
+public class FavouriteBookingsAndSavedAdapter extends RecyclerView.Adapter<FavouriteBookingsAndSavedAdapter.FavouritsHolder> {
     List<FavouriteModel> favouriteModelList;
-    public FavouriteAdapter(List<FavouriteModel> favouriteModelList) {
+    public FavouriteBookingsAndSavedAdapter(List<FavouriteModel> favouriteModelList) {
         this.favouriteModelList=favouriteModelList;
     }
 

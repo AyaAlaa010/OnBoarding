@@ -58,7 +58,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linear_login_password"
+            android:id="@+id/linear_register_password"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_20sdp"
