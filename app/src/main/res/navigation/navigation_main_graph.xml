@@ -11,21 +11,34 @@
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_awardFragment"
-            app:destination="@id/awardFragment" />
+            app:destination="@id/awardFragment"
+            app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_favouriteFragment"
-            app:destination="@id/favouriteFragment" />
+            app:destination="@id/favouriteFragment"
+            app:popUpTo="@id/mainFragment" />
         <action
             android:id="@+id/action_mainFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.onboarding.search.SearchFragment"
-        android:label="SearchFragment" />
+        tools:layout="@layout/fragment_search"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_flightDetailsFragment"
+            app:destination="@id/flightDetailsFragment"
+            app:popUpTo="@id/searchFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_flightFragment"
+            app:destination="@id/flightFragment" />
+    </fragment>
     <fragment
         android:id="@+id/awardFragment"
         android:name="com.example.onboarding.search.AwardFragment"
@@ -39,4 +52,21 @@
         android:name="com.example.onboarding.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/flightDetailsFragment"
+        tools:layout="@layout/fragment_flight_details"
+        android:name="com.example.onboarding.search.Flight.FlightDetailsFragment"
+        android:label="FlightDetailsFragment" >
+        <action
+            android:id="@+id/action_flightDetailsFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="position"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightFragment"
+        android:name="com.example.onboarding.search.Flight.FlightFragment"
+        android:label="FlightFragment" />
+
 </navigation>

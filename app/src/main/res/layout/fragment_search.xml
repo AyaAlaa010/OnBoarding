@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+   >
 
     <data>
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linear_search_total"
+        >
 
 
         <ImageView
@@ -23,16 +26,58 @@
             app:layout_constraintStart_toStartOf="parent"
 
             />
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent">-->
+
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/main_tabs_flight_details"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_45sdp"-->
+<!--                app:tabIndicatorHeight="0sp"-->
+<!--                android:background="@drawable/tab_layout"-->
+<!--                android:layout_marginStart="@dimen/_20sdp"-->
+<!--                android:layout_marginEnd="@dimen/_20sdp"-->
+<!--                android:layout_marginTop="@dimen/_10sdp"-->
+<!--                android:visibility="gone"-->
+<!--                android:elevation="@dimen/_1sdp"-->
+
+
+<!--                />-->
+
+
+
+<!--        </FrameLayout>-->
+
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:background="@drawable/tab_layout_gray"-->
+
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            android:weightSum="13"-->
+<!--            android:layout_marginTop="@dimen/_90sdp"-->
+<!--            android:id="@+id/linear_fragment_search_details"-->
+<!--            android:visibility="gone"-->
+<!--            android:orientation="vertical"/>-->
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/tab_layout"
+            android:id="@+id/linear_fragment_search"
+
             app:layout_constraintStart_toStartOf="parent"
             android:weightSum="13"
-            android:id="@+id/linear_test"
-            android:layout_marginTop="@dimen/_105sdp"
+            android:layout_marginTop="@dimen/_110sdp"
             android:orientation="vertical">
 
             <com.google.android.material.tabs.TabLayout

@@ -15,20 +15,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
-
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSearchBinding;
-import com.example.onboarding.favourite.FavouriteFragment;
-import com.example.onboarding.search.Flight.FlightDetailsFragment;
+import com.example.onboarding.search.Flight.SearchDetailsBottomSheet;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class SearchFragment extends Fragment {
     private FragmentSearchBinding binding;
     private  static int fragmentCounter=0;
-
+    int valuePostion;
 
     private SearchTabsAccessorAdapter tabsAccessorAdapter;
+  //  private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,16 +40,20 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+      //  navController= Navigation.findNavController(view);
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new SearchTabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
-        addTabs();
+      // valuePostion = 0;
+        addTabs(binding.mainTabs,valuePostion);
+       // addTabs(binding.mainTabsFlightDetails);
+
         setViewsAction();
+        //addTabs(binding.mainTabs,valuePostion);
 
     }
 
     private void setViewsAction() {
-
         binding.btnFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,8 +62,11 @@ public class SearchFragment extends Fragment {
 
                     case 0:  {
                         Toast.makeText(getContext(),"0",Toast.LENGTH_LONG).show();
-                       getActivity(). getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.linear_test, new FlightDetailsFragment()).commit();
+                        SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
+                        bottomSheet.show(getActivity().getSupportFragmentManager(),
+                                "ModalBottomSheet");
+
+
                         break;
                     }
                     case 1:  {
@@ -101,16 +107,17 @@ public class SearchFragment extends Fragment {
     }
 
 
-    private void addTabs() {
+    private void addTabs(TabLayout tabLayout, int valuePostion ) {
 
-        setTabsTitles();
+        setTabsTitles(tabLayout);
 
 
-        binding.mainTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
                 binding.mainTabsPager.setCurrentItem(tab.getPosition());
+
                 setTabSelectedActions(tab);
 
             }
@@ -131,18 +138,18 @@ public class SearchFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
-                binding.mainTabs.selectTab(binding.mainTabs.getTabAt(position));
+              tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
 
     }
 
-    private void setTabsTitles() {
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.plane_up_solid_1));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.hotel_solid_1));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.bed_solid));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.car_solid_1));
-        binding.mainTabs.addTab(binding.mainTabs.newTab().setIcon(R.drawable.award_solid_1));
+    private void setTabsTitles(TabLayout tabLayout) {
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.plane_up_solid_1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.hotel_solid_1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.bed_solid));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.car_solid_1));
+        tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.award_solid_1));
 
 
     }
@@ -152,7 +159,9 @@ public class SearchFragment extends Fragment {
 
         if (tab.getPosition() == 0) {
             fragmentCounter=0;
-           tab.setIcon(R.drawable.plane_up_solid_1);
+           // setSearchTabsView();
+
+            tab.setIcon(R.drawable.plane_up_solid_1);
 
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
@@ -161,17 +170,20 @@ public class SearchFragment extends Fragment {
 
 
         } else if (tab.getPosition() == 1) {
+
             fragmentCounter=1;
+           // setSearchTabsView();
 
             tab.setIcon(R.drawable.hotel_solid_1);
-
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
 
 
         } else if (tab.getPosition() == 2) {
+
             fragmentCounter=2;
+           // setSearchTabsView();
 
             tab.setIcon(R.drawable.bed_solid);
 
@@ -182,6 +194,7 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 3) {
             fragmentCounter=3;
+          //  setSearchTabsView();
 
             tab.setIcon(R.drawable.car_solid_1);
 
@@ -193,6 +206,7 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 4) {
             fragmentCounter=4;
+           // setSearchTabsView();
 
             tab.setIcon(R.drawable.award_solid_1);
 
@@ -241,6 +255,25 @@ public class SearchFragment extends Fragment {
 
 
     }
+//    private void setTabsDetailsView(){
+//
+//        binding.linearFragmentSearch.setVisibility(View.INVISIBLE);
+//        binding.linearFragmentSearchDetails.setVisibility(View.VISIBLE);
+//       // binding.linearFragmentSearch.setBackground(getResources().getDrawable(R.drawable.tab_layout_gray));
+////        ConstraintLayout.LayoutParams lp = (ConstraintLayout.LayoutParams)  binding.linearFragmentSearch.getLayoutParams();
+////        binding.linearSearchTotal.setBackgroundColor(getResources().getColor(R.color.gray));
+//        binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.app_color_image));
+//        binding.mainTabs.setVisibility(View.INVISIBLE);
+//        binding.mainTabsFlightDetails.setVisibility(View.VISIBLE);
+//
+//    }
+//    private void setSearchTabsView(){
+//        binding.linearFragmentSearch.setVisibility(View.VISIBLE);
+//        binding.linearFragmentSearchDetails.setVisibility(View.INVISIBLE);
+//        binding.mainTabs.setVisibility(View.VISIBLE);
+//        binding.mainTabsFlightDetails.setVisibility(View.INVISIBLE);
+//
+//    }
 
 
 
