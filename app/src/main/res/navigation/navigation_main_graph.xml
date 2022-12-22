@@ -8,7 +8,9 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.onboarding.ui.home.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"
+        >
         <action
             android:id="@+id/action_mainFragment_to_searchFragment"
             app:destination="@id/searchFragment"
@@ -42,11 +44,17 @@
     <fragment
         android:id="@+id/awardFragment"
         android:name="com.example.onboarding.search.AwardFragment"
+        tools:layout="@layout/fragment_search"
+
         android:label="AwardFragment" />
+
+
     <fragment
         android:id="@+id/favouriteFragment"
         android:name="com.example.onboarding.favourite.FavouriteFragment"
-        android:label="FavouriteFragment" />
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_favourite"
+        />
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.onboarding.settings.SettingsFragment"
@@ -57,16 +65,22 @@
         tools:layout="@layout/fragment_flight_details"
         android:name="com.example.onboarding.search.Flight.FlightDetailsFragment"
         android:label="FlightDetailsFragment" >
+
         <action
-            android:id="@+id/action_flightDetailsFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <argument
-            android:name="position"
-            app:argType="integer" />
+            android:id="@+id/action_flightDetailsFragment_to_fragmentConfirmation"
+            app:destination="@id/fragmentConfirmation" />
     </fragment>
     <fragment
         android:id="@+id/flightFragment"
         android:name="com.example.onboarding.search.Flight.FlightFragment"
-        android:label="FlightFragment" />
+        android:label="FlightFragment"
+        tools:layout="@layout/fragment_flight"
+        />
+    <fragment
+        android:id="@+id/fragmentConfirmation"
+        android:name="com.example.onboarding.search.Flight.FragmentConfirmation"
+        android:label="FragmentConfirmation"
+        tools:layout="@layout/fragment_confirmation"
+        />
 
 </navigation>

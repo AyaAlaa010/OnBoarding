@@ -15,7 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">
-    
+        <activity
+            android:name=".search.Flight.TestConfirmationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".ui.home.BottomsTestActivity"
             android:exported="false">

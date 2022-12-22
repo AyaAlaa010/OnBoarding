@@ -31,6 +31,20 @@ public class SearchDetailsBottomSheet extends BottomSheetDialogFragment {
                 container, false);
         recyclerView= v.findViewById(R.id.rec_flights);
 
+        setFlightsData();
+
+
+
+        return v;
+    }
+
+    @NonNull
+    @Override
+    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+        return new BottomSheetDialog(getContext(),R.style.MyBottomSheetDialogTheme);
+    }
+
+    private void setFlightsData(){
 
         flightList= new ArrayList<>();
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
@@ -51,17 +65,10 @@ public class SearchDetailsBottomSheet extends BottomSheetDialogFragment {
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
 
-        adapter = new FlightsAdapter(flightList);
+        //adapter = new FlightsAdapter(flightList);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(layoutManager);
 
-        return v;
-    }
-
-    @NonNull
-    @Override
-    public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        return new BottomSheetDialog(getContext(),R.style.MyBottomSheetDialogTheme);
     }
 }

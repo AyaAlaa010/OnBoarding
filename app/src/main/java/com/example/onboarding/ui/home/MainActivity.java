@@ -29,8 +29,7 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener{
     private ActivityMainBinding binding;
 
- BottomNavigationView bottomNavigationView; // TODO : DELETE THIS
-    private NavController navController;
+ BottomNavigationView bottomNavigationView;
     private MainFragment mainFragment;
     private SearchFragment searchFragment;
     private FavouriteFragment favouriteFragment;
@@ -40,7 +39,6 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-       // navController = Navigation.findNavController(this,R.id.navigation_main_graph);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
@@ -82,6 +80,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
         }
 
 
+
+    // TODO : DELETE THIS
 //    private void setBottomTaps() {
 //
 //
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //            }
 //
 //
-//            @Override
+//            @Override  // TODO : DELETE THIS
 //            public void onTabUnselected(TabLayout.Tab tab) {
 //                setTabUnSelectedActions(tab);
 //            }
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //
 //
 //        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.ic_baseline_search_24));
-//
+//  // TODO : DELETE THIS
 //
 //        binding.mainTabsBottom.addTab(binding.mainTabsBottom.newTab().setIcon(R.drawable.ic_baseline_favorite_border_24));
 //
@@ -187,7 +187,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //        }
 //
 //    }
-
+    // TODO : DELETE THIS
 //    @Override
 //    public void onBackPressed() {
 

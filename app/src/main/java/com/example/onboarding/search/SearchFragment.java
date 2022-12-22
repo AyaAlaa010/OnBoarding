@@ -14,18 +14,22 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSearchBinding;
+import com.example.onboarding.search.Flight.FlightDetailsFragment;
 import com.example.onboarding.search.Flight.SearchDetailsBottomSheet;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class SearchFragment extends Fragment {
     private FragmentSearchBinding binding;
     private  static int fragmentCounter=0;
-    int valuePostion;
-
+    //View bottomSheet;
+   // BottomSheetBehavior mBottomSheetBehavior1;
     private SearchTabsAccessorAdapter tabsAccessorAdapter;
   //  private NavController navController;
 
@@ -44,8 +48,9 @@ public class SearchFragment extends Fragment {
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new SearchTabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
-      // valuePostion = 0;
-        addTabs(binding.mainTabs,valuePostion);
+//         bottomSheet = view.findViewById(R.id.bottom_sheet_view);
+
+        addTabs(binding.mainTabs);
        // addTabs(binding.mainTabsFlightDetails);
 
         setViewsAction();
@@ -61,10 +66,10 @@ public class SearchFragment extends Fragment {
                 switch (fragmentCounter){
 
                     case 0:  {
-                        Toast.makeText(getContext(),"0",Toast.LENGTH_LONG).show();
-                        SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
-                        bottomSheet.show(getActivity().getSupportFragmentManager(),
-                                "ModalBottomSheet");
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()).commit();
+
+
+                        //setFlightsBottomSheet();
 
 
                         break;
@@ -106,8 +111,33 @@ public class SearchFragment extends Fragment {
 
     }
 
+    private void setFlightsBottomSheet() {
+        SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
+        bottomSheet.show(getActivity().getSupportFragmentManager(),
+                "ModalBottomSheet");
+//        mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet);
+//        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_EXPANDED);
+//
+//        slideToTop(bottomSheet);
 
-    private void addTabs(TabLayout tabLayout, int valuePostion ) {
+    }
+    public static void slideToBottom(View view){
+        TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.GONE);
+    }
+
+    public static void slideToTop(View view){
+        TranslateAnimation animate = new TranslateAnimation(0,0,view.getHeight(),0);
+        animate.setDuration(500);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.VISIBLE);
+    }
+
+    private void addTabs(TabLayout tabLayout ) {
 
         setTabsTitles(tabLayout);
 

@@ -36,7 +36,8 @@ public class FlightDetailsFragment extends Fragment {
 private FragmentFlightDetailsBinding binding;
     private List<FlightModel> flightList;
     private FlightsAdapter adapter;
-   private NavController navController;
+ //  private NavController navController;
+    ItemFlightImp itemFlightImp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,38 +49,45 @@ private FragmentFlightDetailsBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       // navController= Navigation.findNavController(view);
+        //  navController= Navigation.findNavController(view);
+
 
         addTabs(binding.mainTabsFlightDetails);
 
-//        flightList= new ArrayList<>();
-//
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-//
-//            adapter = new FlightsAdapter(flightList);
-//        binding.recFlights.setAdapter(adapter);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
-//        binding.recFlights.setLayoutManager(layoutManager);
+        flightList= new ArrayList<>();
 
-//        FragmentBottomSheetDialog bottomSheet = new FragmentBottomSheetDialog();
-//        bottomSheet.show(getActivity().getSupportFragmentManager(),
-//                "ModalBottomSheet");
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+        flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
+         itemFlightImp=new ItemFlightImp() {
+            @Override
+            public void navigateToConfirmFragment() {
+              //  navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, new FragmentConfirmation()).commit();
+
+
+            }
+        };
+
+            adapter = new FlightsAdapter(flightList,itemFlightImp);
+        binding.recFlights.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
+        binding.recFlights.setLayoutManager(layoutManager);
+
 
     }
 
@@ -92,7 +100,7 @@ private FragmentFlightDetailsBinding binding;
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
 
-                //binding.mainTabsPager.setCurrentItem(tab.getPosition());
+                //binding.mainTabsPager.setCurrentItem(tab.getPosition());  // TODO : DELETE THIS
 
                 setTabSelectedActions(tab);
 
@@ -111,7 +119,7 @@ private FragmentFlightDetailsBinding binding;
         });
       //  binding.mainTabsPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
 //            @Override
-//            public void onPageSelected(int position) {
+//            public void onPageSelected(int position) {  // TODO : DELETE THIS
 //                super.onPageSelected(position);
 //
 //                tabLayout.selectTab(tabLayout.getTabAt(position));

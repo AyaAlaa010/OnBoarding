@@ -82,4 +82,11 @@
     <string name="title_activity_success_register">SuccessRegisterActivity</string>
     <string name="bookings">Bookings</string>
     <string name="saved">Saved</string>
+    <string name="flight_details">Flight details</string>
+    <string name="included_baggage">Included baggage</string>
+    <string name="the_total_baggage_included_in_the_price">The total baggage included in the price</string>
+    <string name="included">Included</string>
+    <string name="rewards">Rewards</string>
+    <string name="price">Price</string>
+    <string name="select">Select</string>
 </resources>
