@@ -32,7 +32,7 @@ public class FragmentConfirmation extends Fragment {
         LinearLayout bottomSheet = view.findViewById(R.id.vBSBehavior);
         BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         bottomSheetBehavior.setHideable(false);
-
+        bottomSheetBehavior.setPeekHeight(1500);
 
 // setting the bottom sheet callback for interacting with state changes and sliding
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {

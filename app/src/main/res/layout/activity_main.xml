@@ -11,8 +11,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="11"
+        android:weightSum="20"
         tools:context=".MainActivity">
+
 
 
 
@@ -21,9 +22,11 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="10"
+            android:layout_weight="18.5"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/navigation_main_graph" />
+            app:navGraph="@navigation/navigation_main_graph"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="77dp" />
 
 
 
@@ -31,7 +34,7 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

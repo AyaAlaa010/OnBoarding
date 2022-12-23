@@ -30,7 +30,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//flights list
 public class FlightDetailsFragment extends Fragment {
 
 private FragmentFlightDetailsBinding binding;
@@ -46,6 +46,7 @@ private FragmentFlightDetailsBinding binding;
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_flight_details, container, false);
         return binding.getRoot();    }
 
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -53,6 +54,30 @@ private FragmentFlightDetailsBinding binding;
 
 
         addTabs(binding.mainTabsFlightDetails);
+
+        setFlightListData();
+        callItemFlightIMP();
+        setAdapterToRecycler();
+
+
+    }
+    private void callItemFlightIMP(){
+
+        itemFlightImp=new ItemFlightImp() {
+            @Override
+            public void navigateToConfirmFragment() {
+                //  navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FragmentConfirmation()) .addToBackStack(null).commit();
+
+
+            }
+        };
+
+
+    }
+
+
+    private void setFlightListData(){
 
         flightList= new ArrayList<>();
 
@@ -73,23 +98,22 @@ private FragmentFlightDetailsBinding binding;
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
         flightList.add(new FlightModel("6797","Dubai, United Arab Emirates 16.3 km from center"));
-         itemFlightImp=new ItemFlightImp() {
-            @Override
-            public void navigateToConfirmFragment() {
-              //  navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, new FragmentConfirmation()).commit();
 
 
-            }
-        };
 
-            adapter = new FlightsAdapter(flightList,itemFlightImp);
+    }
+    private void setAdapterToRecycler(){
+
+
+        adapter = new FlightsAdapter(flightList,itemFlightImp);
         binding.recFlights.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext(), RecyclerView.VERTICAL, false);
         binding.recFlights.setLayoutManager(layoutManager);
 
 
+
     }
+
 
     private void addTabs(TabLayout tabLayout ) {
 
@@ -212,7 +236,6 @@ private FragmentFlightDetailsBinding binding;
 
         } else if (tab.getPosition() == 4) {
            // fragmentCounter=4;
-            // setSearchTabsView();
 
             tab.setIcon(R.drawable.award_solid_1);
 
@@ -223,9 +246,7 @@ private FragmentFlightDetailsBinding binding;
             args.putInt("position", 4);
             searchFragment.setArguments(args);
             getFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, searchFragment).commit();
-//            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.second_color_btn));
-//            binding.btnFind.setTextColor(getResources().getColor(R.color.award_color));
-//            binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slide2));
+
 
         }
 
@@ -257,11 +278,6 @@ private FragmentFlightDetailsBinding binding;
         } else if (tab.getPosition() == 4) {
             tab.setIcon(R.drawable.award_solid_1);
 
-
-//            binding.btnFind.setTextColor(getResources().getColor(R.color.white));
-//
-//            binding.btnFind.setBackground(getResources().getDrawable(R.drawable.btn_third_color_layout));
-//
 
         }
 

@@ -6,20 +6,16 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="@dimen/_10sdp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginEnd="@dimen/_7sdp"
-            android:layout_marginBottom="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            android:elevation="@dimen/_3sdp"
             app:layout_constraintTop_toTopOf="parent"
+            android:elevation="@dimen/_15sdp"
 
             >
 
@@ -31,9 +27,10 @@
                 <ImageView
                     android:id="@+id/img_item_place_view"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
+                    android:layout_height="@dimen/_150sdp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/slid1"
+                    android:elevation="@dimen/_5sdp"
 
                     />
 
@@ -47,7 +44,7 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:text="HE Hotel Apartments"
                     android:textColor="@color/app_color"
-                    android:textSize="@dimen/_9sdp"
+                    android:textSize="@dimen/_13sdp"
 
 
                     />
@@ -137,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/ubuntu"
                         android:text="Dubai, United Arab Emirates 16.3 km from center"
-                        android:textSize="@dimen/_6sdp"
+                        android:textSize="@dimen/_10sdp"
                         android:textColor="@color/app_second_color"
                         />
                 </LinearLayout>
@@ -146,22 +143,22 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_height="@dimen/_35sdp"
                     android:id="@+id/btn_view"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_5sdp"
-                    android:elevation="1dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:elevation="5dp"
                     android:background="@drawable/btn_third_color_layout"
                     android:text="@string/view"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_7sdp"
+                    android:textSize="@dimen/_11sdp"
                     android:fontFamily="@font/ubuntu_bold" />
             </LinearLayout>
 
 
         </com.google.android.material.card.MaterialCardView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -9,6 +9,8 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
@@ -28,11 +30,9 @@ import com.google.android.material.tabs.TabLayout;
 public class SearchFragment extends Fragment {
     private FragmentSearchBinding binding;
     private  static int fragmentCounter=0;
-    //View bottomSheet;
-   // BottomSheetBehavior mBottomSheetBehavior1;
-    private SearchTabsAccessorAdapter tabsAccessorAdapter;
-  //  private NavController navController;
 
+    private SearchTabsAccessorAdapter tabsAccessorAdapter;
+   // private NavController navController;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -44,11 +44,10 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-      //  navController= Navigation.findNavController(view);
+//        this.navController = Navigation.findNavController(view);
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new SearchTabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
-//         bottomSheet = view.findViewById(R.id.bottom_sheet_view);
 
         addTabs(binding.mainTabs);
        // addTabs(binding.mainTabsFlightDetails);
@@ -66,12 +65,8 @@ public class SearchFragment extends Fragment {
                 switch (fragmentCounter){
 
                     case 0:  {
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()).commit();
-
-
-                        //setFlightsBottomSheet();
-
-
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()) .addToBackStack(null).commit();
+                      //navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
                         break;
                     }
                     case 1:  {
@@ -110,17 +105,15 @@ public class SearchFragment extends Fragment {
 
 
     }
-
+//todo delete this
     private void setFlightsBottomSheet() {
         SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
         bottomSheet.show(getActivity().getSupportFragmentManager(),
                 "ModalBottomSheet");
-//        mBottomSheetBehavior1 = BottomSheetBehavior.from(bottomSheet);
-//        mBottomSheetBehavior1.setState(BottomSheetBehavior.STATE_EXPANDED);
-//
-//        slideToTop(bottomSheet);
 
     }
+    //todo delete this
+
     public static void slideToBottom(View view){
         TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
         animate.setDuration(500);
@@ -128,6 +121,7 @@ public class SearchFragment extends Fragment {
         view.startAnimation(animate);
         view.setVisibility(View.GONE);
     }
+//todo delete this
 
     public static void slideToTop(View view){
         TranslateAnimation animate = new TranslateAnimation(0,0,view.getHeight(),0);
@@ -136,6 +130,7 @@ public class SearchFragment extends Fragment {
         view.startAnimation(animate);
         view.setVisibility(View.VISIBLE);
     }
+
 
     private void addTabs(TabLayout tabLayout ) {
 
@@ -189,7 +184,6 @@ public class SearchFragment extends Fragment {
 
         if (tab.getPosition() == 0) {
             fragmentCounter=0;
-           // setSearchTabsView();
 
             tab.setIcon(R.drawable.plane_up_solid_1);
 
@@ -202,8 +196,6 @@ public class SearchFragment extends Fragment {
         } else if (tab.getPosition() == 1) {
 
             fragmentCounter=1;
-           // setSearchTabsView();
-
             tab.setIcon(R.drawable.hotel_solid_1);
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
@@ -213,10 +205,7 @@ public class SearchFragment extends Fragment {
         } else if (tab.getPosition() == 2) {
 
             fragmentCounter=2;
-           // setSearchTabsView();
-
             tab.setIcon(R.drawable.bed_solid);
-
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
             binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.slid3));
@@ -224,7 +213,6 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 3) {
             fragmentCounter=3;
-          //  setSearchTabsView();
 
             tab.setIcon(R.drawable.car_solid_1);
 
@@ -236,7 +224,6 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 4) {
             fragmentCounter=4;
-           // setSearchTabsView();
 
             tab.setIcon(R.drawable.award_solid_1);
 
@@ -285,25 +272,7 @@ public class SearchFragment extends Fragment {
 
 
     }
-//    private void setTabsDetailsView(){
-//
-//        binding.linearFragmentSearch.setVisibility(View.INVISIBLE);
-//        binding.linearFragmentSearchDetails.setVisibility(View.VISIBLE);
-//       // binding.linearFragmentSearch.setBackground(getResources().getDrawable(R.drawable.tab_layout_gray));
-////        ConstraintLayout.LayoutParams lp = (ConstraintLayout.LayoutParams)  binding.linearFragmentSearch.getLayoutParams();
-////        binding.linearSearchTotal.setBackgroundColor(getResources().getColor(R.color.gray));
-//        binding.imgBackground.setImageDrawable(getResources().getDrawable(R.drawable.app_color_image));
-//        binding.mainTabs.setVisibility(View.INVISIBLE);
-//        binding.mainTabsFlightDetails.setVisibility(View.VISIBLE);
-//
-//    }
-//    private void setSearchTabsView(){
-//        binding.linearFragmentSearch.setVisibility(View.VISIBLE);
-//        binding.linearFragmentSearchDetails.setVisibility(View.INVISIBLE);
-//        binding.mainTabs.setVisibility(View.VISIBLE);
-//        binding.mainTabsFlightDetails.setVisibility(View.INVISIBLE);
-//
-//    }
+
 
 
 

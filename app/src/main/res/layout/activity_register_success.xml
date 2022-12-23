@@ -21,7 +21,7 @@
             android:id="@+id/tv_success_title"
             android:layout_gravity="center"
             android:text="@string/success"
-            android:textSize="@dimen/_22sdp"
+            android:textSize="@dimen/_25sdp"
             android:fontFamily="@font/ubuntu_bold"
             android:layout_marginTop="@dimen/_30sdp"
             android:textColor="@color/app_color" />
@@ -34,18 +34,25 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/congratulations_your_time2travel_account_has_been_created"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="@dimen/_13sdp"
             android:paddingStart="@dimen/_20sdp"
             android:paddingEnd="@dimen/_20sdp"
             android:fontFamily="@font/ubuntu"
             android:textColor="@color/app_color"
             android:layout_marginTop="@dimen/_15sdp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_main"
+            android:layout_width="@dimen/_300sdp"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:id="@+id/img_success" />
+            app:lottie_autoPlay="true"
+            app:lottie_rawRes="@raw/register_success"
+            app:lottie_loop="true"
+            app:lottie_speed="1"
+            />
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,13 +62,13 @@
             android:layout_gravity="center"
             android:textColor="@color/app_color"
             android:fontFamily="@font/ubuntu"
-            android:textSize="@dimen/_10sdp" />
+            android:textSize="@dimen/_13sdp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_continue"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="2"
+            android:layout_weight="1.7"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_30sdp"
@@ -71,6 +78,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:text="@string/success_continue"
             android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
             android:textColor="@color/white" />
 
     </LinearLayout>

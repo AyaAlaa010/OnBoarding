@@ -16,24 +16,8 @@
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">
         <activity
-            android:name=".search.Flight.TestConfirmationActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.home.BottomsTestActivity"
             android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".registration.SuccessRegisterActivity"
-            android:exported="false"
-            android:label="@string/title_activity_success_register"
-            android:theme="@style/Theme.OnBoarding.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -43,6 +27,9 @@
             android:exported="true" />
         <activity
             android:name=".ui.home.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".registration.SuccessRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".IntroSlider.IntroSliderActivity"

@@ -251,6 +251,8 @@
                             app:sliderIndicatorSelectedColor="#5A5A5A"
                             app:sliderIndicatorUnselectedColor="@color/white"
                             app:sliderScrollTimeInSec="1" />
+
+
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>

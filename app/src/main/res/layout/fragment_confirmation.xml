@@ -6,16 +6,28 @@
     android:layout_height="match_parent"
 
     >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_180sdp"
+    android:background="#6AAEFF">
 
-    <ImageView
-        android:id="@+id/img_background_confirm"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_200sdp"
-        android:background="@color/app_color"
-        android:scaleType="centerCrop"
-
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/flying_paper_plane"
+        app:lottie_loop="true"
+        app:lottie_speed="1"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="@dimen/_10sdp"
         />
+
+
+</LinearLayout>
+
+
     <!--    style="@style/Widget.Design.BottomSheet.Modal"-->
 
     <LinearLayout
@@ -169,7 +181,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_3sdp"
                             android:layout_marginTop="@dimen/_2sdp"
-                            android:fontFamily="@font/ubuntu"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center"
                             android:text="DXB • Dubai"
                             android:textColor="@color/app_color"
@@ -202,7 +214,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_3sdp"
                             android:layout_marginTop="@dimen/_1sdp"
-                            android:fontFamily="@font/ubuntu"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center"
                             android:text="BAH • Bahrain"
                             android:textColor="@color/app_color"
@@ -400,7 +412,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_3sdp"
                             android:layout_marginTop="@dimen/_2sdp"
-                            android:fontFamily="@font/ubuntu"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center"
                             android:text="BAH • Bahrian"
                             android:textColor="@color/app_color"
@@ -427,7 +439,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_3sdp"
                             android:layout_marginTop="@dimen/_1sdp"
-                            android:fontFamily="@font/ubuntu"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center"
                             android:text="JED • Jeddah"
                             android:textColor="@color/app_color"
@@ -755,7 +767,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/price"
                         android:layout_marginTop="@dimen/_5sdp"
-                        android:textSize="@dimen/_13sdp"
+                        android:textSize="@dimen/_15sdp"
                         android:fontFamily="@font/ubuntu_bold"
                         android:textColor="@color/app_second_color"
 

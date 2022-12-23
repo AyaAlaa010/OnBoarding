@@ -1,39 +1,31 @@
 package com.example.onboarding.ui.home;
 
-import android.graphics.Color;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.NavHostController;
-import androidx.navigation.Navigation;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityMainBinding;
 import com.example.onboarding.favourite.FavouriteFragment;
-import com.example.onboarding.search.Flight.FlightDetailsFragment;
-import com.example.onboarding.search.HouseFragment;
 import com.example.onboarding.search.SearchFragment;
 import com.example.onboarding.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
 
-public class MainActivity extends AppCompatActivity  implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     private ActivityMainBinding binding;
 
- BottomNavigationView bottomNavigationView;
+    BottomNavigationView bottomNavigationView;
     private MainFragment mainFragment;
     private SearchFragment searchFragment;
     private FavouriteFragment favouriteFragment;
     private SettingsFragment settingsFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,31 +46,43 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
     }
 
 
-
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            mainFragment=new MainFragment();
-            searchFragment=new SearchFragment();
-            favouriteFragment=new FavouriteFragment();
-            settingsFragment=new SettingsFragment();
-            switch (item.getItemId()) {
-                case R.id.home:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, mainFragment).commit();
-                    return true;
-                case R.id.search:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, searchFragment).commit();
-                    return true;
-                case R.id.favourite:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, favouriteFragment).commit();
-                    return true;
-                case R.id.menu:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, settingsFragment).commit();
-                    return true;
-            }
-            return false;
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        mainFragment = new MainFragment();
+        searchFragment = new SearchFragment();
+        favouriteFragment = new FavouriteFragment();
+        settingsFragment = new SettingsFragment();
+        switch (item.getItemId()) {
+            case R.id.home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, mainFragment).commit();
+                return true;
+            case R.id.search:
+                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, searchFragment).addToBackStack(null).commit();
+                return true;
+            case R.id.favourite:
+                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, favouriteFragment).addToBackStack(null).commit();
+                return true;
+            case R.id.menu:
+                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, settingsFragment).addToBackStack(null).commit();
+                return true;
         }
+        return false;
+    }
 
+    @Override
+    public void onBackPressed() {
+
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            Log.i("MainActivity", "popping backstack");
+            fm.popBackStack();
+
+        } else {
+            super.onBackPressed();
+
+
+        }
+    }
 
 
     // TODO : DELETE THIS
@@ -207,7 +211,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //
 //
 //        }
-        /////////
+    /////////
 //            getSupportFragmentManager().beginTransaction()
 //                    .replace(R.id.fragmentContainerView3, mainFragment).commit();
 //            Toast.makeText(
@@ -218,7 +222,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //            Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT).show();
 
 
-        //  super.onBackPressed();
+    //  super.onBackPressed();
 //        moveTaskToBack(true);
 //        FragmentManager fm =  getSupportFragmentManager();
 //        Fragment fragInstance = fm.findFragmentById(R.id.fragmentContainerView3);
@@ -238,8 +242,8 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //                    "FirstFragment found",
 //                    Toast.LENGTH_SHORT
 //            ).show();
-        // }
-        //super.onBackPressed();
+    // }
+    //super.onBackPressed();
 //
 //        NavController navController = Navigation.findNavController(this, R.id.navigation_main_graph);
 //        navController.addOnDestinationChangedListener((navController1, navDestination, bundle) ->
@@ -263,6 +267,7 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //    }
 //
 //    );}}
+//  // TODO : DELETE THIS
 
 //            else if (navDestination.getId() == R.id.flightFragment) {
 //                Log.i("TAGgg", "onBackPressed: nav" + navDestination);
@@ -293,8 +298,10 @@ public class MainActivity extends AppCompatActivity  implements BottomNavigation
 //            }
 
 
-        //   });
+    //   });
 
-        // }
-  //  }
+    // }
+    //  }
+
+
 }
