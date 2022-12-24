@@ -84,20 +84,44 @@
                     android:fontFamily="@font/ubuntu_bold"
                     android:textSize="@dimen/_13sdp"
                     android:layout_marginStart="@dimen/_20sdp"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_33sdp"
 
 
                     />
-                <ImageView
+                <LinearLayout
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:src="@drawable/filter_fill_icon"
-                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
                     android:layout_marginEnd="@dimen/_10sdp"
+                    >
 
-                    />
+                    <ImageView
+                        android:id="@+id/btn_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/edite_icon"
+                        app:civ_border_color="@color/app_second_color"
+                        android:layout_margin="@dimen/_5sdp"
+
+                        />
+                    <ImageView
+                        android:id="@+id/iv_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/filter_fill_icon"
+                        android:layout_margin="@dimen/_5sdp"
+
+
+                        />
+
+                </LinearLayout>
+
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.recyclerview.widget.RecyclerView

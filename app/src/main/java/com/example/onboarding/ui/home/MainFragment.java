@@ -27,9 +27,9 @@ import java.util.List;
 
 
 public class MainFragment extends Fragment {
-private FragmentMainBinding binding;
+    private FragmentMainBinding binding;
     private SliderAdapter adapter;
-  //  private NavController navController;
+    //  private NavController navController;
 
 
     @Override
@@ -37,12 +37,13 @@ private FragmentMainBinding binding;
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
-        return binding.getRoot();    }
+        return binding.getRoot();
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       // navController= Navigation.findNavController(view);
+        // navController= Navigation.findNavController(view);
 
         setTopCitiesSlider();
         setTopHotelsSlider();
@@ -50,13 +51,14 @@ private FragmentMainBinding binding;
         setViewsActions();
     }
 
-    private void setViewsActions(){
+    private void setViewsActions() {
 
 
         binding.userPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+               startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+
             }
         });
 
@@ -143,7 +145,6 @@ private FragmentMainBinding binding;
 
 
     }
-
 
 
 }

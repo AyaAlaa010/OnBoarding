@@ -9,8 +9,6 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
@@ -18,21 +16,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.Toast;
+
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSearchBinding;
 import com.example.onboarding.search.Flight.FlightDetailsFragment;
-import com.example.onboarding.search.Flight.SearchDetailsBottomSheet;
-import com.google.android.material.bottomsheet.BottomSheetBehavior;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;
 
 
 public class SearchFragment extends Fragment {
-    private FragmentSearchBinding binding;
-    private  static int fragmentCounter=0;
 
+    private FragmentSearchBinding binding;
+    private static int fragmentCounter = 0;
     private SearchTabsAccessorAdapter tabsAccessorAdapter;
-   // private NavController navController;
+    // private NavController navController;
+    String tabPosition ;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -45,15 +43,40 @@ public class SearchFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 //        this.navController = Navigation.findNavController(view);
+
+        getFlightsTabPosition();//TOdO JOIN TABS FIGHTS WITH SEARCH TABS NEED TO HANDEL AND FIX I GET A POSITION FROM FLIGHTS AND NEED TO HANDEL WHEN I MAKE BACK TO SERCH (the problem is no move at first time open the fragment)
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new SearchTabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
 
         addTabs(binding.mainTabs);
-       // addTabs(binding.mainTabsFlightDetails);
 
         setViewsAction();
-        //addTabs(binding.mainTabs,valuePostion);
+
+    }
+    private void getFlightsTabPosition(){
+
+        try {
+            if( getArguments().get("position")!=null){
+
+
+                tabPosition=getArguments().getString("position");
+                // Toast.makeText(getContext(), "position= "+tabPosition, Toast.LENGTH_SHORT).show();
+
+            }
+            else{
+
+                Toast.makeText(getContext(), "null", Toast.LENGTH_SHORT).show();
+            }
+
+        }
+        catch (Exception e){
+
+           // Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+
+
+        }
+
 
     }
 
@@ -62,60 +85,54 @@ public class SearchFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                switch (fragmentCounter){
+                switch (fragmentCounter) {
 
-                    case 0:  {
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()) .addToBackStack(null).commit();
-                      //navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
+                    case 0: {
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()).addToBackStack(null).commit();
+                        //navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
                         break;
                     }
-                    case 1:  {
-                        Toast.makeText(getContext(),"1",Toast.LENGTH_LONG).show();
-
-                        break;
-                    } case 2:  {
-                        Toast.makeText(getContext(),"2",Toast.LENGTH_LONG).show();
-
-                        break;
-                    } case 3:  {
-                        Toast.makeText(getContext(),"3",Toast.LENGTH_LONG).show();
+                    case 1: {
+//                        Toast.makeText(getContext(),"1",Toast.LENGTH_LONG).show();
 
                         break;
                     }
-                    case 4:  {
-                        Toast.makeText(getContext(),"4",Toast.LENGTH_LONG).show();
+                    case 2: {
+//                        Toast.makeText(getContext(),"2",Toast.LENGTH_LONG).show();
 
                         break;
                     }
+                    case 3: {
+//                        Toast.makeText(getContext(),"3",Toast.LENGTH_LONG).show();
 
+                        break;
+                    }
+                    case 4: {
+//                        Toast.makeText(getContext(),"4",Toast.LENGTH_LONG).show();
 
+                        break;
+                    }
 
 
                 }
-
 
 
             }
         });
 
 
-
-
-
-
-
     }
 //todo delete this
-    private void setFlightsBottomSheet() {
-        SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
-        bottomSheet.show(getActivity().getSupportFragmentManager(),
-                "ModalBottomSheet");
-
-    }
+//    private void setFlightsBottomSheet() {
+//        SearchDetailsBottomSheet bottomSheet = new SearchDetailsBottomSheet();
+//        bottomSheet.show(getActivity().getSupportFragmentManager(),
+//                "ModalBottomSheet");
+//
+//    }
     //todo delete this
 
-    public static void slideToBottom(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
+    public static void slideToBottom(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, 0, view.getHeight());
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
@@ -123,8 +140,8 @@ public class SearchFragment extends Fragment {
     }
 //todo delete this
 
-    public static void slideToTop(View view){
-        TranslateAnimation animate = new TranslateAnimation(0,0,view.getHeight(),0);
+    public static void slideToTop(View view) {
+        TranslateAnimation animate = new TranslateAnimation(0, 0, view.getHeight(), 0);
         animate.setDuration(500);
         animate.setFillAfter(true);
         view.startAnimation(animate);
@@ -132,7 +149,7 @@ public class SearchFragment extends Fragment {
     }
 
 
-    private void addTabs(TabLayout tabLayout ) {
+    private void addTabs(TabLayout tabLayout) {
 
         setTabsTitles(tabLayout);
 
@@ -140,9 +157,7 @@ public class SearchFragment extends Fragment {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
                 binding.mainTabsPager.setCurrentItem(tab.getPosition());
-
                 setTabSelectedActions(tab);
 
             }
@@ -163,7 +178,7 @@ public class SearchFragment extends Fragment {
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
 
-              tabLayout.selectTab(tabLayout.getTabAt(position));
+                tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
 
@@ -183,7 +198,7 @@ public class SearchFragment extends Fragment {
 
 
         if (tab.getPosition() == 0) {
-            fragmentCounter=0;
+            fragmentCounter = 0;
 
             tab.setIcon(R.drawable.plane_up_solid_1);
 
@@ -195,7 +210,7 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 1) {
 
-            fragmentCounter=1;
+            fragmentCounter = 1;
             tab.setIcon(R.drawable.hotel_solid_1);
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
@@ -204,7 +219,7 @@ public class SearchFragment extends Fragment {
 
         } else if (tab.getPosition() == 2) {
 
-            fragmentCounter=2;
+            fragmentCounter = 2;
             tab.setIcon(R.drawable.bed_solid);
             tab.getIcon().setColorFilter(ContextCompat.getColor(this.getContext(), android.R.color.white),
                     PorterDuff.Mode.MULTIPLY);
@@ -212,7 +227,7 @@ public class SearchFragment extends Fragment {
 
 
         } else if (tab.getPosition() == 3) {
-            fragmentCounter=3;
+            fragmentCounter = 3;
 
             tab.setIcon(R.drawable.car_solid_1);
 
@@ -223,7 +238,7 @@ public class SearchFragment extends Fragment {
 
 
         } else if (tab.getPosition() == 4) {
-            fragmentCounter=4;
+            fragmentCounter = 4;
 
             tab.setIcon(R.drawable.award_solid_1);
 
@@ -238,17 +253,16 @@ public class SearchFragment extends Fragment {
 
 
     }
+
     private void setTabUnSelectedActions(TabLayout.Tab tab) {
 
 
         if (tab.getPosition() == 0) {
-           tab.setIcon(R.drawable.plane_up_solid_1);
+            tab.setIcon(R.drawable.plane_up_solid_1);
 
 
         } else if (tab.getPosition() == 1) {
             tab.setIcon(R.drawable.hotel_solid_1);
-
-
 
 
         } else if (tab.getPosition() == 2) {
@@ -272,8 +286,6 @@ public class SearchFragment extends Fragment {
 
 
     }
-
-
 
 
 }

@@ -89,4 +89,11 @@
     <string name="rewards">Rewards</string>
     <string name="price">Price</string>
     <string name="select">Select</string>
+    <string name="ticket_type">Ticket Type</string>
+    <string name="standard_ticket">Standard Ticket</string>
+    <string name="flexible_ticket">Flexible Ticket</string>
+    <string name="flexible_tickets_are_only_available_when_you_book_your_flight_see_section_7_for_terms_and_conditions">Flexible tickets are only available when you book your flight. See section 7 for <font color='#449CE1'>terms and conditions.</font> </string>
+    <string name="back_ticket">Back</string>
+
+
 </resources>
