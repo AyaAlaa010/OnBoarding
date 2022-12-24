@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">OnBoarding</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_back_where_do_you_want_to_go_today">Welcome back, where do you want to go today?</string>
     <string name="hi_omar">Hi Omar !</string>
@@ -94,6 +93,13 @@
     <string name="flexible_ticket">Flexible Ticket</string>
     <string name="flexible_tickets_are_only_available_when_you_book_your_flight_see_section_7_for_terms_and_conditions">Flexible tickets are only available when you book your flight. See section 7 for <font color='#449CE1'>terms and conditions.</font> </string>
     <string name="back_ticket">Back</string>
+    <string name="who_s_flying">Who\'s flying?</string>
+    <string name="required"><font color='#449CE1'>*</font> Required</string>
+    <string name="contact_details">Contact details</string>
+    <string name="contact_email">Contact email <font color='#449CE1'>*</font></string>
+    <string name="contact_number">Contact number <font color='#449CE1'>*</font></string>
+    <string name="get_free_text_message_updates_about_your_flight">Get free text message updates about your flight</string>
+    <string name="we_ll_send_your_flight_confirmation_here">We\'ll send your flight confirmation here</string>
 
 
 </resources>

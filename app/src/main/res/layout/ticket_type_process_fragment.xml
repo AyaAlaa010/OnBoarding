@@ -13,6 +13,14 @@
         android:background="@color/gray"
         android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/ticket_top_layout">
+
+
         <TextView
             android:id="@+id/tv_ticket_type"
             android:layout_width="wrap_content"
@@ -34,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_8sdp"
             android:orientation="horizontal"
-            android:weightSum="8"
+            android:weightSum="10"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_ticket_type">
 
@@ -42,7 +50,7 @@
                 android:id="@+id/one_ProgressIndicator"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="4"
+                android:layout_weight="6"
                 android:indeterminate="false"
                 android:indeterminateDuration="@integer/material_motion_duration_long_1"
 
@@ -94,7 +102,7 @@
                 app:trackCornerRadius="@dimen/_10sdp"
                 app:trackThickness="@dimen/_6sdp" />
         </LinearLayout>
-
+    </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
