@@ -100,6 +100,18 @@
     <string name="contact_number">Contact number <font color='#449CE1'>*</font></string>
     <string name="get_free_text_message_updates_about_your_flight">Get free text message updates about your flight</string>
     <string name="we_ll_send_your_flight_confirmation_here">We\'ll send your flight confirmation here</string>
+    <string name="first_name_flying">First Name<font color='#449CE1'> *</font></string>
+    <string name="last_name_flying">Last Name <font color='#449CE1'> *</font></string>
+    <string name="gender_specified_on_your_travel_document">Gender specified on your travel document<font color='#449CE1'> *</font></string>
+    <string name="enter_exactly_what_s_written_on_this_traveler_s_travel_document">Enter exactly what\'s written on this traveler\'s travel document</string>
+    <string name="flying_select">dropDownMenuExample</string>
+    <string name="we_re_currently_required_by_airlines_and_providers_to_ask_for_this_information">We\'re currently required by airlines and providers to ask for this information</string>
+    <string name="check_and_pay">Check and pay</string>
+    <string-array name="gender">
+        <item>select</item>
+        <item>male</item>
+        <item>female</item>
 
+    </string-array>
 
 </resources>

@@ -13,96 +13,96 @@
         android:background="@color/gray"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/_10sdp"
-        android:background="@drawable/ticket_top_layout">
-
-
-        <TextView
-            android:id="@+id/tv_ticket_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:fontFamily="@font/ubuntu_bold"
-            android:text="@string/ticket_type"
-            android:textColor="@color/app_color"
-            android:textSize="@dimen/_15sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-
-            />
-
         <LinearLayout
-            android:id="@+id/linear_process_ticket_loading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_8sdp"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ticket_type">
+            android:background="@drawable/ticket_top_layout"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/one_ProgressIndicator"
-                android:layout_width="0dp"
+
+            <TextView
+                android:id="@+id/tv_ticket_type"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:indeterminate="false"
-                android:indeterminateDuration="@integer/material_motion_duration_long_1"
-
-                android:scrollIndicators="start"
-                app:indicatorDirectionLinear="startToEnd"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:trackColor="@color/app_color"
-
-                app:trackCornerRadius="@dimen/_10sdp"
-                app:trackThickness="@dimen/_6sdp" />
-
-
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/two_ProgressIndicator"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_weight="2"
-                android:indeterminate="false"
-
-                android:indeterminateDuration="@integer/material_motion_duration_long_1"
-                android:scrollIndicators="start"
-                app:indicatorDirectionLinear="startToEnd"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:trackColor="@color/app_second_color"
-
-                app:trackCornerRadius="@dimen/_10sdp"
-                app:trackThickness="@dimen/_6sdp" />
-
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/three_linearProgressIndicator"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_weight="2"
-                android:indeterminate="false"
-                android:indeterminateDuration="@integer/material_motion_duration_long_1"
-                android:scrollIndicators="start"
-                app:indicatorDirectionLinear="startToEnd"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/ticket_type"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
 
-                app:trackColor="@color/app_second_color"
-                app:trackCornerRadius="@dimen/_10sdp"
-                app:trackThickness="@dimen/_6sdp" />
+                />
+
+            <LinearLayout
+                android:id="@+id/linear_process_ticket_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ticket_type">
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/one_ProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="6"
+                    android:indeterminate="false"
+                    android:indeterminateDuration="@integer/material_motion_duration_long_1"
+
+                    android:scrollIndicators="start"
+                    app:indicatorDirectionLinear="startToEnd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackColor="@color/app_color"
+
+                    app:trackCornerRadius="@dimen/_10sdp"
+                    app:trackThickness="@dimen/_6sdp" />
+
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/two_ProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="2"
+                    android:indeterminate="false"
+
+                    android:indeterminateDuration="@integer/material_motion_duration_long_1"
+                    android:scrollIndicators="start"
+                    app:indicatorDirectionLinear="startToEnd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackColor="@color/app_second_color"
+
+                    app:trackCornerRadius="@dimen/_10sdp"
+                    app:trackThickness="@dimen/_6sdp" />
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/three_linearProgressIndicator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_weight="2"
+                    android:indeterminate="false"
+                    android:indeterminateDuration="@integer/material_motion_duration_long_1"
+                    android:scrollIndicators="start"
+                    app:indicatorDirectionLinear="startToEnd"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    app:trackColor="@color/app_second_color"
+                    app:trackCornerRadius="@dimen/_10sdp"
+                    app:trackThickness="@dimen/_6sdp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -182,8 +182,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginBottom="@dimen/_7sdp"
                     android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_marginBottom="@dimen/_7sdp"
                     android:fontFamily="@font/ubuntu_bold"
                     android:text="Select your ticket type"
                     android:textColor="@color/app_second_color"
@@ -205,6 +205,7 @@
                         android:orientation="vertical">
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/card_standard_ticket"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="@dimen/_10sdp"
@@ -220,124 +221,154 @@
                                 android:orientation="vertical"
                                 android:padding="@dimen/_5sdp">
 
-                                <RadioButton
-                                    android:id="@+id/radio_standard_ticket"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="4">
+
+                                    <RadioButton
+                                        android:id="@+id/radio_standard_ticket"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:fontFamily="@font/ubuntu_bold"
+                                        android:text="@string/standard_ticket"
+                                        android:textColor="@color/app_second_color"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                    <ImageView
+                                        android:id="@+id/image_see_more_standard"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:src="@drawable/see_more_arrow_down_solid"
+                                        android:visibility="gone"
+
+                                        />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/linear_standard_hide"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:checked="false"
-                                    android:fontFamily="@font/ubuntu_bold"
-                                    android:text="@string/standard_ticket"
-                                    android:textColor="@color/app_second_color"
-                                    android:textSize="@dimen/_12sdp" />
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_20sdp"
-                                    android:orientation="horizontal">
+                                    android:orientation="vertical">
 
-                                    <ImageView
-                                        android:layout_width="wrap_content"
+                                    <LinearLayout
+                                        android:id="@+id/linear_cheapest_price"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/correct_icon"
+                                        android:layout_marginStart="@dimen/_20sdp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/correct_icon"
+
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_cheapest_price"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/ubuntu"
+                                            android:text="Cheapest price"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_11sdp"
+
+                                            />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_no_need"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_20sdp"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_5sdp"
+                                            android:src="@drawable/small_exite_icon"
+
+
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_flexibility"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_7sdp"
+                                            android:fontFamily="@font/ubuntu"
+                                            android:text="No need for flexibility - you're sure about your plans"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_11sdp"
+
+                                            />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_2sdp"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:background="@color/gray"
 
                                         />
 
-                                    <TextView
-                                        android:id="@+id/tv_cheapest_price"
-                                        android:layout_width="wrap_content"
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_total_price"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/ubuntu"
-                                        android:text="Cheapest price"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_11sdp"
+                                        android:layout_margin="@dimen/_10sdp"
+                                        android:orientation="horizontal"
+                                        android:weightSum="11">
 
-                                        />
+                                        <TextView
+                                            android:id="@+id/tv_total_price_text"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_7sdp"
+                                            android:layout_weight="7"
+                                            android:fontFamily="@font/ubuntu_bold"
+                                            android:text="Total price"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_12sdp"
 
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_price"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_7sdp"
+                                            android:layout_weight="4"
+                                            android:fontFamily="@font/ubuntu_bold"
+                                            android:text="AED 945.14"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_12sdp"
+
+                                            />
+
+
+                                    </LinearLayout>
                                 </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_20sdp"
-                                    android:layout_marginBottom="@dimen/_10sdp"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_5sdp"
-                                        android:src="@drawable/small_exite_icon"
-
-
-                                        />
-
-                                    <TextView
-                                        android:id="@+id/tv_flexibility"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_7sdp"
-                                        android:fontFamily="@font/ubuntu"
-                                        android:text="No need for flexibility - you're sure about your plans"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_11sdp"
-
-                                        />
-
-                                </LinearLayout>
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_2sdp"
-                                    android:layout_marginStart="@dimen/_10sdp"
-                                    android:layout_marginEnd="@dimen/_10sdp"
-                                    android:background="@color/gray"
-
-                                    />
-
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="@dimen/_10sdp"
-                                    android:orientation="horizontal"
-                                    android:weightSum="11">
-
-                                    <TextView
-                                        android:id="@+id/tv_total_price_text"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_7sdp"
-                                        android:layout_weight="7"
-                                        android:fontFamily="@font/ubuntu_bold"
-                                        android:text="Total price"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_12sdp"
-
-                                        />
-
-                                    <TextView
-                                        android:id="@+id/tv_price"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_7sdp"
-                                        android:layout_weight="4"
-                                        android:fontFamily="@font/ubuntu_bold"
-                                        android:text="AED 945.14"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_12sdp"
-
-                                        />
-
-
-                                </LinearLayout>
-
 
                             </LinearLayout>
 
@@ -346,6 +377,7 @@
 
 
                         <androidx.cardview.widget.CardView
+                            android:id="@+id/card_flexible_ticket"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_10sdp"
@@ -360,387 +392,418 @@
                                 android:orientation="vertical"
                                 android:padding="@dimen/_5sdp">
 
-                                <RadioButton
-                                    android:id="@+id/radio_flexible_ticket"
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="4">
+
+                                    <RadioButton
+                                        android:id="@+id/radio_flexible_ticket"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="3"
+                                        android:checked="false"
+                                        android:fontFamily="@font/ubuntu_bold"
+                                        android:text="@string/flexible_ticket"
+                                        android:textColor="@color/app_second_color"
+                                        android:textSize="@dimen/_12sdp" />
+
+                                    <ImageView
+                                        android:id="@+id/image_see_more_flexible"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:src="@drawable/see_more_arrow_down_solid"
+                                        android:visibility="gone"
+
+                                        />
+
+                                </LinearLayout>
+
+
+                                <LinearLayout
+                                    android:id="@+id/linear_flexible_hide"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:checked="false"
-                                    android:fontFamily="@font/ubuntu_bold"
-                                    android:text="@string/flexible_ticket"
-                                    android:textColor="@color/app_second_color"
-                                    android:textSize="@dimen/_12sdp" />
+                                    android:orientation="vertical">
 
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_20sdp"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
+                                    <LinearLayout
+                                        android:id="@+id/linear_switch_flight"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/correct_icon"
+                                        android:layout_marginStart="@dimen/_20sdp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/correct_icon"
+
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_switch_flight"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/ubuntu"
+                                            android:text="Switch flights up to 24 hours before your departure time – with no penalties"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_11sdp"
+
+                                            />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_change_flight"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_20sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/correct_icon"
+
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_change_flight"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/ubuntu"
+                                            android:text="Change your flight to another with the same airline for free, subject to availability"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_11sdp"
+
+                                            />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_pay_differance"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/_20sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:src="@drawable/correct_icon"
+
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_pay_difference_flight"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/ubuntu"
+                                            android:text="Only pay the difference if the new flight costs more than the original"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_11sdp"
+
+                                            />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_2sdp"
+                                        android:layout_margin="@dimen/_10sdp"
+                                        android:background="@color/gray"
 
                                         />
 
-                                    <TextView
-                                        android:id="@+id/tv_switch_flight"
-                                        android:layout_width="wrap_content"
+                                    <LinearLayout
+                                        android:id="@+id/linear_total_price_flexible"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/ubuntu"
-                                        android:text="Switch flights up to 24 hours before your departure time – with no penalties"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_11sdp"
+                                        android:layout_marginStart="@dimen/_10sdp"
+                                        android:layout_marginEnd="@dimen/_10sdp"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:orientation="horizontal"
+                                        android:weightSum="11">
 
-                                        />
+                                        <TextView
+                                            android:id="@+id/tv_total_price_text_flexible"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_7sdp"
+                                            android:layout_weight="7"
+                                            android:fontFamily="@font/ubuntu_bold"
+                                            android:text="Total price"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_12sdp"
 
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/tv_price_flexible"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_marginStart="@dimen/_7sdp"
+                                            android:layout_weight="4"
+                                            android:fontFamily="@font/ubuntu_bold"
+                                            android:text="AED 1,068.01"
+                                            android:textColor="@color/app_second_color"
+                                            android:textSize="@dimen/_12sdp"
+
+                                            />
+
+
+                                    </LinearLayout>
                                 </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_20sdp"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/correct_icon"
-
-                                        />
-
-                                    <TextView
-                                        android:id="@+id/tv_change_flight"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/ubuntu"
-                                        android:text="Change your flight to another with the same airline for free, subject to availability"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_11sdp"
-
-                                        />
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_20sdp"
-                                    android:layout_marginTop="@dimen/_5sdp"
-                                    android:orientation="horizontal">
-
-                                    <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:src="@drawable/correct_icon"
-
-                                        />
-
-                                    <TextView
-                                        android:id="@+id/tv_pay_difference_flight"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/ubuntu"
-                                        android:text="Only pay the difference if the new flight costs more than the original"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_11sdp"
-
-                                        />
-
-                                </LinearLayout>
-
-                                <View
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/_2sdp"
-                                    android:layout_margin="@dimen/_10sdp"
-                                    android:background="@color/gray"
-
-                                    />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="@dimen/_10sdp"
-                                    android:layout_marginEnd="@dimen/_10sdp"
-                                    android:layout_marginBottom="@dimen/_10sdp"
-                                    android:orientation="horizontal"
-                                    android:weightSum="11">
-
-                                    <TextView
-                                        android:id="@+id/tv_total_price_text_flexible"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_7sdp"
-                                        android:layout_weight="7"
-                                        android:fontFamily="@font/ubuntu_bold"
-                                        android:text="Total price"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_12sdp"
-
-                                        />
-
-                                    <TextView
-                                        android:id="@+id/tv_price_flexible"
-                                        android:layout_width="0dp"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_marginStart="@dimen/_7sdp"
-                                        android:layout_weight="4"
-                                        android:fontFamily="@font/ubuntu_bold"
-                                        android:text="AED 1,068.01"
-                                        android:textColor="@color/app_second_color"
-                                        android:textSize="@dimen/_12sdp"
-
-                                        />
-
-
-                                </LinearLayout>
-
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
-
-
-                        <TextView
-                            android:id="@+id/tv_hint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginBottom="@dimen/_27sdp"
-                            android:fontFamily="@font/ubuntu"
-                            android:text="@string/flexible_tickets_are_only_available_when_you_book_your_flight_see_section_7_for_terms_and_conditions"
-                            android:textSize="@dimen/_10sdp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:fontFamily="@font/ubuntu_bold"
-                            android:text="@string/price"
-                            android:textSize="@dimen/_13sdp" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:orientation="horizontal"
-                            android:weightSum="6">
-
-                            <TextView
-                                android:id="@+id/tv_ticket_1_adult_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/ubuntu_bold"
-                                android:text="Ticket (1 Adult)"
-
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                            <TextView
-                                android:id="@+id/tv_ticket_1_adult_price_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-
-                                android:fontFamily="@font/ubuntu_bold"
-                                android:text="AED 945.14 "
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:orientation="horizontal"
-                            android:weightSum="6"
-
-                            >
-
-                            <TextView
-                                android:id="@+id/tv_flight_fare_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="Flight fare"
-
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                            <TextView
-                                android:id="@+id/tv_flight_fare_price_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="AED 945.14"
-
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_3sdp"
-                            android:orientation="horizontal"
-                            android:weightSum="6">
-
-                            <TextView
-                                android:id="@+id/tv_taxes_fees_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="Taxes and Fees"
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                            <TextView
-                                android:id="@+id/tv_taxes_fees_price_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="AED 945.14 "
-
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:layout_marginTop="@dimen/_10sdp"
-                            android:orientation="horizontal"
-                            android:weightSum="6">
-
-                            <TextView
-                                android:id="@+id/tv_flexible_text_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="@string/flexible_ticket"
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                            <TextView
-                                android:id="@+id/tv_flexible_text_price_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="2"
-                                android:fontFamily="@font/ubuntu"
-                                android:text="AED 122.87"
-
-                                android:textColor="@color/app_second_color"
-                                android:textSize="@dimen/_12sdp" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="6"
-                            android:layout_marginTop="@dimen/_18sdp"
-                            android:layout_marginStart="@dimen/_10sdp"
-
-                            >
-
-                            <TextView
-                                android:id="@+id/tv_total"
-                                android:layout_width="0dp"
-                                android:layout_weight="4"
-                                android:layout_height="wrap_content"
-                                android:text="Total"
-                                android:textSize="@dimen/_15sdp"
-                                android:textColor="@color/app_color"
-
-                                android:fontFamily="@font/ubuntu_bold" />
-
-                            <TextView
-                                android:id="@+id/tv_total_price"
-                                android:layout_width="0dp"
-                                android:layout_weight="2"
-                                android:layout_height="wrap_content"
-                                android:text="AED 945.14 "
-                                android:textSize="@dimen/_15sdp"
-                                android:textColor="@color/app_color"
-                                android:fontFamily="@font/ubuntu_bold" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/tv_total_hint"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="includes taxes and charges "
-                            android:textSize="@dimen/_10sdp"
-                            android:textColor="@color/app_second_color"
-                            android:layout_marginTop="@dimen/_2sdp"
-                            android:layout_marginBottom="@dimen/_10sdp"
-                            android:fontFamily="@font/ubuntu_light_italic"
-                            android:layout_marginStart="@dimen/_10sdp" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_margin="@dimen/_25sdp"
-                            android:weightSum="6">
-
-                            <TextView
-                                android:id="@+id/tv_back_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="@dimen/_40sdp"
-                                android:layout_weight="3"
-                                android:text="@string/back_ticket"
-                                android:textAllCaps="false"
-                                android:textSize="@dimen/_13sdp"
-                                android:textColor="@color/app_second_color"
-                                android:layout_marginTop="@dimen/_2sdp"
-                                android:gravity="center"
-                                android:fontFamily="@font/ubuntu_bold"
-                                android:background="@drawable/phone_key_layout"
-                                android:layout_marginEnd="@dimen/_7sdp"
-                                 />
-                            <TextView
-                                android:id="@+id/tv_next_ticket"
-                                android:layout_width="0dp"
-                                android:layout_height="@dimen/_40sdp"
-                                android:layout_weight="3"
-                                android:text="@string/next"
-                                android:textAllCaps="false"
-                                android:textSize="@dimen/_13sdp"
-                                android:textColor="@color/white"
-                                android:layout_marginTop="@dimen/_2sdp"
-                                android:gravity="center"
-                                android:fontFamily="@font/ubuntu_bold"
-                                android:background="@drawable/next_ticket_layout"
-                                />
-                        </LinearLayout>
-
                     </LinearLayout>
-
                 </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/tv_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_27sdp"
+                    android:fontFamily="@font/ubuntu"
+                    android:text="@string/flexible_tickets_are_only_available_when_you_book_your_flight_see_section_7_for_terms_and_conditions"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/price"
+                    android:textSize="@dimen/_13sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_ticket_1_adult_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Ticket (1 Adult)"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_ticket_1_adult_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="AED 945.14 "
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_flight_fare_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="Flight fare"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flight_fare_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 945.14"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_taxes_fees_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="Taxes and Fees"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_taxes_fees_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 945.14 "
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_flexible_text_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="@string/flexible_ticket"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flexible_text_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 122.87"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Total"
+                        android:textColor="@color/app_color"
+
+                        android:textSize="@dimen/_15sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_total_price"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="AED 945.14 "
+                        android:textColor="@color/app_color"
+                        android:textSize="@dimen/_15sdp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_total_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:text="includes taxes and charges "
+                    android:textColor="@color/app_second_color"
+                    android:textSize="@dimen/_10sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_25sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_back_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        android:layout_weight="3"
+                        android:background="@drawable/phone_key_layout"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:gravity="center"
+                        android:text="@string/back_ticket"
+                        android:textAllCaps="false"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_next_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:layout_weight="3"
+                        android:background="@drawable/next_ticket_layout"
+                        android:clickable="false"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:gravity="center"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13sdp"
+
+                        />
+                </LinearLayout>
 
 
             </LinearLayout>

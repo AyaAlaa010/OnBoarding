@@ -123,6 +123,8 @@
                 android:layout_weight="1.5"
                 android:id="@+id/tv_country_code"
                 android:gravity="center"
+                android:elevation="@dimen/_3sdp"
+
                 app:ccp_textSize="@dimen/_10sdp"
                 app:ccp_autoDetectCountry="true"
                 app:ccp_showNameCode="false"
@@ -139,6 +141,8 @@
                 android:maxLength="9"
                 android:hint="  phone number"
                 android:textSize="@dimen/_10sdp"
+                android:elevation="@dimen/_3sdp"
+
                 android:inputType="phone"
                 android:background="@drawable/phone_number_layout"
                 />

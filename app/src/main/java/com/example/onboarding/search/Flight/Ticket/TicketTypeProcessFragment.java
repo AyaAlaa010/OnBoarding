@@ -16,6 +16,7 @@ import com.example.onboarding.databinding.TicketTypeProcessFragmentBinding;
 
 public class TicketTypeProcessFragment extends Fragment {
     private TicketTypeProcessFragmentBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -28,10 +29,86 @@ public class TicketTypeProcessFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        setViewsAction();
+        handelRadioButtonCheck();
+        setBackButtonAction();
+        setSeeMoreTicketDetailsAction();
+
     }
 
-    private void setViewsAction() {
+    private void handelRadioButtonCheck() {
+
+
+        binding.radioFlexibleTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.radioStandardTicket.setChecked(false);
+               hideTicketDetails();
+                binding.tvNextTicket.setClickable(true);
+                // next button clickable only when i choose one ticket
+                setNextButtonAction();
+
+            }
+        });
+
+        binding.radioStandardTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.radioFlexibleTicket.setChecked(false);
+                hideTicketDetails();
+                binding.tvNextTicket.setClickable(true);
+                // next button clickable only when i choose one ticket
+
+                setNextButtonAction();
+            }
+        });
+
+        binding.cardFlexibleTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.radioStandardTicket.setChecked(false);
+                binding.radioFlexibleTicket.setChecked(true);
+                hideTicketDetails();
+                setNextButtonAction();
+
+            }
+
+
+
+        });
+
+        binding.cardStandardTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.radioStandardTicket.setChecked(true);
+                binding.radioFlexibleTicket.setChecked(false);
+                hideTicketDetails();
+                setNextButtonAction();
+
+            }
+
+
+
+        });
+    }
+    private void hideTicketDetails(){
+
+        //hide standard ticket details
+        binding.linearStandardHide.setVisibility(View.GONE);
+        // hid flexible ticket details
+        binding.linearFlexibleHide.setVisibility(View.GONE);
+        //appear see more
+        binding.imageSeeMoreFlexible.setVisibility(View.VISIBLE);
+        binding.imageSeeMoreStandard.setVisibility(View.VISIBLE);
+        // make view rounded
+        binding.cardFlexibleTicket.setRadius(100);
+        binding.cardStandardTicket.setRadius(100);
+
+
+    }
+
+
+
+    private void setNextButtonAction() {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,4 +117,50 @@ public class TicketTypeProcessFragment extends Fragment {
             }
         });
     }
+
+    private void setBackButtonAction(){
+
+
+        binding.tvBackTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getParentFragmentManager().popBackStack();
+
+            }
+        });
+
+    }
+
+    private  void setSeeMoreTicketDetailsAction(){
+        binding.imageSeeMoreStandard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //show standard ticket details
+                binding.linearStandardHide.setVisibility(View.VISIBLE);
+                // hide see more icone
+                binding.imageSeeMoreStandard.setVisibility(View.GONE);
+                //set card view
+                binding.cardStandardTicket.setRadius(60);
+
+            }
+        });
+        binding.imageSeeMoreFlexible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //show flexible ticket details
+                binding.linearFlexibleHide.setVisibility(View.VISIBLE);
+                // hide see more icone
+                binding.imageSeeMoreFlexible.setVisibility(View.GONE);
+                //set card view
+                binding.cardFlexibleTicket.setRadius(60);
+
+            }
+        });
+
+
+    }
+
+
+
+
 }

@@ -20,7 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 public class FragmentConfirmation extends Fragment {
 
     private FragmentConfirmationBinding binding;
-
+    private LinearLayout bottomSheet;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -32,7 +32,12 @@ public class FragmentConfirmation extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        LinearLayout bottomSheet = view.findViewById(R.id.vBSBehavior);
+         bottomSheet = view.findViewById(R.id.vBSBehavior);
+        setBottomSheet();
+        setViewsAction();
+    }
+    private void setBottomSheet(){
+
         BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet);
         bottomSheetBehavior.setHideable(false);
         bottomSheetBehavior.setPeekHeight(1500);
@@ -50,7 +55,7 @@ public class FragmentConfirmation extends Fragment {
 
             }
         });
-        setViewsAction();
+
     }
 
     private void setViewsAction() {

@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/gray"
         android:orientation="vertical">
 
@@ -29,8 +29,7 @@
         android:textColor="@color/app_color"
         android:textSize="@dimen/_15sdp"
         android:layout_gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+
 
         />
 
@@ -193,13 +192,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="@dimen/_30sdp"
-                    android:layout_margin="@dimen/_15sdp"
+
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+
                     >
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:padding="@dimen/_10sdp"
+                        android:elevation="@dimen/_5sdp"
+
                         >
                         <TextView
                             android:layout_width="wrap_content"
@@ -215,7 +221,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/required"
                             android:fontFamily="@font/ubuntu_light_italic"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_10sdp"
                             android:textColor="@color/app_second_color"
                             android:layout_marginTop="@dimen/_3sdp"
 
@@ -242,6 +248,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/_2sdp"
                             android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
                             android:background="@drawable/edit_text_layout"
                             android:elevation="@dimen/_2sdp"
                             android:fontFamily="@font/ubuntu_light_italic"
@@ -255,7 +263,7 @@
                             android:text="@string/we_ll_send_your_flight_confirmation_here"
                             android:fontFamily="@font/ubuntu_light_italic"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_11sdp"
                             android:gravity="center"
                             android:textColor="@color/app_second_color"
                             android:layout_marginBottom="@dimen/_10sdp"
@@ -277,26 +285,64 @@
 
                             />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_contact_number"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_2sdp"
-                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:layout_height="@dimen/_38sdp"
+                            android:id="@+id/linear_phone_number"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_7sdp"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_marginBottom="@dimen/_10sdp"
+                            android:orientation="horizontal"
+                            android:weightSum="4"
                             android:background="@drawable/edit_text_layout"
-                            android:elevation="@dimen/_2sdp"
-                            android:fontFamily="@font/ubuntu_light_italic"
-                            android:padding="@dimen/_10sdp"
-                            android:textSize="@dimen/_12sdp"
+                            android:elevation="@dimen/_3sdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/et_register_email">
 
-                            />
+
+                            <com.hbb20.CountryCodePicker
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:id="@+id/tv_country_code"
+                                android:gravity="center"
+                                android:elevation="@dimen/_2sdp"
+
+                                app:ccp_textSize="@dimen/_10sdp"
+                                app:ccp_autoDetectCountry="true"
+                                app:ccp_showNameCode="false"
+                                android:layout_marginEnd="@dimen/_5sdp"
+                                android:background="@drawable/phone_key_layout"
+
+                                />
+
+                            <EditText
+                                android:id="@+id/tv_phone_number"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.5"
+                                android:maxLength="9"
+                                android:hint="  phone number"
+                                android:textSize="@dimen/_10sdp"
+                                android:elevation="@dimen/_2sdp"
+                                android:gravity="center"
+                                android:inputType="phone"
+                                android:background="@drawable/phone_number_layout"
+                                />
+
+
+
+                        </LinearLayout>
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/get_free_text_message_updates_about_your_flight"
                             android:fontFamily="@font/ubuntu_light_italic"
                             android:layout_marginStart="@dimen/_10sdp"
-                            android:textSize="@dimen/_9sdp"
+                            android:textSize="@dimen/_11sdp"
                             android:gravity="center"
                             android:textColor="@color/app_second_color"
                             android:drawableStart="@drawable/correct_mark_success_tick_icon"
@@ -309,6 +355,383 @@
 
                 </androidx.cardview.widget.CardView>
 
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_30sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/_10sdp"
+                android:elevation="@dimen/_5sdp"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_adult_1"
+                    android:text="Adult 1"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/required"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_name_flying"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/ubuntu"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/edit_text_layout"
+                    android:elevation="@dimen/_2sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:padding="@dimen/_12sdp"
+                    android:textSize="@dimen/_12sdp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_exactly_what_s_written_on_this_traveler_s_travel_document"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/last_name_flying"
+                    android:layout_marginTop="@dimen/_15ssp"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/ubuntu"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+
+                    />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/edit_text_layout"
+                    android:elevation="@dimen/_2sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:padding="@dimen/_12sdp"
+                    android:textSize="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_exactly_what_s_written_on_this_traveler_s_travel_document"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender_specified_on_your_travel_document"
+                    android:textSize="@dimen/_12sdp"
+                    android:fontFamily="@font/ubuntu"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    />
+
+
+
+
+       <TextView
+           android:id="@+id/select_menu"
+           android:layout_width="@dimen/_100sdp"
+           android:layout_height="wrap_content"
+           android:text="Select"
+           android:gravity="center"
+           android:background="@drawable/edit_text_layout"
+           android:padding="@dimen/_7sdp"
+           android:fontFamily="@font/ubuntu_bold"
+           android:textColor="@color/app_second_color"
+           android:elevation="@dimen/_2sdp"
+           android:drawableEnd="@drawable/arrow_bottom_down_icon"
+           android:layout_marginBottom="@dimen/_5sdp"
+           android:layout_marginStart="@dimen/_5sdp"
+           android:layout_marginEnd="@dimen/_5sdp"
+           />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                 android:text="@string/we_re_currently_required_by_airlines_and_providers_to_ask_for_this_information"
+                    android:textSize="@dimen/_11sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    />
+
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+//
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="@string/price"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:textSize="@dimen/_13sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:orientation="horizontal"
+
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_ticket_1_adult_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="Ticket (1 Adult)"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_ticket_1_adult_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="AED 945.14 "
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_flight_fare_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="Flight fare"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flight_fare_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 945.14"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_taxes_fees_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="Taxes and Fees"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_taxes_fees_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 945.14 "
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_flexible_text_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="@string/flexible_ticket"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_flexible_text_price_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/ubuntu"
+                        android:text="AED 122.87"
+
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_12sdp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="6"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_total"
+                        android:layout_width="0dp"
+                        android:layout_weight="4"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textSize="@dimen/_15sdp"
+                        android:textColor="@color/app_color"
+
+                        android:fontFamily="@font/ubuntu_bold" />
+
+                    <TextView
+                        android:id="@+id/tv_total_price"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:text="AED 945.14 "
+                        android:textSize="@dimen/_15sdp"
+                        android:textColor="@color/app_color"
+                        android:fontFamily="@font/ubuntu_bold" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_total_hint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="includes taxes and charges "
+                    android:textSize="@dimen/_10sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:fontFamily="@font/ubuntu_light_italic"
+                    android:layout_marginStart="@dimen/_10sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/_25sdp"
+                    android:weightSum="6">
+
+                    <TextView
+                        android:id="@+id/tv_back_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="3"
+                        android:text="@string/back_ticket"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/app_second_color"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:background="@drawable/phone_key_layout"
+                        android:layout_marginEnd="@dimen/_7sdp"
+                        />
+                    <TextView
+                        android:id="@+id/tv_next_ticket"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_weight="3"
+                        android:text="@string/next"
+                        android:textAllCaps="false"
+                        android:textSize="@dimen/_13sdp"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:gravity="center"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:background="@drawable/next_ticket_layout"
+                        />
+                </LinearLayout>
 
 
             </LinearLayout>
