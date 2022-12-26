@@ -1,6 +1,5 @@
 package com.example.onboarding.registration;
 
-import static com.github.willena.phoneinputview.CountryConfigurator.HintType.MOBILE;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,7 +19,6 @@ import android.widget.ImageView;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentRegisterBinding;
-import com.github.willena.phoneinputview.CountryConfigurator;
 
 
 public class RegisterFragment extends Fragment {
@@ -46,13 +44,13 @@ private FragmentRegisterBinding binding;
     }
 
     private void  setPhoneNumberInput(){
-        CountryConfigurator config = new CountryConfigurator();
-        config.setDisplayFlag(true);
-        config.setDisplayCountryCode(true);
-        config.setDisplayDialingCode(true);
-        config.setPhoneNumberHintType(MOBILE); //Set the phone number type that will be displayed as hint (MOBILE, FIXED, NONE)
-        config.setDefaultCountry("FR"); //Set the default country that will be selected when loading
-       // binding.phoneId.setConfig(config);
+//        CountryConfigurator config = new CountryConfigurator();
+//        config.setDisplayFlag(true);
+//        config.setDisplayCountryCode(true);
+//        config.setDisplayDialingCode(true);
+//        config.setPhoneNumberHintType(MOBILE); //Set the phone number type that will be displayed as hint (MOBILE, FIXED, NONE)
+//        config.setDefaultCountry("FR"); //Set the default country that will be selected when loading
+//       // binding.phoneId.setConfig(config);
 
 
 
