@@ -12,6 +12,7 @@ import androidx.databinding.DataBindingUtil;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityMainBinding;
 import com.example.onboarding.favourite.FavouriteFragment;
+import com.example.onboarding.search.Flight.Ticket.SuccessfulFlightBookingFragment;
 import com.example.onboarding.search.SearchFragment;
 import com.example.onboarding.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;

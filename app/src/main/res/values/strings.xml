@@ -107,6 +107,8 @@
     <string name="flying_select">dropDownMenuExample</string>
     <string name="we_re_currently_required_by_airlines_and_providers_to_ask_for_this_information">We\'re currently required by airlines and providers to ask for this information</string>
     <string name="check_and_pay">Check and pay</string>
+    <string name="flexibility_and_protection">Flexibility and protection</string>
+    <string name="by_clicking_34_pay_now_34_you_agree_with_the_terms_and_conditions_and_privacy_policies_of_booking_com_gotogate_flights_ltd_gulf_air_and_with_the_fare_rules">By clicking \" pay now \" you agree with <font color='#449CE1'><u>the terms and conditions and privacy policies</u></font>of Booking.com, Gotogate Flights Ltd, Gulf Air, and with the<font color='#449CE1'>  <u>fare rules.</u></font></string>
     <string-array name="gender">
         <item>select</item>
         <item>male</item>
