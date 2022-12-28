@@ -1,14 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/_15sdp"
+
     tools:context=".settings.SecurityFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/security"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="@dimen/_18sdp"
+        android:textColor="@color/app_second_color"
 
-</FrameLayout>
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/adjust_your_security_settings_and_set_up_two_factor_authentication"
+        android:textSize="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/app_second_color"
+        android:layout_marginTop="@dimen/_5sdp"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+
+        />
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/reset_your_password_regularly_to_keep_your_account_secure"
+    android:textSize="@dimen/_11sdp"
+    android:fontFamily="@font/ubuntu"
+    android:textColor="@color/app_second_color"
+    android:layout_marginTop="@dimen/_5sdp"
+    />
+    <TextView
+        android:id="@+id/tv_reset_password"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:text="@string/reset"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:background="@drawable/btn_rounded_border"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:layout_marginTop="@dimen/_10sdp"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_out"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="@dimen/_14sdp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selecting_34_sign_out_34_will_sign_you_out_from_all_devices_except_this_one_this_can_take_up_to_10_minutes"
+        android:textSize="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/app_second_color"
+
+        />
+    <TextView
+        android:id="@+id/tv_sign_out_password"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:text="@string/sign_out"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:background="@drawable/btn_rounded_border"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:layout_marginTop="@dimen/_10sdp"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_account"
+        android:fontFamily="@font/ubuntu_bold"
+        android:textSize="@dimen/_14sdp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/permanently_delete_your_time2travel_account"
+        android:textSize="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/app_second_color"
+        />
+    <TextView
+        android:id="@+id/tv_delete_account"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:text="@string/delete_account"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:background="@drawable/delete_account_btn"
+        android:textColor="@color/white"
+        android:fontFamily="@font/ubuntu_bold_italic"
+        android:layout_marginTop="@dimen/_10sdp"
+
+
+        />
+
+</LinearLayout>

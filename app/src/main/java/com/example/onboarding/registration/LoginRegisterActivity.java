@@ -34,6 +34,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login_register);
+        overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
+
         tvLogin = findViewById(R.id.tv_login);
         tvRegister = findViewById(R.id.tv_register);
         select = findViewById(R.id.select);

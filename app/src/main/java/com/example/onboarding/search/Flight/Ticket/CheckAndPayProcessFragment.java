@@ -43,12 +43,16 @@ public class CheckAndPayProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new SuccessfulFlightBookingFragment(),"success").commit();
-               // startActivity(new Intent(getContext(),SuccessfullFightBookingActivity.class));
+              getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new SuccessfulFlightBookingFragment(),"success").commit();
 
                 //remove all fragment of ticket process after finish the booking
-
-
+//                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("check")).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("who")).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("confirmation")).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("ticket")).commit();
+//                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("details")).commit();
+//
+//
 
 
 

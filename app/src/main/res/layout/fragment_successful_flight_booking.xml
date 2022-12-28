@@ -23,15 +23,16 @@
             android:layout_marginTop="@dimen/_120sdp"
 
             android:background="@color/white"
-            app:cardCornerRadius="@dimen/_100sdp"
+            app:cardCornerRadius="@dimen/_200sdp"
             android:elevation="@dimen/_3sdp"
             >
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottie_main"
-                android:layout_width="@dimen/_200sdp"
-                android:layout_height="@dimen/_200sdp"
+                android:layout_width="@dimen/_230sdp"
+                android:layout_height="@dimen/_230sdp"
                 app:lottie_autoPlay="true"
+                android:padding="@dimen/_20sdp"
                 app:lottie_loop="true"
                 android:layout_gravity="center"
                 app:lottie_rawRes="@raw/flight_success"
@@ -63,7 +64,7 @@
             />
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_finish"
-            android:layout_width="@dimen/_160sdp"
+            android:layout_width="@dimen/_180sdp"
             android:layout_height="wrap_content"
             android:text="Finish"
             android:background="@drawable/btn_third_color_layout"
@@ -71,6 +72,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/_30sdp"
             android:textAllCaps="false"
+            android:textSize="@dimen/_19sdp"
 
             />
 

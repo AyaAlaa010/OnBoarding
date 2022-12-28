@@ -1,9 +1,12 @@
 package com.example.onboarding.ui.home;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +19,9 @@ import com.example.onboarding.search.Flight.Ticket.SuccessfulFlightBookingFragme
 import com.example.onboarding.search.SearchFragment;
 import com.example.onboarding.settings.SettingsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
 
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -35,17 +41,35 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+        setNavigationVisibilityForKeyboard();
 
-        //setBottomTaps();
 
     }
 
-    private void setUpNavBar() {
-//        bottomNavigationView.nav
-//        navController.setNavigatorProvider(bottomNavigationView);
-//        setupActionBarWithNavController(controller)   // TODO : DELETE THIS
-    }
 
+private void setNavigationVisibilityForKeyboard(){
+
+
+    KeyboardVisibilityEvent.setEventListener(
+            this,
+            new KeyboardVisibilityEventListener() {
+                @Override
+                public void onVisibilityChanged(boolean isOpen) {
+                    Log.d(TAG,"onVisibilityChanged: Keyboard visibility changed");
+                    if(isOpen){
+                        Log.d(TAG, "onVisibilityChanged: Keyboard is open");
+                        bottomNavigationView.setVisibility(View.GONE);
+                        Log.d(TAG, "onVisibilityChanged: NavBar got Invisible");
+                    }else{
+                        Log.d(TAG, "onVisibilityChanged: Keyboard is closed");
+                        bottomNavigationView.setVisibility(View.VISIBLE);
+                        Log.d(TAG, "onVisibilityChanged: NavBar got Visible");
+                    }
+                }
+            });
+
+
+}
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {

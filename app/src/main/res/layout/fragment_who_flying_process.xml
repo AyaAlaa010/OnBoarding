@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/gray"
         android:orientation="vertical">
 
@@ -106,6 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
+            android:isScrollContainer="false"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linear_process_ticket_loading"
 
@@ -241,7 +242,6 @@
 
 
                             />
-
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_contact_email"
                             android:layout_width="match_parent"
@@ -252,6 +252,7 @@
                             android:layout_marginEnd="@dimen/_10sdp"
                             android:background="@drawable/edit_text_layout"
                             android:elevation="@dimen/_2sdp"
+                            android:inputType="textEmailAddress"
                             android:fontFamily="@font/ubuntu_light_italic"
                             android:padding="@dimen/_10sdp"
                             android:textSize="@dimen/_12sdp"
@@ -318,7 +319,7 @@
 
                                 />
 
-                            <EditText
+                            <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/tv_phone_number"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
@@ -417,6 +418,7 @@
                     android:layout_marginEnd="@dimen/_5sdp"
                     android:background="@drawable/edit_text_layout"
                     android:elevation="@dimen/_2sdp"
+                    android:inputType="text"
                     android:fontFamily="@font/ubuntu_light_italic"
                     android:padding="@dimen/_12sdp"
                     android:textSize="@dimen/_12sdp"
@@ -454,6 +456,7 @@
                     android:fontFamily="@font/ubuntu_light_italic"
                     android:padding="@dimen/_12sdp"
                     android:textSize="@dimen/_12sdp"
+                    android:inputType="text"
                     android:layout_marginStart="@dimen/_5sdp"
                     android:layout_marginEnd="@dimen/_5sdp"
 

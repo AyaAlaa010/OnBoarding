@@ -109,6 +109,15 @@
     <string name="check_and_pay">Check and pay</string>
     <string name="flexibility_and_protection">Flexibility and protection</string>
     <string name="by_clicking_34_pay_now_34_you_agree_with_the_terms_and_conditions_and_privacy_policies_of_booking_com_gotogate_flights_ltd_gulf_air_and_with_the_fare_rules">By clicking \" pay now \" you agree with <font color='#449CE1'><u>the terms and conditions and privacy policies</u></font>of Booking.com, Gotogate Flights Ltd, Gulf Air, and with the<font color='#449CE1'>  <u>fare rules.</u></font></string>
+    <string name="adjust_your_security_settings_and_set_up_two_factor_authentication">Adjust your security settings and set up two-factor authentication.</string>
+    <string name="reset_your_password_regularly_to_keep_your_account_secure">Reset your password regularly to keep your account secure</string>
+    <string name="reset">Reset</string>
+    <string name="sign_out">Sign out</string>
+    <string name="selecting_34_sign_out_34_will_sign_you_out_from_all_devices_except_this_one_this_can_take_up_to_10_minutes">Selecting \"Sign out \" will sign you out from all devices except this one. This can take up to 10 minutes.</string>
+    <string name="delete_account">Delete account</string>
+    <string name="permanently_delete_your_time2travel_account">Permanently delete your Time2Travel account</string>
+    <string name="decide_what_you_want_to_be_notified_about_and_unsubscribe_from_what_you_don_t">Decide what you want to be notified about, and unsubscribe from what you don\'t.</string>
+    <string name="update_your_info_and_find_out_how_it_s_used">Update your info and find out how it\'s used.</string>
     <string-array name="gender">
         <item>select</item>
         <item>male</item>

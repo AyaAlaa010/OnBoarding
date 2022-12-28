@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".settings.PreferenceFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".settings.PreferenceFragment"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/_10sdp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferences"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_18sdp"
+            android:textColor="@color/app_second_color"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/update_your_info_and_find_out_how_it_s_used"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:textSize="@dimen/_13sdp"
+            android:textColor="@color/app_second_color"
+
+            />
+
+
+    </LinearLayout>
+</layout>
