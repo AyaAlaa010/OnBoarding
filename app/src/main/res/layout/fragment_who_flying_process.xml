@@ -327,8 +327,8 @@
                                 android:hint="  phone number"
                                 android:textSize="@dimen/_10sdp"
                                 android:elevation="@dimen/_2sdp"
-                                android:gravity="center"
                                 android:inputType="phone"
+                                android:paddingStart="@dimen/_5sdp"
                                 android:background="@drawable/phone_number_layout"
                                 />
 

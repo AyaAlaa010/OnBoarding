@@ -1,4 +1,4 @@
-package com.example.onboarding.registration;
+package com.example.onboarding.registration.notwork;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;

@@ -112,7 +112,7 @@ public class TicketTypeProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new WhoFlyingProcessFragment()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new WhoFlyingProcessFragment(),"who").addToBackStack(null).commit();
 
             }
         });

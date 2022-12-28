@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentCheckAndPayProcessBinding;
+import com.example.onboarding.search.SearchFragment;
 
 public class CheckAndPayProcessFragment extends Fragment {
 
@@ -42,9 +43,16 @@ public class CheckAndPayProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new SuccessfulFlightBookingFragment()).commit();
-                startActivity(new Intent(getContext(),SuccessfullFightBookingActivity.class));
-                getActivity().finish();
+             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new SuccessfulFlightBookingFragment(),"success").commit();
+               // startActivity(new Intent(getContext(),SuccessfullFightBookingActivity.class));
+
+                //remove all fragment of ticket process after finish the booking
+
+
+
+
+
+
 
             }
         });

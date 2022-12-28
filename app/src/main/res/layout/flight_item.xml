@@ -8,110 +8,127 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:elevation="@dimen/_5sdp"
-            android:layout_margin="@dimen/_10sdp"
-            app:cardCornerRadius="20dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_3sdp">
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
+            android:elevation="@dimen/_5sdp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:padding="@dimen/_5sdp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/gradient_flight_item"
-                android:layout_height="wrap_content">
+                android:padding="@dimen/_5sdp">
 
                 <TextView
+                    android:id="@+id/flight_country"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/flight_country"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:textSize="@dimen/_13sdp"
-                    android:fontFamily="@font/ubuntu_bold"
-                    android:textColor="@color/app_second_color"
-                    android:text="Mumbai"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:text="Mumbai"
+                    android:textColor="@color/app_second_color"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
 
                     />
 
                 <LinearLayout
+                    android:id="@+id/linear_date_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/linear_date_price"
                     android:layout_marginEnd="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
 
                     >
 
                     <TextView
+                        android:id="@+id/flight_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/flight_date"
 
-                        android:textSize="@dimen/_9sdp"
-                        android:fontFamily="@font/ubuntu_light_italic"
-                        android:textColor="@color/app_second_color"
-                        android:text="2-24 Sep"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp" />
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/ubuntu_light_italic"
+                        android:text="2-24 Sep"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_9sdp" />
 
                     <TextView
+                        android:id="@+id/flight_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/flight_price"
 
-                        android:textSize="@dimen/_13sdp"
-                        android:fontFamily="@font/ubuntu_bold"
-                        android:textColor="@color/app_second_color"
-                        android:text="350$"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp" />
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:fontFamily="@font/ubuntu_bold"
+                        android:text="350$"
+                        android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_13sdp" />
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/linear_start_end"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/linear_start_end"
-                    app:layout_constraintTop_toBottomOf="@id/linear_date_price"
-                    app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:layout_marginTop="@dimen/_8sdp"
-                    android:weightSum="5">
+                    android:weightSum="5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/linear_date_price">
 
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.5"
                         android:id="@+id/flight_start"
-                        android:text="11:30"
-                        android:textSize="@dimen/_9sdp"
-                        android:fontFamily="@font/ubuntu_light_italic"
-                        android:textColor="@color/app_second_color"
-
-                        />
-
-                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:id="@+id/flight_dot"
-                        android:text="......................................................"
-                        android:textSize="@dimen/_9sdp"
+                        android:layout_weight=".5"
                         android:fontFamily="@font/ubuntu_light_italic"
+                        android:text="11:30"
                         android:textColor="@color/app_second_color"
+                        android:textSize="@dimen/_9sdp"
 
                         />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.7"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/dotted_horizontal_line"
+                            android:layout_marginStart="@dimen/_3sdp"
+
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/flight_dotted_line"
+
+                            />
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/dotted_horizontal_line"
+
+                            />
+                    </LinearLayout>
+
 
                     <TextView
                         android:id="@+id/flight_end"
@@ -131,78 +148,79 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/linear_start_end"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:orientation="horizontal"
-                    android:weightSum="13"
                     android:layout_marginStart="@dimen/_5sdp"
-                    android:padding="@dimen/_10sdp">
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp"
+                    android:weightSum="13"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linear_start_end">
 
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
                         android:id="@+id/flight_short_name_from"
-                        android:text="DBX"
-                        android:gravity="center"
-                        android:background="@drawable/second_color_btn"
-                        android:textSize="@dimen/_9sdp"
-                        android:fontFamily="@font/ubuntu_light_italic"
-                        android:textColor="@color/white"
-                        android:padding="@dimen/_2sdp"
-                        android:layout_marginTop="@dimen/_3sdp"
-
-
-                        />
-
-                    <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="6"
-                        android:id="@+id/flight_duration"
-                        android:text="Duration: 02:15 - Direct"
-                        android:textSize="@dimen/_9sdp"
-                        android:gravity="center"
                         android:layout_marginTop="@dimen/_3sdp"
-
-                        android:fontFamily="@font/ubuntu_light_italic"
-                        android:textColor="@color/app_second_color_light"
-
-                        />
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:id="@+id/flight_short_name_to"
-                        android:text="BOM"
-                        android:padding="@dimen/_2sdp"
-                        android:gravity="center"
-                        android:textSize="@dimen/_9sdp"
-                        android:layout_marginTop="@dimen/_3sdp"
-                        android:fontFamily="@font/ubuntu_light_italic"
-                        android:textColor="@color/white"
                         android:background="@drawable/second_color_btn"
+                        android:fontFamily="@font/ubuntu_light_italic"
+                        android:gravity="center"
+                        android:padding="@dimen/_2sdp"
+                        android:text="DBX"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"
+
 
                         />
+
+                    <TextView
+                        android:id="@+id/flight_duration"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_weight="6"
+                        android:fontFamily="@font/ubuntu_light_italic"
+                        android:gravity="center"
+                        android:text="Duration: 02:15 - Direct"
+
+                        android:textColor="@color/app_second_color_light"
+                        android:textSize="@dimen/_9sdp"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/flight_short_name_to"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        android:layout_weight="2"
+                        android:background="@drawable/second_color_btn"
+                        android:fontFamily="@font/ubuntu_light_italic"
+                        android:gravity="center"
+                        android:padding="@dimen/_2sdp"
+                        android:text="BOM"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_9sdp"
+
+                        />
+
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_weight="1.5"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/cart_flatbed_suitcase_solid"
+                        android:layout_gravity="center"
                         android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_gravity="center"
+                        android:layout_weight="1.5"
+                        android:src="@drawable/cart_flatbed_suitcase_solid"
 
 
                         />
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_weight="1.5"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/suitcase_rolling_solid"
                         android:layout_gravity="center"
+                        android:layout_weight="1.5"
+                        android:src="@drawable/suitcase_rolling_solid"
 
                         />
                 </LinearLayout>

@@ -16,13 +16,6 @@
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">
         <activity
-            android:name=".search.Flight.Ticket.SuccessfullFightBookingActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".ui.home.BottomsTestActivity"
             android:exported="false">
             <meta-data
@@ -35,9 +28,9 @@
         <activity
             android:name=".ui.home.MainActivity"
             android:exported="true" />
-      
+
         <activity
-            android:name=".registration.SuccessRegisterActivity"
+            android:name=".registration.notwork.SuccessRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".IntroSlider.IntroSliderActivity"
@@ -50,7 +43,7 @@
 
             <meta-data
                 android:name="android.app.lib_name"
-                android:value="" />
+                android:value=""/>
         </activity>
 
         <meta-data

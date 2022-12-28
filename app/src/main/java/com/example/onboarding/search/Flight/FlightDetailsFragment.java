@@ -71,7 +71,7 @@ private FragmentFlightDetailsBinding binding;
             @Override
             public void navigateToConfirmFragment() {
                 //  navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FragmentConfirmation()) .addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FragmentConfirmation(),"confirmation") .addToBackStack(null).commit();
 
 
             }

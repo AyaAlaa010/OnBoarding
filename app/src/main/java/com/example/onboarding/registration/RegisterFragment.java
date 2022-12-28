@@ -38,30 +38,19 @@ private FragmentRegisterBinding binding;
         super.onViewCreated(view, savedInstanceState);
       // navController= Navigation.findNavController(view);
 
-        setPhoneNumberInput();
         setViewsAcions();
 
     }
 
-    private void  setPhoneNumberInput(){
-//        CountryConfigurator config = new CountryConfigurator();
-//        config.setDisplayFlag(true);
-//        config.setDisplayCountryCode(true);
-//        config.setDisplayDialingCode(true);
-//        config.setPhoneNumberHintType(MOBILE); //Set the phone number type that will be displayed as hint (MOBILE, FIXED, NONE)
-//        config.setDefaultCountry("FR"); //Set the default country that will be selected when loading
-//       // binding.phoneId.setConfig(config);
 
-
-
-    }
 
     private void setViewsAcions() {
 
         binding.btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), SuccessRegisterActivity.class));
+              //  startActivity(new Intent(getContext(), SuccessRegisterActivity.class));
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
 
             }
         });

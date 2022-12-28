@@ -88,7 +88,7 @@ public class SearchFragment extends Fragment {
                 switch (fragmentCounter) {
 
                     case 0: {
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment()).addToBackStack(null).commit();
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment(),"details").addToBackStack(null).commit();
                         //navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
                         break;
                     }

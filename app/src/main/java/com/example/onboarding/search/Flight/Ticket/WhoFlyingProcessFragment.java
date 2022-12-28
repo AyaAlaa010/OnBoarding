@@ -84,7 +84,7 @@ public class WhoFlyingProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new CheckAndPayProcessFragment()).addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new CheckAndPayProcessFragment(),"check").addToBackStack(null).commit();
 
             }
         });

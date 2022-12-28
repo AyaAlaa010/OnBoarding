@@ -62,7 +62,7 @@ public class FragmentConfirmation extends Fragment {
         binding.btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new TicketTypeProcessFragment(), "confirmation").addToBackStack(null).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new TicketTypeProcessFragment(), "ticket").addToBackStack(null).commit();
 
             }
         });

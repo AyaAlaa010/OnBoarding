@@ -111,17 +111,17 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_find"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_100sdp"
                 android:layout_height="0dp"
                 android:layout_gravity="center"
-                android:layout_weight="1.5"
+                android:layout_weight="1.2"
                 android:background="@drawable/btn_third_color_layout"
                 android:fontFamily="@font/ubuntu_bold_italic"
                 android:text="@string/find"
                 android:textAllCaps="false"
                 android:layout_marginBottom="@dimen/_10sdp"
-
                 android:textColor="@color/white"
+                android:textSize="@dimen/_16sdp"
 
 
                 />
