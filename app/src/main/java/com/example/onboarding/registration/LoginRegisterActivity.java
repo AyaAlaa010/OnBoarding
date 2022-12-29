@@ -2,22 +2,18 @@ package com.example.onboarding.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityLoginRegisterBinding;
-import com.example.onboarding.ui.home.MainActivity;
+import com.example.onboarding.ui.home.notused.MainActivity;
 
 public class LoginRegisterActivity extends AppCompatActivity {
     private ColorStateList def;

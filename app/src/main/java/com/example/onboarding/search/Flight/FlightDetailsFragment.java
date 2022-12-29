@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -25,7 +27,7 @@ public class FlightDetailsFragment extends Fragment {
 private FragmentFlightDetailsBinding binding;
     private List<FlightModel> flightList;
     private FlightsAdapter adapter;
- //  private NavController navController;
+   private NavController navController;
     ItemFlightImp itemFlightImp;
 
     @Override
@@ -41,7 +43,7 @@ private FragmentFlightDetailsBinding binding;
         super.onViewCreated(view, savedInstanceState);
 
 
-        //  navController= Navigation.findNavController(view);
+        navController= Navigation.findNavController(view);
         addTabs(binding.mainTabsFlightDetails);
         setFlightListData();
         callItemFlightIMP();
@@ -58,7 +60,7 @@ private FragmentFlightDetailsBinding binding;
             @Override
             public void onClick(View view) {
 
-             getParentFragmentManager().popBackStack();
+                navController.popBackStack();
                // getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations( R.anim.slide_out_top,R.anim.slide_in_bottom).remove(getActivity().getSupportFragmentManager().findFragmentByTag("details")).commit();
 
 
@@ -72,8 +74,9 @@ private FragmentFlightDetailsBinding binding;
         itemFlightImp=new ItemFlightImp() {
             @Override
             public void navigateToConfirmFragment() {
-                //  navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top).add(R.id.fragmentContainerView3, new FragmentConfirmation(),"confirmation").addToBackStack(null).commit();
+                navController.navigate(R.id.action_flightDetailsFragment_to_fragmentConfirmation);
+
+                //  getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top).add(R.id.nav_host_fragment, new FragmentConfirmation(),"confirmation").addToBackStack(null).commit();
 
 
             }
@@ -216,7 +219,7 @@ private FragmentFlightDetailsBinding binding;
         Bundle args = new Bundle();
         args.putString("position", position);
         searchFragment.setArguments(args);
-        getFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, searchFragment).commit();
+        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, searchFragment).commit();
 
     }
 

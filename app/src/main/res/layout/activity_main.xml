@@ -17,16 +17,29 @@
 
 
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragmentContainerView3"
+        <fragment
+            android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="18.5"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/navigation_main_graph"
+            app:navGraph="@navigation/main_graph"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="77dp" />
+
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/nav_host_fragment"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+
+<!--            app:defaultNavHost="true"-->
+<!--            app:navGraph="@navigation/nav_graph_test" />-->
 
 
 
@@ -41,8 +54,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:background="@drawable/tab_layout"
             android:layout_margin="@dimen/_10sdp"
-
-        app:menu="@menu/menu"/>
+            app:menu="@menu/menu"/>
     </LinearLayout>
 
 </layout>

@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.example.onboarding.search.Flight.Ticket.TicketTypeProcessFragment;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
 public class FragmentConfirmation extends Fragment {
+    private NavController navController;
 
     private FragmentConfirmationBinding binding;
     private LinearLayout bottomSheet;
@@ -32,7 +35,8 @@ public class FragmentConfirmation extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-         bottomSheet = view.findViewById(R.id.vBSBehavior);
+        navController= Navigation.findNavController(view);
+        bottomSheet = view.findViewById(R.id.vBSBehavior);
         setBottomSheet();
         setViewsAction();
     }
@@ -62,7 +66,8 @@ public class FragmentConfirmation extends Fragment {
         binding.btnSelect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top).add(R.id.fragmentContainerView3, new TicketTypeProcessFragment(), "ticket").addToBackStack(null).commit();
+               // getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top).add(R.id.nav_host_fragment, new TicketTypeProcessFragment(), "ticket").addToBackStack(null).commit();
+                navController.navigate(R.id.action_fragmentConfirmation_to_ticketTypeProcessFragment);
 
             }
         });
@@ -73,7 +78,7 @@ public class FragmentConfirmation extends Fragment {
             public void onClick(View view) {
 
                 //getFragmentManager().popBackStack();
-                getParentFragmentManager().popBackStack();
+                navController.popBackStack();
 
 
             }

@@ -1,7 +1,6 @@
 package com.example.onboarding.IntroSlider;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
@@ -11,13 +10,13 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.DecelerateInterpolator;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.onboarding.HomeActivity;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.IntroActivityBinding;
-import com.example.onboarding.ui.home.MainActivity;
+
 
 public class IntroSliderActivity extends AppCompatActivity {
     // creating variables for view pager,
@@ -81,10 +80,8 @@ public class IntroSliderActivity extends AppCompatActivity {
     }
     private void moveToMainActivity(){
 
-        startActivity(new Intent(IntroSliderActivity.this, MainActivity.class));
+        startActivity(new Intent(IntroSliderActivity.this, HomeActivity.class));
         finish();
-
-
     }
 
 

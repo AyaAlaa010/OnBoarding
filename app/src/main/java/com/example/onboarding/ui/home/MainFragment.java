@@ -3,15 +3,16 @@ package com.example.onboarding.ui.home;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentMainBinding;
@@ -29,7 +30,7 @@ import java.util.List;
 public class MainFragment extends Fragment {
     private FragmentMainBinding binding;
     private SliderAdapter adapter;
-    //  private NavController navController;
+    private NavController navController;
 
 
     @Override
@@ -43,7 +44,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // navController= Navigation.findNavController(view);
+     navController= Navigation.findNavController(view);
 
         setTopCitiesSlider();
         setTopHotelsSlider();
@@ -65,7 +66,7 @@ public class MainFragment extends Fragment {
         binding.btnBussiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //navController.navigate(R.id.action_mainFragment_to_blankFragment);
+              // navController.navigate(R.id.action_mainFragment_to_blankFragment);
             }
         });
 

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.onboarding.ui.home.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main"/>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.onboarding.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_flightDetailsFragment"
+            app:destination="@id/flightDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.onboarding.favourite.FavouriteFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_favouriteFragment_to_bookingsFragment"
+            app:destination="@id/bookingsFragment" />
+        <action
+            android:id="@+id/action_favouriteFragment_to_savedFragment"
+            app:destination="@id/savedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsDetailsFragment"
+        android:name="com.example.onboarding.settings.SettingsDetailsFragment"
+        android:label="SettingsDetailsFragment"
+        tools:layout="@layout/fragment_settings_details">
+        <action
+            android:id="@+id/action_settingsDetailsFragment_to_personalDetailsFragment"
+            app:destination="@id/personalDetailsFragment" />
+        <action
+            android:id="@+id/action_settingsDetailsFragment_to_securityFragment"
+            app:destination="@id/securityFragment" />
+        <action
+            android:id="@+id/action_settingsDetailsFragment_to_emailNotificationFragment"
+            app:destination="@id/emailNotificationFragment" />
+        <action
+            android:id="@+id/action_settingsDetailsFragment_to_preferenceFragment"
+            app:destination="@id/preferenceFragment" />
+        <action
+            android:id="@+id/action_settingsDetailsFragment_to_walletAndPaymentFragment"
+            app:destination="@id/walletAndPaymentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flightDetailsFragment"
+        android:name="com.example.onboarding.search.Flight.FlightDetailsFragment"
+        android:label="FlightDetailsFragment"
+        tools:layout="@layout/fragment_flight_details">
+
+        <action
+            android:id="@+id/action_flightDetailsFragment_to_fragmentConfirmation"
+            app:destination="@id/fragmentConfirmation"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+         />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentConfirmation"
+        android:name="com.example.onboarding.search.Flight.FragmentConfirmation"
+        android:label="FragmentConfirmation"
+        tools:layout="@layout/fragment_confirmation">
+        <action
+            android:id="@+id/action_fragmentConfirmation_to_ticketTypeProcessFragment"
+            app:destination="@id/ticketTypeProcessFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"/>
+    </fragment>
+    <fragment
+        android:id="@+id/ticketTypeProcessFragment"
+        android:name="com.example.onboarding.search.Flight.Ticket.TicketTypeProcessFragment"
+        android:label="TicketTypeProcessFragment"
+        tools:layout="@layout/ticket_type_process_fragment">
+        <action
+            android:id="@+id/action_ticketTypeProcessFragment_to_whoFlyingProcessFragment"
+            app:destination="@id/whoFlyingProcessFragment"
+            app:enterAnim="@anim/horizontal_slide_in"
+            app:exitAnim="@anim/horizontal_slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/whoFlyingProcessFragment"
+        android:name="com.example.onboarding.search.Flight.Ticket.WhoFlyingProcessFragment"
+        android:label="WhoFlyingProcessFragment"
+        tools:layout="@layout/fragment_who_flying_process">
+        <action
+            android:id="@+id/action_whoFlyingProcessFragment_to_checkAndPayProcessFragment"
+            app:destination="@id/checkAndPayProcessFragment"
+            app:enterAnim="@anim/horizontal_slide_in"
+            app:exitAnim="@anim/horizontal_slide_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/checkAndPayProcessFragment"
+        android:name="com.example.onboarding.search.Flight.Ticket.CheckAndPayProcessFragment"
+        android:label="CheckAndPayProcessFragment"
+        tools:layout="@layout/fragment_check_and_pay_process">
+        <action
+            android:id="@+id/action_checkAndPayProcessFragment_to_successfulFlightBookingFragment"
+            app:destination="@id/successfulFlightBookingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/successfulFlightBookingFragment"
+        android:name="com.example.onboarding.search.Flight.Ticket.SuccessfulFlightBookingFragment"
+        android:label="SuccessfulFlightBookingFragment"
+        tools:layout="@layout/fragment_successful_flight_booking">
+        <action
+            android:id="@+id/action_successfulFlightBookingFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@+id/searchFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bookingsFragment"
+        android:name="com.example.onboarding.favourite.BookingsFragment"
+        android:label="BookingsFragment"
+        tools:layout="@layout/fragment_bookings"/>
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.onboarding.favourite.SavedFragment"
+        android:label="SavedFragment"
+        tools:layout="@layout/fragment_saved"/>
+    <fragment
+        android:id="@+id/personalDetailsFragment"
+        android:name="com.example.onboarding.settings.PersonalDetailsFragment"
+        android:label="fragment_personal_details"
+        tools:layout="@layout/fragment_personal_details" />
+    <fragment
+        android:id="@+id/securityFragment"
+        android:name="com.example.onboarding.settings.SecurityFragment"
+        android:label="fragment_security"
+        tools:layout="@layout/fragment_security" />
+    <fragment
+        android:id="@+id/emailNotificationFragment"
+        android:name="com.example.onboarding.settings.EmailNotificationFragment"
+        android:label="EmailNotificationFragment"
+        tools:layout="@layout/fragment_email_notification"/>
+    <fragment
+        android:id="@+id/preferenceFragment"
+        android:name="com.example.onboarding.settings.PreferenceFragment"
+        android:label="PreferenceFragment"
+        tools:layout="@layout/fragment_preference"/>
+    <fragment
+        android:id="@+id/walletAndPaymentFragment"
+        android:name="com.example.onboarding.settings.WalletAndPaymentFragment"
+        android:label="fragment_wallet_payment"
+        tools:layout="@layout/fragment_wallet_payment" />
+</navigation>

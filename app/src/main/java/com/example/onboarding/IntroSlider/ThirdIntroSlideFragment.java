@@ -1,6 +1,5 @@
 package com.example.onboarding.IntroSlider;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentThirdBinding;
-import com.example.onboarding.ui.home.MainActivity;
 
 
 public class ThirdIntroSlideFragment extends Fragment {

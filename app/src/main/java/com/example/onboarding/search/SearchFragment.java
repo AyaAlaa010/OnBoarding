@@ -9,6 +9,10 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
@@ -28,7 +32,7 @@ public class SearchFragment extends Fragment {
     private FragmentSearchBinding binding;
     private static int fragmentCounter = 0;
     private SearchTabsAccessorAdapter tabsAccessorAdapter;
-    // private NavController navController;
+ private NavController navController;
     String tabPosition ;
 
     @Override
@@ -42,13 +46,13 @@ public class SearchFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-//        this.navController = Navigation.findNavController(view);
+
+      navController = Navigation.findNavController(view);
 
         getFlightsTabPosition();//TOdO JOIN TABS FIGHTS WITH SEARCH TABS NEED TO HANDEL AND FIX I GET A POSITION FROM FLIGHTS AND NEED TO HANDEL WHEN I MAKE BACK TO SERCH (the problem is no move at first time open the fragment)
         FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
         tabsAccessorAdapter = new SearchTabsAccessorAdapter(fragmentManager, getLifecycle());
         binding.mainTabsPager.setAdapter(tabsAccessorAdapter);
-
         addTabs(binding.mainTabs);
 
         setViewsAction();
@@ -88,8 +92,14 @@ public class SearchFragment extends Fragment {
                 switch (fragmentCounter) {
 
                     case 0: {
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment(),"details").addToBackStack(null).commit();
-                        //navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
+                       // getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new FlightDetailsFragment(),"details").addToBackStack(null).commit();
+                      // navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);;
+//                        NavDirections action =
+//                                SearchFragmentDirections
+//                                        .actionSearchFragmentToFlightDetailsFragment();
+//                        Navigation.findNavController(view).navigate(action);
+                        navController.navigate(R.id.action_searchFragment_to_flightDetailsFragment);
+
                         break;
                     }
                     case 1: {

@@ -16,17 +16,23 @@
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.BottomsTestActivity"
+            android:name=".ui.home.notused.BottomsTestActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".registration.LoginRegisterActivity"
             android:exported="true" />
         <activity
-            android:name=".ui.home.MainActivity"
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity
+            android:name=".ui.home.notused.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize"/>
 

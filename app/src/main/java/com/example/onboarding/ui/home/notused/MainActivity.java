@@ -1,4 +1,4 @@
-package com.example.onboarding.ui.home;
+package com.example.onboarding.ui.home.notused;
 
 import static android.content.ContentValues.TAG;
 
@@ -11,13 +11,16 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityMainBinding;
 import com.example.onboarding.favourite.FavouriteFragment;
-import com.example.onboarding.search.Flight.Ticket.SuccessfulFlightBookingFragment;
 import com.example.onboarding.search.SearchFragment;
+import com.example.onboarding.settings.SettingsDetailsFragment;
 import com.example.onboarding.settings.SettingsFragment;
+import com.example.onboarding.ui.home.MainFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
@@ -32,14 +35,16 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private SearchFragment searchFragment;
     private FavouriteFragment favouriteFragment;
     private SettingsFragment settingsFragment;
-
+    SettingsDetailsFragment settingsDetailsFragment;
+    View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+      //  bottomNavigationView.setSelectedItemId(R.id.home);
 
         setNavigationVisibilityForKeyboard();
 
@@ -58,6 +63,7 @@ private void setNavigationVisibilityForKeyboard(){
                     Log.d(TAG,"onVisibilityChanged: Keyboard visibility changed");
                     if(isOpen){
                         Log.d(TAG, "onVisibilityChanged: Keyboard is open");
+
                         bottomNavigationView.setVisibility(View.GONE);
                         Log.d(TAG, "onVisibilityChanged: NavBar got Invisible");
                     }else{
@@ -77,22 +83,31 @@ private void setNavigationVisibilityForKeyboard(){
         searchFragment = new SearchFragment();
         favouriteFragment = new FavouriteFragment();
         settingsFragment = new SettingsFragment();
+         settingsDetailsFragment= new SettingsDetailsFragment();
         switch (item.getItemId()) {
-            case R.id.home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView3, mainFragment).commit();
-                return true;
-            case R.id.search:
-                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, searchFragment).addToBackStack(null).commit();
-                return true;
-            case R.id.favourite:
-                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, favouriteFragment).addToBackStack(null).commit();
-                return true;
-            case R.id.menu:
-                getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, settingsFragment).addToBackStack(null).commit();
-                return true;
+//            case R.id.home:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, mainFragment).commit();
+//                return true;
+//            case R.id.search:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, searchFragment).addToBackStack(null).commit();
+//                return true;
+//            case R.id.favourite:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, favouriteFragment).addToBackStack(null).commit();
+//                return true;
+//            case R.id.menu:
+//                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,  settingsDetailsFragment).addToBackStack(null).commit();
+//                return true;
         }
         return false;
     }
+    private void setUpNavBar() {
+//        BottomNavigationView navView = findViewById(R.id.bottomNavigationView);
+//        NavController controller = this.findNavController(R.id.main_fragment)
+//        view = findViewById(R.id.nav_host_fragment);
+//        NavController controller = Navigation.findNavController(view);
+
+    }
+
 
     @Override
     public void onBackPressed() {

@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import com.example.onboarding.databinding.TicketTypeProcessFragmentBinding;
 
 public class TicketTypeProcessFragment extends Fragment {
     private TicketTypeProcessFragmentBinding binding;
+    NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -28,6 +31,7 @@ public class TicketTypeProcessFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        navController= Navigation.findNavController(view);
 
         handelRadioButtonCheck();
         setBackButtonAction();
@@ -112,8 +116,8 @@ public class TicketTypeProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.horizontal_slide_in, R.anim.horizontal_slide_out).add(R.id.fragmentContainerView3, new WhoFlyingProcessFragment(),"who").addToBackStack(null).commit();
-
+              //  getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.horizontal_slide_in, R.anim.horizontal_slide_out).add(R.id.nav_host_fragment, new WhoFlyingProcessFragment(),"who").addToBackStack(null).commit();
+                navController.navigate(R.id.action_ticketTypeProcessFragment_to_whoFlyingProcessFragment);
             }
         });
     }
@@ -124,7 +128,7 @@ public class TicketTypeProcessFragment extends Fragment {
         binding.tvBackTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getParentFragmentManager().popBackStack();
+                navController.popBackStack();
 
             }
         });

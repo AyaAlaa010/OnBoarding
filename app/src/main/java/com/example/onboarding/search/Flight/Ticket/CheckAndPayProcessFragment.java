@@ -7,6 +7,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +22,7 @@ import com.example.onboarding.search.SearchFragment;
 public class CheckAndPayProcessFragment extends Fragment {
 
     private FragmentCheckAndPayProcessBinding binding;
-
+    private NavController navController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,6 +35,7 @@ public class CheckAndPayProcessFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        navController= Navigation.findNavController(view);
 
         setNextViewAction();
         setBackViewAction();
@@ -43,7 +46,14 @@ public class CheckAndPayProcessFragment extends Fragment {
         binding.tvNextTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fragmentContainerView3, new SuccessfulFlightBookingFragment(),"success").commit();
+            //  getActivity().getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment, new SuccessfulFlightBookingFragment(),"success").commit();
+                navController.clearBackStack(R.id.flightDetailsFragment);
+                navController.clearBackStack(R.id.fragmentConfirmation);
+                navController.clearBackStack(R.id.ticketTypeProcessFragment);
+                navController.clearBackStack(R.id.whoFlyingProcessFragment);
+                navController.clearBackStack(R.id.checkAndPayProcessFragment);
+
+                navController.navigate(R.id.action_checkAndPayProcessFragment_to_successfulFlightBookingFragment);
 
                 //remove all fragment of ticket process after finish the booking
 //                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("check")).commit();
@@ -66,7 +76,7 @@ public class CheckAndPayProcessFragment extends Fragment {
         binding.tvBackTicket.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getParentFragmentManager().popBackStack();
+                navController.popBackStack();
 
             }
         });
