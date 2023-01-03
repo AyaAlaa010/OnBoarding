@@ -49,7 +49,7 @@ class HomeActivity : AppCompatActivity(){
             } else {
                 Log.d(ContentValues.TAG, "onVisibilityChanged: Keyboard is closed")
 //                Toast.makeText(this,"closed",Toast.LENGTH_SHORT).show()
-//                if(controller.currentDestination?.id!=R.id.loginRegisterFragment){
+//                if(controller.currentDestination?.id!=R.id.loginRegisterFragment){//TODO DELETE
 //                bottomNavigationView?.setVisibility(View.VISIBLE)
 //                }
                 Log.d(ContentValues.TAG, "onVisibilityChanged: NavBar got Visible")
@@ -81,7 +81,7 @@ class HomeActivity : AppCompatActivity(){
 
 
     private fun setUpNavBar() {
-        //val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
+        //val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView) //TODO DELETE
         controller = this.findNavController(R.id.nav_host_fragment)
         bottomNavigationView?.setupWithNavController(controller)
     }

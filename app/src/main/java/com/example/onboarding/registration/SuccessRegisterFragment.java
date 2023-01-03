@@ -29,7 +29,7 @@ private FragmentSuccessRegisterBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.custom_tab).setVisibility(View.GONE);
-        getActivity().findViewById(R.id.iv_back).setVisibility(View.GONE);
+     //   getActivity().findViewById(R.id.iv_back).setVisibility(View.GONE);
         getActivity().findViewById(R.id.card_login_register).setVisibility(View.GONE);
 
         setViewsAction();

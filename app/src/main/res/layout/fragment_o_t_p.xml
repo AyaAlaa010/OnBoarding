@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@color/gray"
+        tools:context=".registration.OTPFragment">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/arrow_back_left_previous_icon"
+            app:civ_border_color="@color/app_second_color"
+            app:civ_border_width="@dimen/_2sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/otp_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toBottomOf="@id/iv_back" />
+
+        <TextView
+            android:id="@+id/tv_otp_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/we_have_sent_you_a_verification_code_to_your_email"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_otp"
+
+            />
+
+        <TextView
+            android:id="@+id/tv_email_format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="adress@domain.com"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_otp_hint"
+
+            />
+
+        <TextView
+            android:id="@+id/yv_otp_input_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/please_input_the_6_digit_code_below_to_continue"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_11sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_format"
+
+            />
+
+        <LinearLayout
+            android:id="@+id/linear_otp_numbers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="7"
+            app:layout_constraintTop_toBottomOf="@+id/yv_otp_input_hint">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+android:layout_marginBottom="@dimen/_2sdp"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_one"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_three"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_four"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_five"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
+                android:layout_weight="1"
+                app:cardCornerRadius="@dimen/_5sdp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_otp_six"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/ubuntu_bold"
+                    android:inputType="number"
+                    android:maxLength="1"
+                    android:textSize="@dimen/_20sdp"
+                    android:textColor="@color/app_second_color"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+
+                    />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_resend_cod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+
+            app:layout_constraintTop_toBottomOf="@+id/linear_otp_numbers">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/didn_t_get_code_yet"
+                android:fontFamily="@font/ubuntu"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/app_second_color"
+
+
+                />
+            <TextView
+                android:id="@+id/tv_resend_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resend code"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/app_color"
+
+
+
+                />
+
+        </LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_verify"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@+id/linear_resend_cod"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/btn_third_color_layout"
+            android:text="@string/verify"
+            android:fontFamily="@font/ubuntu_italic"
+            android:textSize="@dimen/_20sdp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_30sdp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

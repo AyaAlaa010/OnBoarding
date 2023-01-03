@@ -18,9 +18,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.onboarding.ApllicationPojo.RegisterPojo.RegisterRequest;
+import com.example.onboarding.ApllicationPojo.RegisterPojo.RegisterResponse;
+import com.example.onboarding.Network.RetrofitClient;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentRegisterBinding;
+
+import rx.SingleSubscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 
 public class RegisterFragment extends Fragment {
@@ -45,6 +53,7 @@ private String validEmail;
         hidePassword();
         hideRepeatedPassword();
         checkInputEmail();
+        registerTest();
 
     }
 
@@ -157,6 +166,28 @@ private String validEmail;
     private void hidePassword(EditText editText, ImageView imageView){
        editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
        imageView.setImageDrawable(getResources().getDrawable(R.drawable.show_password_icon));
+    }
+
+    private void registerTest(){
+        RegisterRequest registerRequest = new RegisterRequest("aya", "alaa","ayaalaa010920@gmail.com","+201092098006", "Nawras12#");
+        RetrofitClient.getApi().register(registerRequest).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new SingleSubscriber<RegisterResponse>() {
+                    @Override
+                    public void onSuccess(RegisterResponse value) {
+                        Toast.makeText(getContext(), "Acount Created"+value.getRegistered_email(), Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void onError(Throwable error) {
+                      //  Log.i(TAG, "onError: "+ error.getLocalizedMessage());
+                     Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+                });
+
+
     }
 
 

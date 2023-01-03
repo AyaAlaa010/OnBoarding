@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/t2t_logo"
+        android:icon="@drawable/time2travel_svg"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/t2t_logo"
+        android:roundIcon="@drawable/time2travel_svg"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">

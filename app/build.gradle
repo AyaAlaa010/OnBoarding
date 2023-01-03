@@ -65,12 +65,28 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
-    //
+    //animation lottie
    implementation "com.airbnb.android:lottie:3.4.0"
    implementation'com.hbb20:ccp:2.3.1'
 //for bottom navigation because it is going up with keyboard
     implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:2.1.0'
 
+
+    // for load image url
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //room
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    //retrofit with rx java
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0'
+    implementation 'io.reactivex:rxjava:1.1.8'
+    implementation 'io.reactivex:rxandroid:1.2.1'
 
 
 

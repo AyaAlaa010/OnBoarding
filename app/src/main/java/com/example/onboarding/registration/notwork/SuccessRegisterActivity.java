@@ -10,7 +10,7 @@ import android.view.View;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityRegisterSuccessBinding;
 import com.example.onboarding.ui.home.notused.MainActivity;
-
+//TODO DELETE THIS ACTIVITY
 public class SuccessRegisterActivity extends AppCompatActivity {
     private ActivityRegisterSuccessBinding binding;
     @Override

@@ -21,6 +21,7 @@ import com.example.onboarding.databinding.ActivityLoginRegisterBinding;
 import com.example.onboarding.registration.LoginFragment;
 import com.example.onboarding.registration.RegisterFragment;
 
+//TODO DELETE THIS Fragment
 
 public class LoginRegisterFragment extends Fragment {
     private ColorStateList def;
