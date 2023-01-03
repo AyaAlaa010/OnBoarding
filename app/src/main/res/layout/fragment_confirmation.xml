@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
+
         >
 
         <LinearLayout
@@ -264,7 +265,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Gulf Air GF513"
+                                    android:text="Gulf Air"
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -274,7 +275,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Gulf Air GF513"
+                                    android:text=" GF513 economy"
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -283,7 +284,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Flight time 1h 24m"
+                                    android:text="Flight time 0h 44m"
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -481,7 +482,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Gulf Air GF513"
+                                    android:text="Gulf Air "
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -491,7 +492,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Gulf Air GF513"
+                                    android:text=" GF513 economy"
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -500,7 +501,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/ubuntu"
-                                    android:text="Flight time 1h 24m"
+                                    android:text="Flight time 1h 04m"
                                     android:textColor="@color/app_second_color"
                                     android:textSize="@dimen/_9sdp" />
 
@@ -760,7 +761,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/_120sdp"
                             android:id="@+id/rewards"
-                            android:background="@color/app_color"
+                            android:background="@color/gray"
 
 
                             />

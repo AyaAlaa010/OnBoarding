@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        tools:context=".search.Flight.FlightsFilterFragment"
+        >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ android:layout_margin="@dimen/_10sdp"
+        android:orientation="vertical"
+
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="Filter"
+                android:textColor="@color/app_color"
+                android:textSize="@dimen/_22sdp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/exite_icon"
+
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/stops"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_14sdp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_direct"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="3.5"
+                android:fontFamily="@font/ubuntu"
+                android:text="@string/direct"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_direct_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="From 190$"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_stop"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="3.5"
+                android:fontFamily="@font/ubuntu"
+                android:text="@string/_1_stop"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_stop_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="From 190$"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_2_stop"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="3.5"
+                android:fontFamily="@font/ubuntu"
+                android:text="@string/_2_stops"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_2_stop"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="From 190$"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp"
+
+                />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/gray"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/departure_times"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_14sdp"
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.5"
+                android:fontFamily="@font/ubuntu"
+                android:text="@string/outbound"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:text="04:00 - 20:00"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp"
+
+
+                />
+
+
+        </LinearLayout>
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/slider_depature_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:stepSize="10.0"
+            android:valueFrom="0.0"
+            android:valueTo="100.0"
+            app:values="@array/initial_slider_values" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="Return"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_12sdp" />
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/slider_return_time"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:stepSize="10.0"
+            android:valueFrom="0"
+            android:valueTo="100.0"
+            app:values="@array/initial_slider_values" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/gray"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/price"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/range"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/slider_price"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:stepSize="10.0"
+            android:valueFrom="0"
+            android:valueTo="100.0"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:values="@array/initial_slider_values" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/gray"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/duration"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/maximum_travel_time"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.google.android.material.slider.RangeSlider
+            android:id="@+id/slider_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:stepSize="10.0"
+            android:valueFrom="0"
+            android:valueTo="100.0"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+       />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/gray"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/duration"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_14sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_egyptair"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="4"
+                android:fontFamily="@font/ubuntu"
+                android:text="Egyptair"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_egyptair_num"
+                android:layout_width="71dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:gravity="end"
+                android:text="14"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_emirate_airline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="4"
+                android:fontFamily="@font/ubuntu"
+                android:text="Emirates Airline"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_emirate_airline_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="2"
+                android:gravity="end"
+
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+
+            android:weightSum="5">
+
+        <CheckBox
+            android:id="@+id/checkbox_Ethiopian_Airlines_airline"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_weight="4"
+            android:fontFamily="@font/ubuntu"
+            android:text="Ethiopian Airlines"
+            android:textColor="@color/app_second_color"
+            android:textSize="@dimen/_12sdp" />
+
+        <TextView
+            android:id="@+id/tv_emirate_Ethiopian_Airlines_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/ubuntu_light_italic"
+            android:text="1"
+            android:gravity="end"
+            android:textColor="@color/app_second_color_light"
+            android:textSize="@dimen/_10sdp" />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_Fly_Dubai_airline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="4"
+                android:fontFamily="@font/ubuntu"
+                android:text="Fly Dubai"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_Fly_Dubai_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="22"
+
+                android:gravity="end"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:weightSum="5">
+
+            <CheckBox
+                android:id="@+id/checkbox_FlyNas_airline"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_weight="4"
+                android:fontFamily="@font/ubuntu"
+                android:text="FlyNas"
+                android:textColor="@color/app_second_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/tv_FlyNas_num"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/ubuntu_light_italic"
+                android:text="12"
+                android:gravity="end"
+                android:textColor="@color/app_second_color_light"
+                android:textSize="@dimen/_10sdp" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_show_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/show_all"
+            android:textColor="@color/app_color"
+            android:textSize="@dimen/_12sdp"
+            android:layout_margin="@dimen/_10sdp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/_30sdp"
+            android:weightSum="6">
+
+            <TextView
+                android:id="@+id/tv_back_ticket"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="3"
+                android:text="@string/reset"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/app_second_color"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center"
+                android:fontFamily="@font/ubuntu_bold"
+                android:background="@drawable/phone_key_layout"
+                android:layout_marginEnd="@dimen/_7sdp"
+                />
+            <TextView
+                android:id="@+id/tv_next_ticket"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_weight="3"
+                android:text="@string/apply"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_13sdp"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:gravity="center"
+                android:fontFamily="@font/ubuntu_bold"
+                android:background="@drawable/next_ticket_layout"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+    </LinearLayout>
+</layout>

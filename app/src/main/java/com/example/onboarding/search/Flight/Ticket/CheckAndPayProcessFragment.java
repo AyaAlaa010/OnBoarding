@@ -53,7 +53,7 @@ public class CheckAndPayProcessFragment extends Fragment {
                 navController.clearBackStack(R.id.whoFlyingProcessFragment);
                 navController.clearBackStack(R.id.checkAndPayProcessFragment);
 
-                navController.navigate(R.id.action_checkAndPayProcessFragment_to_successfulFlightBookingFragment);
+                navController.navigate(CheckAndPayProcessFragmentDirections.actionCheckAndPayProcessFragmentToSuccessfulFlightBookingFragment());
 
                 //remove all fragment of ticket process after finish the booking
 //                getActivity().getSupportFragmentManager().beginTransaction().remove(getActivity().getSupportFragmentManager().findFragmentByTag("check")).commit();

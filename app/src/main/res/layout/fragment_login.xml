@@ -15,6 +15,7 @@
         android:elevation="@dimen/_3sdp"
         tools:context=".registration.LoginFragment">
 
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -145,6 +146,9 @@
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_marginStart="@dimen/_2sdp"
+
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_30sdp">
 
@@ -164,6 +168,8 @@
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_30sdp">
 
@@ -184,6 +190,7 @@
                 android:layout_width="@dimen/_50sdp"
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_30sdp">
 
@@ -211,5 +218,6 @@
             android:textColor="@color/app_second_color_light"
             android:textSize="@dimen/_7sdp"
             android:gravity="center" />
+
     </LinearLayout>
 </layout>

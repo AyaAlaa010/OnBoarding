@@ -4,7 +4,7 @@ import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.onboarding.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
+
 
 class HomeActivity : AppCompatActivity(){
     var binding: ActivityMainBinding? = null
@@ -24,6 +25,7 @@ class HomeActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         //  bottomNavigationView.setSelectedItemId(R.id.home);
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE or WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView?.setVisibility(View.VISIBLE)
@@ -31,6 +33,9 @@ class HomeActivity : AppCompatActivity(){
         setUpNavBar()
 
     }
+
+
+
     private fun setNavigationVisibilityForKeyboard() {
         KeyboardVisibilityEvent.setEventListener(
                 this
@@ -44,12 +49,35 @@ class HomeActivity : AppCompatActivity(){
             } else {
                 Log.d(ContentValues.TAG, "onVisibilityChanged: Keyboard is closed")
 //                Toast.makeText(this,"closed",Toast.LENGTH_SHORT).show()
-                bottomNavigationView?.setVisibility(View.VISIBLE)
+//                if(controller.currentDestination?.id!=R.id.loginRegisterFragment){
+//                bottomNavigationView?.setVisibility(View.VISIBLE)
+//                }
                 Log.d(ContentValues.TAG, "onVisibilityChanged: NavBar got Visible")
             }
         }
     }
 
+    private val listener = NavController.OnDestinationChangedListener { _, destination, _ ->
+        if(destination.id==R.id.successfulFlightBookingFragment  ){
+            bottomNavigationView?.visibility = View.GONE
+
+        }
+        else{
+            bottomNavigationView?.visibility = View.VISIBLE
+        }
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        controller.addOnDestinationChangedListener(listener)
+    }
+
+    override fun onPause() {
+        controller.removeOnDestinationChangedListener(listener)
+        super.onPause()
+    }
 
 
     private fun setUpNavBar() {

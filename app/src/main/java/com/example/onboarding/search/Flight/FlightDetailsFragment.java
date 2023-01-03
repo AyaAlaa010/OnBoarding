@@ -66,6 +66,13 @@ private FragmentFlightDetailsBinding binding;
 
             }
         });
+        binding.ivFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_flightDetailsFragment_to_flightsFilterFragment);
+
+            }
+        });
 
     }
 
@@ -215,11 +222,12 @@ private FragmentFlightDetailsBinding binding;
     }
     private void joinFlightsTabWithSearchTabs(String position){
 
-        SearchFragment searchFragment = new SearchFragment ();
-        Bundle args = new Bundle();
-        args.putString("position", position);
-        searchFragment.setArguments(args);
-        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, searchFragment).commit();
+//        SearchFragment searchFragment = new SearchFragment ();
+//        Bundle args = new Bundle();
+//        args.putString("position", position);
+//        searchFragment.setArguments(args);
+//        getFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, searchFragment).commit();
+        navController.popBackStack();
 
     }
 

@@ -41,7 +41,23 @@
             android:fontFamily="@font/ubuntu_bold"
             android:textSize="@dimen/_13sdp"
             android:textColor="@color/app_second_color"
-
+            />
+        <TextView
+            android:id="@+id/select_currancy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AED U.A.E Dirham"
+            android:background="@drawable/edit_text_layout"
+            android:padding="@dimen/_7sdp"
+            android:textSize="@dimen/_12sdp"
+            android:fontFamily="@font/ubuntu_italic"
+            android:textColor="@color/app_second_color"
+            android:elevation="@dimen/_2sdp"
+            android:drawableEnd="@drawable/arrow_bottom_down_icon"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             />
 
 

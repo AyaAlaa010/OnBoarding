@@ -200,6 +200,8 @@ public class SearchFragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.bed_solid));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.car_solid_1));
         tabLayout.addTab(tabLayout.newTab().setIcon(R.drawable.award_solid_1));
+        binding.mainTabs.setSelectedTabIndicatorColor(getResources().getColor(R.color.gray));
+
 
 
     }

@@ -37,6 +37,7 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false);
         return binding.getRoot();
     }
@@ -45,6 +46,7 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
      navController= Navigation.findNavController(view);
+
 
         setTopCitiesSlider();
         setTopHotelsSlider();
@@ -58,7 +60,8 @@ public class MainFragment extends Fragment {
         binding.userPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+            startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+             // navController.navigate(R.id.action_mainFragment_to_loginRegisterFragment);
 
             }
         });

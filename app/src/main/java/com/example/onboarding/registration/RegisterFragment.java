@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
@@ -24,6 +26,7 @@ import com.example.onboarding.databinding.FragmentRegisterBinding;
 public class RegisterFragment extends Fragment {
 
 private FragmentRegisterBinding binding;
+private String validEmail;
 //private NavController navController;
 
     @Override
@@ -38,38 +41,46 @@ private FragmentRegisterBinding binding;
         super.onViewCreated(view, savedInstanceState);
       // navController= Navigation.findNavController(view);
 
-        setViewsAcions();
+        createAccount();
+        hidePassword();
+        hideRepeatedPassword();
+        checkInputEmail();
 
     }
 
-
-
-    private void setViewsAcions() {
+    private void createAccount(){
 
         binding.btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  startActivity(new Intent(getContext(), SuccessRegisterActivity.class));
+                //  startActivity(new Intent(getContext(), SuccessRegisterActivity.class));
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
 
             }
         });
 
+    }
+    private void hidePassword(){
         binding.imgHidePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-               if(    binding.imgHidePassword.getDrawable().getConstantState().equals
-                       (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
-                  showPassword(binding.etRegisterPassword,binding.imgHidePassword);
-               }
-               else{
-                 hidePassword(binding.etRegisterPassword,binding.imgHidePassword);
+                if(    binding.imgHidePassword.getDrawable().getConstantState().equals
+                        (getResources().getDrawable(R.drawable.show_password_icon).getConstantState())){
+                    showPassword(binding.etRegisterPassword,binding.imgHidePassword);
+                }
+                else{
+                    hidePassword(binding.etRegisterPassword,binding.imgHidePassword);
 
 
-               }
+                }
             }
         });
+
+
+    }
+    private void hideRepeatedPassword(){
+
         binding.imgHideRepeatPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -86,8 +97,55 @@ private FragmentRegisterBinding binding;
                 }
             }
         });
+    }
+
+
+
+
+
+    private void checkInputEmail(){
+
+        binding.etRegisterEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                checkEmailValidation(binding.etRegisterEmail); // pass your EditText Obj here.
+
+
+            }
+        });
 
     }
+    public void checkEmailValidation(EditText edtEmail) {
+        if (edtEmail.getText().toString() == null) {
+            edtEmail.setError("Invalid Email Address");
+            validEmail = null;
+        } else if (isEmailValid(edtEmail.getText().toString()) == false) {
+            edtEmail.setError("Invalid Email Address");
+            validEmail = null;
+        } else {
+            validEmail = edtEmail.getText().toString();
+        }
+    }
+
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                .matches();
+    }
+
+
 
     private void showPassword(EditText editText, ImageView imageView){
         editText.setTransformationMethod( PasswordTransformationMethod.getInstance());

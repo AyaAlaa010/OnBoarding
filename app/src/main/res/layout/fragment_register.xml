@@ -277,6 +277,7 @@
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_30sdp">
 
@@ -296,6 +297,7 @@
                 android:layout_width="@dimen/_40sdp"
                 android:layout_height="@dimen/_40sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
                 android:background="@color/white"
                 app:cardCornerRadius="@dimen/_30sdp">
 
@@ -313,10 +315,11 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_facebook"
-                android:layout_width="47dp"
+                android:layout_width="55dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:background="@color/white"
+                android:layout_marginBottom="@dimen/_2sdp"
                 app:cardCornerRadius="@dimen/_30sdp">
 
 

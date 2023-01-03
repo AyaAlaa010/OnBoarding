@@ -118,6 +118,19 @@
     <string name="permanently_delete_your_time2travel_account">Permanently delete your Time2Travel account</string>
     <string name="decide_what_you_want_to_be_notified_about_and_unsubscribe_from_what_you_don_t">Decide what you want to be notified about, and unsubscribe from what you don\'t.</string>
     <string name="update_your_info_and_find_out_how_it_s_used">Update your info and find out how it\'s used.</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="direct">Direct</string>
+    <string name="stops">Stops</string>
+    <string name="outbound">Outbound</string>
+    <string name="departure_times">Departure Times</string>
+    <string name="_1_stop">1 Stop</string>
+    <string name="_2_stops">2+ Stops</string>
+    <string name="range">Range</string>
+    <string name="duration">Duration</string>
+    <string name="maximum_travel_time">Maximum travel time</string>
+    <string name="apply">Apply</string>
+    <string name="show_all"><u>Show all</u></string>
     <string-array name="gender">
         <item>select</item>
         <item>male</item>

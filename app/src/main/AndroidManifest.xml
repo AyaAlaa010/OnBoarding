@@ -9,12 +9,13 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/t2t_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/t2t_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnBoarding"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.home.notused.BottomsTestActivity"
             android:exported="false">
@@ -22,20 +23,20 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
             android:name=".registration.LoginRegisterActivity"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustPan"
 
+            />
         <activity
             android:name=".ui.home.notused.MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
 
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".registration.notwork.SuccessRegisterActivity"
             android:exported="true" />
@@ -50,7 +51,7 @@
 
             <meta-data
                 android:name="android.app.lib_name"
-                android:value=""/>
+                android:value="" />
         </activity>
 
         <meta-data

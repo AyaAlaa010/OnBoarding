@@ -1,13 +1,18 @@
-package com.example.onboarding.registration;
+package com.example.onboarding.registration.notwork;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-
-import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,9 +20,9 @@ import com.example.onboarding.R;
 import com.example.onboarding.databinding.ActivityLoginRegisterBinding;
 import com.example.onboarding.registration.LoginFragment;
 import com.example.onboarding.registration.RegisterFragment;
-import com.example.onboarding.ui.home.notused.MainActivity;
 
-public class LoginRegisterActivity extends AppCompatActivity {
+
+public class LoginRegisterFragment extends Fragment {
     private ColorStateList def;
     private TextView tvLogin;
     private TextView tvRegister;
@@ -27,26 +32,56 @@ public class LoginRegisterActivity extends AppCompatActivity {
     private LoginFragment loginFragment;
     private ActivityLoginRegisterBinding binding;
     private static int flagSpecifyFragment = 1;
+    private NavController navController;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login_register);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_login_register, container, false);
+    }
 
-        overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
 
-        tvLogin = findViewById(R.id.tv_login);
-        tvRegister = findViewById(R.id.tv_register);
-        select = findViewById(R.id.select);
-        ivBack = findViewById(R.id.iv_back);
+//        getActivity().overridePendingTransition(R.anim.slide_in_bottom, R.anim.slide_out_top);
+     //   getActivity().findViewById(R.id.bottomNavigationView).setVisibility(View.GONE);
+
+        init(view);
+        setTabsAction();
+        setViewsAction();
+    }
+    private void init(View view){
+        tvLogin = view.findViewById(R.id.tv_login);
+        tvRegister = view.findViewById(R.id.tv_register);
+        select = view.findViewById(R.id.select);
+        ivBack = view.findViewById(R.id.iv_back);
         def = tvRegister.getTextColors();
         registerFragment = new RegisterFragment();
         loginFragment = new LoginFragment();
-        setTabsAction();
+
 
     }
 
 
+    private void setViewsAction() {
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //startActivity(new Intent(LoginRegisterActivity.this, MainActivity.class));
+
+                navController.popBackStack();
+
+
+            }
+
+
+        });
+
+
+    }
 
     private void setTabsAction() {
         tvLogin.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +89,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 flagSpecifyFragment = 1;
                 setLoginAnimation();
-                getSupportFragmentManager().beginTransaction()
+                getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainerView_login_register, loginFragment).commit();
 
             }
@@ -65,8 +100,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 flagSpecifyFragment = 2;
-               setRegisterAnimation();
-                getSupportFragmentManager().beginTransaction()
+                setRegisterAnimation();
+                getActivity().getSupportFragmentManager().beginTransaction()
                         .replace(R.id.fragmentContainerView_login_register, registerFragment).commit();
 
 
@@ -75,14 +110,15 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
 
     }
-    private void setLoginAnimation(){
+
+    private void setLoginAnimation() {
 
         String item_two = tvRegister.getText().toString();
         String item_One = tvLogin.getText().toString();
         tvLogin.setText("");
         tvRegister.setText("");
         select.animate().x(0).setDuration(500);
-        binding.fragmentContainerViewLoginRegister.animate().x(0).setDuration(1000);
+        // binding.fragmentContainerViewLoginRegister.animate().x(0).setDuration(1000);
 
         tvRegister.setText(item_two);
         tvLogin.setText(item_One);
@@ -90,7 +126,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
         tvRegister.setTextColor(def);
 
     }
-    private void setRegisterAnimation(){
+
+    private void setRegisterAnimation() {
 
         String item_one = tvLogin.getText().toString();
         String item_two = tvRegister.getText().toString();
@@ -100,13 +137,20 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
         int size = tvRegister.getWidth();
         select.animate().x(size).setDuration(500);
-        binding.fragmentContainerViewLoginRegister.animate().x(0).setDuration(1000);
+        // binding.fragmentContainerViewLoginRegister.animate().x(0).setDuration(1000);
 
         tvLogin.setText(item_one);
         tvRegister.setText(item_two);
 
         tvLogin.setTextColor(def);
         tvRegister.setTextColor(Color.WHITE);
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        //getActivity().findViewById(R.id.bottomNavigationView).setVisibility(View.VISIBLE);
 
     }
 }

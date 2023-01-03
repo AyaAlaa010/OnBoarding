@@ -293,11 +293,10 @@
                             android:layout_marginStart="@dimen/_10sdp"
                             android:layout_marginTop="@dimen/_7sdp"
                             android:layout_marginEnd="@dimen/_10sdp"
-                            android:layout_marginBottom="@dimen/_10sdp"
                             android:orientation="horizontal"
                             android:weightSum="4"
                             android:background="@drawable/edit_text_layout"
-                            android:elevation="@dimen/_3sdp"
+                            android:elevation="@dimen/_2sdp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/et_register_email">
@@ -309,8 +308,7 @@
                                 android:layout_weight="1.5"
                                 android:id="@+id/tv_country_code"
                                 android:gravity="center"
-                                android:elevation="@dimen/_2sdp"
-
+android:elevation="@dimen/_2sdp"
                                 app:ccp_textSize="@dimen/_10sdp"
                                 app:ccp_autoDetectCountry="true"
                                 app:ccp_showNameCode="false"
@@ -337,19 +335,20 @@
 
                         </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/get_free_text_message_updates_about_your_flight"
-                            android:fontFamily="@font/ubuntu_light_italic"
-                            android:layout_marginStart="@dimen/_10sdp"
-                            android:textSize="@dimen/_11sdp"
-                            android:gravity="center"
-                            android:textColor="@color/app_second_color"
-                            android:drawableStart="@drawable/correct_mark_success_tick_icon"
-                            android:layout_marginBottom="@dimen/_10sdp"
+                            <CheckBox
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/get_free_text_message_updates_about_your_flight"
+                                android:textSize="@dimen/_10sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:textColor="@color/app_second_color"
+                                android:fontFamily="@font/ubuntu_italic"/>
 
-                            />
+
+
+
+
+
 
                     </LinearLayout>
 

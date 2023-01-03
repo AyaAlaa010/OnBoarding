@@ -9,7 +9,9 @@
         android:id="@+id/mainFragment"
         android:name="com.example.onboarding.ui.home.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main">
+       
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.onboarding.search.SearchFragment"
@@ -64,6 +66,9 @@
             app:enterAnim="@anim/slide_in_bottom"
             app:exitAnim="@anim/slide_out_top"
          />
+        <action
+            android:id="@+id/action_flightDetailsFragment_to_flightsFilterFragment"
+            app:destination="@id/flightsFilterFragment" />
     </fragment>
     <fragment
         android:id="@+id/fragmentConfirmation"
@@ -105,7 +110,11 @@
         tools:layout="@layout/fragment_check_and_pay_process">
         <action
             android:id="@+id/action_checkAndPayProcessFragment_to_successfulFlightBookingFragment"
-            app:destination="@id/successfulFlightBookingFragment" />
+            app:destination="@id/successfulFlightBookingFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/main_graph"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/successfulFlightBookingFragment"
@@ -153,4 +162,9 @@
         android:name="com.example.onboarding.settings.WalletAndPaymentFragment"
         android:label="fragment_wallet_payment"
         tools:layout="@layout/fragment_wallet_payment" />
+    <fragment
+        android:id="@+id/flightsFilterFragment"
+        android:name="com.example.onboarding.search.Flight.FlightsFilterFragment"
+        android:label="FlightsFilterFragment"
+        tools:layout="@layout/fragment_flights_filter"/>
 </navigation>

@@ -10,25 +10,38 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentWhoFlyingProcessBinding;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class WhoFlyingProcessFragment extends Fragment {
     private FragmentWhoFlyingProcessBinding binding;
     private NavController navController;
+   private  String validEmail;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,14 +54,18 @@ public class WhoFlyingProcessFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+       // nawrasProplem();
+
+
         navController= Navigation.findNavController(view);
 
         setSelectMenuAction();
         setNextButtonAction();
         setBackButtonAction();
-
+        checkInputEmail();
 
     }
+
 
     private void setSelectMenuAction() {
         binding.selectMenu.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +77,48 @@ public class WhoFlyingProcessFragment extends Fragment {
         });
 
     }
+    private void checkInputEmail(){
+
+        binding.etContactEmail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                }
+
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                checkEmailValidation(binding.etContactEmail); // pass your EditText Obj here.
+
+
+            }
+        });
+
+    }
+    public void checkEmailValidation(EditText edtEmail) {
+        if (edtEmail.getText().toString() == null) {
+            edtEmail.setError("Invalid Email Address");
+            validEmail = null;
+        } else if (isEmailValid(edtEmail.getText().toString()) == false) {
+            edtEmail.setError("Invalid Email Address");
+            validEmail = null;
+        } else {
+            validEmail = edtEmail.getText().toString();
+        }
+    }
+
+    boolean isEmailValid(CharSequence email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email)
+                .matches();
+    }
+
 
     private void showMenu(View view, @MenuRes int menuRes) {
         PopupMenu popup = new PopupMenu(getActivity(), view);
