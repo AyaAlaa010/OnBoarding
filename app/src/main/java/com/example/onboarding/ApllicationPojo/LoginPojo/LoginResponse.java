@@ -9,9 +9,21 @@ public class LoginResponse {
     @SerializedName("registered_email")
     private String registered_email;
 
-    public LoginResponse(int user_id, String registered_email) {
+    @SerializedName("error")
+    private String error;
+
+    public String getError() {
+        return error;
+    }
+
+    public LoginResponse(int user_id, String registered_email, String error) {
         this.user_id = user_id;
         this.registered_email = registered_email;
+        this.error = error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 
     public int getUser_id() {

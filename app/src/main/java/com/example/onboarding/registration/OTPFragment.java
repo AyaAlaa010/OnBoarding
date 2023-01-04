@@ -7,12 +7,19 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.onboarding.ApllicationPojo.OTPPojo.OTPRequest;
@@ -46,7 +53,7 @@ private int userId;
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.custom_tab).setVisibility(View.GONE);
         getActivity().findViewById(R.id.card_login_register).setVisibility(View.GONE);
-        userId=getArguments().getInt("user_id");
+        userId = getArguments().getInt("user_id");
         setBackButtonAction();
         setVerifyAction();
     }
@@ -82,8 +89,8 @@ private int userId;
     }
     private void checkOTPFilled(){
 
-        if( !(  binding.etOtpOne.getText().toString().isEmpty()&& binding.etOtpTwo.getText().toString().isEmpty()&& binding.etOtpThree.getText().toString().isEmpty() && binding.etOtpFour.getText().toString().isEmpty()&& binding.etOtpFive.getText().toString().isEmpty()&& binding.etOtpSix.getText().toString().isEmpty())){
-            String otp=    binding.etOtpOne.getText().toString()+ binding.etOtpTwo.getText().toString()+ binding.etOtpThree.getText().toString()+ binding.etOtpFour.getText().toString()+ binding.etOtpFive.getText().toString()+ binding.etOtpSix.getText().toString();
+        if( binding.PinView.getText().length()==6){
+            String otp=binding.PinView.getText().toString() ;
             int intOTP=Integer.parseInt(otp);
             sendOtp(intOTP);
 

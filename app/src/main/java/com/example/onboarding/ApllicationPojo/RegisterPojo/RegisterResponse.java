@@ -11,10 +11,24 @@ public class RegisterResponse {
     @SerializedName("registered_email")
     private String registered_email;
 
-    public RegisterResponse(int user_id, String registered_email) {
+
+    @SerializedName("error")
+    private String error;
+
+    public RegisterResponse(int user_id, String registered_email, String error) {
         this.user_id = user_id;
         this.registered_email = registered_email;
+        this.error = error;
     }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
 
     public int getUser_id() {
         return user_id;
