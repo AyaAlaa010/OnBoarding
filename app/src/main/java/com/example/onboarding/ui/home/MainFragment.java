@@ -1,11 +1,14 @@
 package com.example.onboarding.ui.home;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -60,10 +63,14 @@ public class MainFragment extends Fragment {
         binding.userPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+                String   token = getActivity().getSharedPreferences("token", MODE_PRIVATE).getString("accessToken", "not exist");
+               // Toast.makeText(getContext(),"you are already login",Toast.LENGTH_LONG).show();
+               // if(token==null){
+
+                startActivity(new Intent(requireContext(), LoginRegisterActivity.class));}
              // navController.navigate(R.id.action_mainFragment_to_loginRegisterFragment);
 
-            }
+          //  }
         });
 
         binding.btnBussiness.setOnClickListener(new View.OnClickListener() {

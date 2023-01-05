@@ -1,5 +1,7 @@
 package com.example.onboarding.registration;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,6 +40,7 @@ import rx.schedulers.Schedulers;
 public class OTPFragment extends Fragment {
 private FragmentOTPBinding binding;
 private int userId;
+private String email,checkFragment;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -53,9 +56,18 @@ private int userId;
         super.onViewCreated(view, savedInstanceState);
         getActivity().findViewById(R.id.custom_tab).setVisibility(View.GONE);
         getActivity().findViewById(R.id.card_login_register).setVisibility(View.GONE);
-        userId = getArguments().getInt("user_id");
+        getDataSendedTHroughBundel();
+
+        binding.tvEmailFormat.setText(email);
         setBackButtonAction();
         setVerifyAction();
+    }
+    private void getDataSendedTHroughBundel(){
+
+        userId = getArguments().getInt("user_id");
+        email=getArguments().getString("email");
+        checkFragment=getArguments().getString("checkFragment");
+
     }
 
 
@@ -113,14 +125,27 @@ private int userId;
                 .subscribe(new SingleSubscriber<OTPResponse>() {
                     @Override
                     public void onSuccess(OTPResponse value) {
-                        Toast.makeText(getContext(),value.getToken()+"",Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(getContext(),HomeActivity.class));
+
+                        if(checkFragment.equals("login")){
+                            startActivity(new Intent(getContext(),HomeActivity.class));
+
+
+                        }
+                        else if (checkFragment.equals("register")){
+                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
+
+
+                        }
+                      //  Toast.makeText(getContext(),value.getToken()+"",Toast.LENGTH_LONG).show();
+                      //  startActivity(new Intent(getContext(),HomeActivity.class));
 
                         String  token = value.getToken();
                         System.out.println("----------------------------"+token+"----------------------------------------");
-                        SharedPreferences preferences = getActivity().getSharedPreferences("token", Context.MODE_PRIVATE);
-                      preferences.edit().putString("accessToken", token).apply();
-//                        myToken = getSharedPreferences("products", MODE_PRIVATE).getString("accessToken", "");
+                        SharedPreferences preferences = getActivity().getSharedPreferences("token", MODE_PRIVATE);
+                        preferences.edit().putString("accessToken", token).apply();
+//                   String   myToken = getActivity().getSharedPreferences("token", MODE_PRIVATE).getString("accessToken", "not exist");
+//                   Toast.makeText(getContext(),"token="+myToken,Toast.LENGTH_LONG).show();
+
 //                        String token = "Bearer " + myToken;
 
                     }

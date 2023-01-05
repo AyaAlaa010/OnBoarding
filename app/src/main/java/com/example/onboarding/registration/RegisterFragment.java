@@ -217,6 +217,8 @@ public class RegisterFragment extends Fragment {
         OTPFragment otpFragment = new OTPFragment();
         Bundle args = new Bundle();
         args.putInt("user_id", userId);
+        args.putString("email",binding.etRegisterEmail.getText().toString());
+        args.putString("checkFragment","register");
         otpFragment.setArguments(args);
         // getFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();

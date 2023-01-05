@@ -142,6 +142,9 @@ public class LoginFragment extends Fragment {
         OTPFragment otpFragment = new OTPFragment();
         Bundle args = new Bundle();
         args.putInt("user_id", userId);
+        args.putString("email",binding.etLoginEmail.getText().toString());
+        args.putString("checkFragment","login");
+
         otpFragment.setArguments(args);
        // getFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
