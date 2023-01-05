@@ -3,6 +3,7 @@ package com.example.onboarding.ui.home;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,11 +18,17 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.onboarding.ApllicationPojo.LoginPojo.LoginResponse;
+import com.example.onboarding.ApllicationPojo.LogoutPojo.LogoutRequest;
+import com.example.onboarding.ApllicationPojo.LogoutPojo.LogoutResponse;
+import com.example.onboarding.HomeActivity;
+import com.example.onboarding.Network.RetrofitClient;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentMainBinding;
 import com.example.onboarding.registration.LoginRegisterActivity;
 import com.example.onboarding.ui.home.imageslider.SliderAdapter;
 import com.example.onboarding.ui.home.imageslider.SliderItem;
+import com.google.android.material.snackbar.Snackbar;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -29,11 +36,19 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import rx.SingleSubscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
 
 public class MainFragment extends Fragment {
     private FragmentMainBinding binding;
     private SliderAdapter adapter;
     private NavController navController;
+    String name;
 
 
     @Override
@@ -48,37 +63,102 @@ public class MainFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-     navController= Navigation.findNavController(view);
+        navController = Navigation.findNavController(view);
+        name = getActivity().getSharedPreferences("user", MODE_PRIVATE).getString("name", "not exist");
 
-
+        checkUserLogin();
         setTopCitiesSlider();
         setTopHotelsSlider();
         setFeaturesSlider();
         setViewsActions();
     }
 
-    private void setViewsActions() {
+    //to check that the user is logined or not
+    private void checkUserLogin() {
 
+        if (!name.equals("not exist")) {
+            binding.userWelcome.setText("Hi " + name + " !");
+        } else {
+
+            binding.userWelcome.setText("Hi Omar !");
+
+
+        }
+
+
+    }
+
+    private void setViewsActions() {
 
         binding.userPicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String   token = getActivity().getSharedPreferences("token", MODE_PRIVATE).getString("accessToken", "not exist");
-               // Toast.makeText(getContext(),"you are already login",Toast.LENGTH_LONG).show();
-               // if(token==null){
+                String token = getActivity().getSharedPreferences("user", MODE_PRIVATE).getString("accessToken", "not exist");
+                if (token.equals("not exist")) {
+                    startActivity(new Intent(requireContext(), LoginRegisterActivity.class));
+                    getActivity().finish();
+                } else {
 
-                startActivity(new Intent(requireContext(), LoginRegisterActivity.class));}
-             // navController.navigate(R.id.action_mainFragment_to_loginRegisterFragment);
+                    showSnackBarForLogOut();
 
-          //  }
+                }
+
+            }
         });
 
         binding.btnBussiness.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              // navController.navigate(R.id.action_mainFragment_to_blankFragment);
+                // navController.navigate(R.id.action_mainFragment_to_blankFragment);
             }
         });
+
+
+    }
+    private void showSnackBarForLogOut(){
+
+        Snackbar snackbar = Snackbar.make(binding.linearMain, "want to log out", Snackbar.LENGTH_LONG);
+
+        snackbar.setAction("Yes", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                logOut();
+            }
+        });
+        snackbar.show();
+
+    }
+
+    private void logOut() {
+        RetrofitClient.getApi().logout(new LogoutRequest("mobile")).enqueue(new Callback<LogoutResponse>() {
+            @Override
+            public void onResponse(Call<LogoutResponse> call, Response<LogoutResponse> response) {
+
+                Toast.makeText(getContext(), "you are logged out now  ", Toast.LENGTH_SHORT).show();
+                storeTokenAndName();
+                startActivity(new Intent(getContext(), LoginRegisterActivity.class));
+                getActivity().finish();
+
+
+            }
+
+            @Override
+            public void onFailure(Call<LogoutResponse> call, Throwable t) {
+                Toast.makeText(getContext(), t.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
+
+            }
+
+        });
+
+
+    }
+    private void storeTokenAndName(){
+
+        SharedPreferences preferences = getActivity().getSharedPreferences("user", MODE_PRIVATE);
+        preferences.edit().putString("accessToken", "not exist").apply();
+        preferences.edit().putString("name", "not exist").apply();
+
 
 
     }

@@ -1,5 +1,6 @@
 package com.example.onboarding.registration;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.onboarding.HomeActivity;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentSuccessRegisterBinding;
 
@@ -39,8 +41,9 @@ private FragmentSuccessRegisterBinding binding;
         binding.btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getActivity().finish();
 
+                startActivity(new Intent(getContext(), HomeActivity.class));
+                getActivity().finish();
             }
         });
 

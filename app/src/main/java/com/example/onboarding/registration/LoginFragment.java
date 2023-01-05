@@ -56,7 +56,6 @@ public class LoginFragment extends Fragment {
 
     private void login(String email,String password){
 
-      //LoginRequest loginRequest = new LoginRequest("eng.nawrasma@gmail.com", "Nawras12#");
         LoginRequest loginRequest = new LoginRequest(email, password);
 
         RetrofitClient.getApi().login(loginRequest).subscribeOn(Schedulers.io())
@@ -64,31 +63,14 @@ public class LoginFragment extends Fragment {
                 .subscribe(new SingleSubscriber<LoginResponse>() {
                     @Override
                     public void onSuccess(LoginResponse value) {
-//                        Toast.makeText(getContext(),value.getRegistered_email(),Toast.LENGTH_LONG).show();
-//                        Toast.makeText(getContext(),value.getUser_id()+"",Toast.LENGTH_LONG).show();
 
                         setOTP(value.getUser_id());
-                      // String  token = value.gr();
-//                        SharedPreferences preferences = getSharedPreferences("products", Context.MODE_PRIVATE);
-//                        preferences.edit().putString("accessToken", myToken).apply();
-//                        myToken = getSharedPreferences("products", MODE_PRIVATE).getString("accessToken", "");
-//                        String token = "Bearer " + myToken;
-//                        Log.i(TAG, "onCreate:my token =  " + token);
-//                        Log.i(TAG, "onResponse: xxxxxxxxxxxxx" + myToken);
-//                        if (myToken.isEmpty()) {
-//
-//                            Toast.makeText(LoginActivity.this, "token empty", Toast.LENGTH_LONG).show();
-//                        }
-//                        Toast.makeText(LoginActivity.this, "sucess", Toast.LENGTH_LONG).show();
-//
-//                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-//                        finish();
+
                     }
 
                     @Override
                     public void onError(Throwable error) {
 
-                       // Log.i(TAG, "onError: " + error.getLocalizedMessage());
                         Toast.makeText(getContext(),error.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
                     }
                 });
@@ -144,9 +126,7 @@ public class LoginFragment extends Fragment {
         args.putInt("user_id", userId);
         args.putString("email",binding.etLoginEmail.getText().toString());
         args.putString("checkFragment","login");
-
         otpFragment.setArguments(args);
-       // getFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
 
 

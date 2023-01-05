@@ -31,6 +31,7 @@ import com.example.onboarding.HomeActivity;
 import com.example.onboarding.Network.RetrofitClient;
 import com.example.onboarding.R;
 import com.example.onboarding.databinding.FragmentOTPBinding;
+import com.example.onboarding.ui.home.MainFragment;
 
 import rx.SingleSubscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -38,9 +39,10 @@ import rx.schedulers.Schedulers;
 
 
 public class OTPFragment extends Fragment {
-private FragmentOTPBinding binding;
-private int userId;
-private String email,checkFragment;
+    private FragmentOTPBinding binding;
+    private int userId;
+    private String email, checkFragment;
+    private SharedPreferences preferences;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,24 +56,27 @@ private String email,checkFragment;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        preferences = getActivity().getSharedPreferences("user", MODE_PRIVATE);
+
         getActivity().findViewById(R.id.custom_tab).setVisibility(View.GONE);
         getActivity().findViewById(R.id.card_login_register).setVisibility(View.GONE);
-        getDataSendedTHroughBundel();
+        getDataSentTHroughBundel();
 
         binding.tvEmailFormat.setText(email);
         setBackButtonAction();
         setVerifyAction();
     }
-    private void getDataSendedTHroughBundel(){
+
+    private void getDataSentTHroughBundel() {
 
         userId = getArguments().getInt("user_id");
-        email=getArguments().getString("email");
-        checkFragment=getArguments().getString("checkFragment");
+        email = getArguments().getString("email");
+        checkFragment = getArguments().getString("checkFragment");
 
     }
 
 
-    private void setBackButtonAction(){
+    private void setBackButtonAction() {
         binding.ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,76 +92,70 @@ private String email,checkFragment;
 
     }
 
-    private void setVerifyAction(){
+    private void setVerifyAction() {
 
         binding.btnVerify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // startActivity(new Intent(getContext(), HomeActivity.class));
-                checkOTPFilled();            }
+                // startActivity(new Intent(getContext(), HomeActivity.class));
+                checkOTPFilled();
+            }
         });
 
 
-
     }
-    private void checkOTPFilled(){
 
-        if( binding.PinView.getText().length()==6){
-            String otp=binding.PinView.getText().toString() ;
-            int intOTP=Integer.parseInt(otp);
+    private void checkOTPFilled() {
+
+        if (binding.PinView.getText().length() == 6) {
+            String otp = binding.PinView.getText().toString();
+            int intOTP = Integer.parseInt(otp);
             sendOtp(intOTP);
 
+        } else {
+
+            Toast.makeText(getContext(), "you must fill all six digits", Toast.LENGTH_LONG).show();
+
         }
-        else{
-
-            Toast.makeText(getContext(),"you must enter six digits",Toast.LENGTH_LONG).show();
-
-        }
-
-
 
 
     }
 
-    private void sendOtp(int otp){
-        OTPRequest otpRequest = new OTPRequest("mobile", userId,otp);
+    private void sendOtp(int otp) {
+        OTPRequest otpRequest = new OTPRequest("mobile", userId, otp);
         RetrofitClient.getApi().sendOTP(otpRequest).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new SingleSubscriber<OTPResponse>() {
                     @Override
                     public void onSuccess(OTPResponse value) {
+                        //store name of the user
+                        preferences.edit().putString("name",value.getUser().getFirstName()).apply();
 
-                        if(checkFragment.equals("login")){
-                            startActivity(new Intent(getContext(),HomeActivity.class));
-
-
-                        }
-                        else if (checkFragment.equals("register")){
-                            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
-
-
-                        }
-                      //  Toast.makeText(getContext(),value.getToken()+"",Toast.LENGTH_LONG).show();
-                      //  startActivity(new Intent(getContext(),HomeActivity.class));
-
-                        String  token = value.getToken();
-                        System.out.println("----------------------------"+token+"----------------------------------------");
-                        SharedPreferences preferences = getActivity().getSharedPreferences("token", MODE_PRIVATE);
+                        //store the token to record the session
+                        String token = value.getToken();
                         preferences.edit().putString("accessToken", token).apply();
-//                   String   myToken = getActivity().getSharedPreferences("token", MODE_PRIVATE).getString("accessToken", "not exist");
-//                   Toast.makeText(getContext(),"token="+myToken,Toast.LENGTH_LONG).show();
 
-//                        String token = "Bearer " + myToken;
-
+                        //check which fragment sent otp
+                        checkTheCurrentFragment();
                     }
 
                     @Override
                     public void onError(Throwable error) {
-
-                        // Log.i(TAG, "onError: " + error.getLocalizedMessage());
-                        Toast.makeText(getContext(),error.getLocalizedMessage().toString(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), error.getLocalizedMessage().toString(), Toast.LENGTH_LONG).show();
                     }
                 });
+
+    }
+    private void checkTheCurrentFragment(){
+        if (checkFragment.equals("login")) {
+
+            startActivity( new Intent(getContext(), HomeActivity.class));
+            getActivity().finish();
+
+        } else if (checkFragment.equals("register")) {
+            getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
+        }
+
 
     }
 

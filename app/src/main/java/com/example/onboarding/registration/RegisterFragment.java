@@ -198,7 +198,7 @@ public class RegisterFragment extends Fragment {
                     @Override
                     public void onSuccess(RegisterResponse value) {
 
-                        Toast.makeText(getContext(), "Acount Created" + value.getRegistered_email(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getContext(), "Acount Created", Toast.LENGTH_LONG).show();
                         //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.linear_login_register, new SuccessRegisterFragment()).commit();
                         setOTP( value.getUser_id());
                     }
@@ -220,7 +220,6 @@ public class RegisterFragment extends Fragment {
         args.putString("email",binding.etRegisterEmail.getText().toString());
         args.putString("checkFragment","register");
         otpFragment.setArguments(args);
-        // getFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.linear_login_register, otpFragment).commit();
 
 
